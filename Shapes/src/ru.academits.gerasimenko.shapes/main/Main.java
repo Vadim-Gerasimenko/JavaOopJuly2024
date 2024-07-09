@@ -18,7 +18,7 @@ public class Main {
         Shape shapeWithMaxArea = AreaComparator.getShapeWithMaxArea(shapes);
 
         System.out.println("Информация о фигуре с максимальной площадью:");
-        System.out.println("Название фигуры: " + shapeWithMaxArea.toString());
+        System.out.println("Название фигуры: " + shapeWithMaxArea);
         System.out.println("Ширина: " + shapeWithMaxArea.getWidth());
         System.out.println("Высота: " + shapeWithMaxArea.getHeight());
         System.out.println("Площадь: " + shapeWithMaxArea.getArea());
