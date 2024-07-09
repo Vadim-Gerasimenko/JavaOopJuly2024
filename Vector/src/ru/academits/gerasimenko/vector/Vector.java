@@ -44,4 +44,8 @@ public class Vector {
 
         return stringBuilder.append("}").toString();
     }
+
+    public int getSize() {
+        return array.length;
+    }
 }
