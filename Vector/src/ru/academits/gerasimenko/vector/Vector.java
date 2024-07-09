@@ -3,7 +3,7 @@ package ru.academits.gerasimenko.vector;
 import java.util.Arrays;
 
 public class Vector {
-    private final double[] array;
+    private double[] array;
 
     public Vector(int n) {
         dimensionValidation(n);
@@ -31,12 +31,18 @@ public class Vector {
         }
     }
 
+    private void indexValidation(int index) {
+        if (index < 0 || index >= this.array.length) {
+            throw new IllegalArgumentException("Index out of range.");
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder("{");
 
-        for (double element : array) {
-            stringBuilder.append(element);
+        for (double component : array) {
+            stringBuilder.append(component);
             stringBuilder.append(", ");
         }
 
@@ -47,5 +53,101 @@ public class Vector {
 
     public int getSize() {
         return array.length;
+    }
+
+    public void add(Vector vector) {
+        double[] sumArray = new double[Math.max(array.length, vector.array.length)];
+
+        for (int i = 0; i < array.length; i++) {
+            sumArray[i] += array[i];
+        }
+
+        for (int i = 0; i < vector.array.length; i++) {
+            sumArray[i] += vector.array[i];
+        }
+
+        array = sumArray;
+    }
+
+    public void subtract(Vector vector) {
+        double[] differenceArray = new double[Math.max(array.length, vector.array.length)];
+
+        for (int i = 0; i < array.length; i++) {
+            differenceArray[i] += array[i];
+        }
+
+        for (int i = 0; i < vector.array.length; i++) {
+            differenceArray[i] -= vector.array[i];
+        }
+
+        array = differenceArray;
+    }
+
+    public void multiplyByScalar(double scalar) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] *= scalar;
+        }
+    }
+
+    public void reverse() {
+        final int reverseCoefficient = -1;
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] *= reverseCoefficient;
+        }
+    }
+
+    public double getLength() {
+        double componentsSquaresSum = 0;
+
+        for (double component : array) {
+            componentsSquaresSum += component * component;
+        }
+
+        return Math.sqrt(componentsSquaresSum);
+    }
+
+    public double getComponent(int index) {
+        indexValidation(index);
+
+        return array[index];
+    }
+
+    public void setComponent(int index, double component) {
+        indexValidation(index);
+
+        array[index] = component;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (o == null || o.getClass() != getClass()) {
+            return false;
+        }
+
+        Vector vector = (Vector) o;
+
+        if (array.length != vector.array.length) {
+            return false;
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != vector.array[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 37;
+
+        return prime + Arrays.hashCode(array);
     }
 }
