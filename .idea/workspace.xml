@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/AreaComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/AreaComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vector/Vector.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/Vector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +33,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2ik0DwWEZM7EtzuEoVjb0HCk1XS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,6 +45,7 @@
     "Application.Main.executor": "Run",
     "Application.Test.executor": "Run",
     "Application.ru.academits.gerasimenko.shapes.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.vector.main.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -48,13 +54,13 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Shapes/src/ru.academits.gerasimenko.shapes/main/Main.java",
+    "onboarding.tips.debug.path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Vector/src/ru/academits/gerasimenko/vector/main/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ru.academits.gerasimenko.shapes.main.Main">
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.vector.main.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.range.main.Main" />
       <module name="Range" />
@@ -94,8 +100,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ru.academits.gerasimenko.vector.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.vector.main.Main" />
+      <module name="Vector" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.academits.gerasimenko.vector.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ru.academits.gerasimenko.vector.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.shapes.main.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test" />
