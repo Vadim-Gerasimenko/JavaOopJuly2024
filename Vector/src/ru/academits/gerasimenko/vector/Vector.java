@@ -3,12 +3,10 @@ package ru.academits.gerasimenko.vector;
 import java.util.Arrays;
 
 public class Vector {
-    private double[] array;
+    private final double[] array;
 
     public Vector(int n) {
-        if (n <= 0) {
-            throw new IllegalArgumentException("The dimension of the vector must be positive.");
-        }
+        dimensionValidation(n);
 
         array = new double[n];
     }
@@ -22,6 +20,28 @@ public class Vector {
     }
 
     public Vector(int n, double[] array) {
-        array = Arrays.copyOf(array, n);
+        dimensionValidation(n);
+
+        this.array = Arrays.copyOf(array, n);
+    }
+
+    private void dimensionValidation(int n) {
+        if (n <= 0) {
+            throw new IllegalArgumentException("The dimension of the vector must be positive.");
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder("{");
+
+        for (double element : array) {
+            stringBuilder.append(element);
+            stringBuilder.append(", ");
+        }
+
+        stringBuilder.delete(stringBuilder.lastIndexOf(", "), stringBuilder.length());
+
+        return stringBuilder.append("}").toString();
     }
 }
