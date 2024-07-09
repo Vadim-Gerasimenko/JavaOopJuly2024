@@ -1,5 +1,6 @@
 package ru.academits.gerasimenko.shapes;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 public class AreaComparator implements Comparator<Shape> {
@@ -16,5 +17,13 @@ public class AreaComparator implements Comparator<Shape> {
         }
 
         return 0;
+    }
+
+    public static Shape getShapeWithMaxArea(Shape[] shapes) {
+        AreaComparator areaComparator = new AreaComparator();
+
+        Arrays.sort(shapes, areaComparator);
+
+        return shapes[shapes.length - 1];
     }
 }

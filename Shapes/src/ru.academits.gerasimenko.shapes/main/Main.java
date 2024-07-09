@@ -2,17 +2,7 @@ package ru.academits.gerasimenko.shapes.main;
 
 import ru.academits.gerasimenko.shapes.*;
 
-import java.util.Arrays;
-
 public class Main {
-    public static Shape getShapeWithMaxArea(Shape[] shapes) {
-        AreaComparator areaComparator = new AreaComparator();
-
-        Arrays.sort(shapes, areaComparator);
-
-        return shapes[shapes.length - 1];
-    }
-
     public static void main(String[] args) {
         Shape[] shapes = {
                 new Square(4), new Square(3),
@@ -25,7 +15,7 @@ public class Main {
                 new Circle(2)
         };
 
-        Shape shapeWithMaxArea = getShapeWithMaxArea(shapes);
+        Shape shapeWithMaxArea = AreaComparator.getShapeWithMaxArea(shapes);
 
         System.out.println("Информация о фигуре с максимальной площадью:");
         System.out.println("Название фигуры: " + shapeWithMaxArea.toString());
