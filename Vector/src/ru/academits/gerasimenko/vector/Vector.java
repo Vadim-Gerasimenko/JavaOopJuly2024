@@ -6,7 +6,7 @@ public class Vector {
     private double[] array;
 
     public Vector(int n) {
-        dimensionValidation(n);
+        sizeValidation(n);
 
         array = new double[n];
     }
@@ -20,14 +20,14 @@ public class Vector {
     }
 
     public Vector(int n, double[] array) {
-        dimensionValidation(n);
+        sizeValidation(n);
 
         this.array = Arrays.copyOf(array, n);
     }
 
-    private void dimensionValidation(int n) {
+    private void sizeValidation(int n) {
         if (n <= 0) {
-            throw new IllegalArgumentException("The dimension of the vector must be positive.");
+            throw new IllegalArgumentException("The size of the vector must be positive.");
         }
     }
 
@@ -149,5 +149,45 @@ public class Vector {
         final int prime = 37;
 
         return prime + Arrays.hashCode(array);
+    }
+
+    public static Vector getVectorsSum(Vector vector1, Vector vector2) {
+        Vector sumVector = new Vector(Math.max(vector1.array.length, vector2.array.length));
+
+        for (int i = 0; i < vector1.array.length; i++) {
+            sumVector.array[i] += vector1.array[i];
+        }
+
+        for (int i = 0; i < vector2.array.length; i++) {
+            sumVector.array[i] += vector2.array[i];
+        }
+
+        return sumVector;
+    }
+
+    public static Vector getVectorsDifference(Vector vector1, Vector vector2) {
+        Vector differenceVector = new Vector(Math.max(vector1.array.length, vector2.array.length));
+
+        for (int i = 0; i < vector1.array.length; i++) {
+            differenceVector.array[i] += vector1.array[i];
+        }
+
+        for (int i = 0; i < vector2.array.length; i++) {
+            differenceVector.array[i] -= vector2.array[i];
+        }
+
+        return differenceVector;
+    }
+
+    public static double getDotProduct(Vector vector1, Vector vector2) {
+        int minSize = Math.min(vector1.array.length, vector2.array.length);
+
+        double dotProduct = 0;
+
+        for (int i = 0; i < minSize; i++) {
+            dotProduct += vector1.array[i] * vector2.array[i];
+        }
+
+        return dotProduct;
     }
 }
