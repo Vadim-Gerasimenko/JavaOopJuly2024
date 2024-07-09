@@ -1,6 +1,4 @@
-package ru.academits.gerasimenko.shapes.main;
-
-import ru.academits.gerasimenko.shapes.Shape;
+package ru.academits.gerasimenko.shapes;
 
 public class Triangle implements Shape {
     private double x1;
