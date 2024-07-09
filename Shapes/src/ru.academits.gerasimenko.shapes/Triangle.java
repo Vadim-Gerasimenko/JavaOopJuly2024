@@ -1,14 +1,14 @@
 package ru.academits.gerasimenko.shapes;
 
 public class Triangle implements Shape {
-    private double x1;
-    private double y1;
+    private final double x1;
+    private final double y1;
 
-    private double x2;
-    private double y2;
+    private final double x2;
+    private final double y2;
 
-    private double x3;
-    private double y3;
+    private final double x3;
+    private final double y3;
 
     public Triangle(double x1, double y1, double x2, double y2, double x3, double y3) {
         this.x1 = x1;
@@ -43,5 +43,41 @@ public class Triangle implements Shape {
         double side3Length = Math.sqrt((x3 - x2) * (x3 - x2) - (y3 - y2) * (y3 - y2));
 
         return side1Length + side2Length + side3Length;
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
+
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (o == null || o.getClass() != getClass()) {
+            return false;
+        }
+
+        Triangle triangle = (Triangle) o;
+
+        return (Math.abs(x1 - triangle.x1 + y1 - triangle.y1) <= EPSILON) &&
+                (Math.abs(x2 - triangle.x2 + y2 - triangle.y2) <= EPSILON) &&
+                (Math.abs(x3 - triangle.x3 + y3 - triangle.y3) <= EPSILON);
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 19;
+        int hash = 1;
+
+        hash = prime * hash + Double.hashCode(x1);
+        hash = prime * hash + Double.hashCode(y1);
+        hash = prime * hash + Double.hashCode(x2);
+        hash = prime * hash + Double.hashCode(y2);
+        hash = prime * hash + Double.hashCode(x3);
+        hash = prime * hash + Double.hashCode(y3);
+
+        return hash;
     }
 }

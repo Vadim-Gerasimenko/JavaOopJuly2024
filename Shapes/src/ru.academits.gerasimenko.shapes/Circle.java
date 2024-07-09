@@ -1,7 +1,7 @@
 package ru.academits.gerasimenko.shapes;
 
 public class Circle implements Shape {
-    private double radius;
+    private final double radius;
 
     public Circle(double radius) {
         this.radius = radius;
@@ -25,5 +25,32 @@ public class Circle implements Shape {
     @Override
     public double getPerimeter() {
         return 2 * Math.PI * radius;
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (o == null || o.getClass() != getClass()) {
+            return false;
+        }
+
+        Circle circle = (Circle) o;
+
+        return Math.abs(radius - circle.radius) <= EPSILON;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 37;
+
+        return prime + Double.hashCode(radius);
     }
 }
