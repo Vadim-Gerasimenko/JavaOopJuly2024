@@ -151,7 +151,7 @@ public class Vector {
         return prime + Arrays.hashCode(array);
     }
 
-    public static Vector getVectorsSum(Vector vector1, Vector vector2) {
+    public static Vector getSum(Vector vector1, Vector vector2) {
         Vector sumVector = new Vector(Math.max(vector1.array.length, vector2.array.length));
 
         for (int i = 0; i < vector1.array.length; i++) {
@@ -165,7 +165,7 @@ public class Vector {
         return sumVector;
     }
 
-    public static Vector getVectorsDifference(Vector vector1, Vector vector2) {
+    public static Vector getDifference(Vector vector1, Vector vector2) {
         Vector differenceVector = new Vector(Math.max(vector1.array.length, vector2.array.length));
 
         for (int i = 0; i < vector1.array.length; i++) {

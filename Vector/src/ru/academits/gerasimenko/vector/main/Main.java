@@ -53,8 +53,8 @@ public class Main {
         System.out.println("Хэш-код 2-ого вектора: " + vector2.hashCode());
         System.out.println();
 
-        System.out.println("Результат сложения 5-ого и 7-ого векторов: " + Vector.getVectorsSum(vector5, vector7));
-        System.out.println("Результат вычитания 5-ого вектора из 7-ого: " + Vector.getVectorsDifference(vector7, vector5));
+        System.out.println("Результат сложения 5-ого и 7-ого векторов: " + Vector.getSum(vector5, vector7));
+        System.out.println("Результат вычитания 5-ого вектора из 7-ого: " + Vector.getDifference(vector7, vector5));
         System.out.println("Скалярное произведение 5-ого и 7-ого векторов: " + Vector.getDotProduct(vector5, vector7));
     }
 }
