@@ -47,8 +47,9 @@ public class Vector {
         }
 
         stringBuilder.delete(stringBuilder.lastIndexOf(", "), stringBuilder.length());
+        stringBuilder.append("}");
 
-        return stringBuilder.append("}").toString();
+        return stringBuilder.toString();
     }
 
     public int getSize() {
@@ -152,31 +153,31 @@ public class Vector {
     }
 
     public static Vector getSum(Vector vector1, Vector vector2) {
-        Vector sumVector = new Vector(Math.max(vector1.array.length, vector2.array.length));
+        Vector resultVector = new Vector(Math.max(vector1.array.length, vector2.array.length));
 
         for (int i = 0; i < vector1.array.length; i++) {
-            sumVector.array[i] += vector1.array[i];
+            resultVector.array[i] += vector1.array[i];
         }
 
         for (int i = 0; i < vector2.array.length; i++) {
-            sumVector.array[i] += vector2.array[i];
+            resultVector.array[i] += vector2.array[i];
         }
 
-        return sumVector;
+        return resultVector;
     }
 
     public static Vector getDifference(Vector vector1, Vector vector2) {
-        Vector differenceVector = new Vector(Math.max(vector1.array.length, vector2.array.length));
+        Vector resultVector = new Vector(Math.max(vector1.array.length, vector2.array.length));
 
         for (int i = 0; i < vector1.array.length; i++) {
-            differenceVector.array[i] += vector1.array[i];
+            resultVector.array[i] += vector1.array[i];
         }
 
         for (int i = 0; i < vector2.array.length; i++) {
-            differenceVector.array[i] -= vector2.array[i];
+            resultVector.array[i] -= vector2.array[i];
         }
 
-        return differenceVector;
+        return resultVector;
     }
 
     public static double getDotProduct(Vector vector1, Vector vector2) {
