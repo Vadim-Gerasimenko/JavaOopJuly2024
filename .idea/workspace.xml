@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/Vector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/Matrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/main_matrix/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +44,7 @@
     "Application.Test.executor": "Run",
     "Application.ru.academits.gerasimenko.shapes.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.vector.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.vector.main_matrix.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -51,13 +53,21 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Vector/src/ru/academits/gerasimenko/vector/main/Main.java",
+    "onboarding.tips.debug.path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Matrix/src/ru/academits/gerasimenko/matrix/main/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ru.academits.gerasimenko.vector.main.Main">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Vector/src" />
+      <recent name="$PROJECT_DIR$/Matrix/src" />
+      <recent name="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix" />
+      <recent name="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.vector.main_matrix.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.range.main.Main" />
       <module name="Range" />
@@ -110,8 +120,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ru.academits.gerasimenko.vector.main_matrix.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.vector.main_matrix.Main" />
+      <module name="Vector" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.academits.gerasimenko.vector.main_matrix.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ru.academits.gerasimenko.vector.main_matrix.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.vector.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.shapes.main.Main" />
         <item itemvalue="Application.Main" />
@@ -169,6 +193,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.InputMismatchException" package="java.util" />
           <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="4" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

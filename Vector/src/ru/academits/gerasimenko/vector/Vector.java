@@ -6,7 +6,7 @@ public class Vector {
     private double[] array;
 
     public Vector(int n) {
-        sizeValidation(n);
+        validateSize(n);
 
         array = new double[n];
     }
@@ -20,18 +20,18 @@ public class Vector {
     }
 
     public Vector(int n, double[] array) {
-        sizeValidation(n);
+        validateSize(n);
 
         this.array = Arrays.copyOf(array, n);
     }
 
-    private void sizeValidation(int n) {
+    private void validateSize(int n) {
         if (n <= 0) {
             throw new IllegalArgumentException("The size of the vector must be positive.");
         }
     }
 
-    private void indexValidation(int index) {
+    private void validateIndex(int index) {
         if (index < 0 || index >= this.array.length) {
             throw new IllegalArgumentException("Index out of range.");
         }
@@ -108,13 +108,13 @@ public class Vector {
     }
 
     public double getComponent(int index) {
-        indexValidation(index);
+        validateIndex(index);
 
         return array[index];
     }
 
     public void setComponent(int index, double component) {
-        indexValidation(index);
+        validateIndex(index);
 
         array[index] = component;
     }
