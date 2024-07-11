@@ -141,14 +141,6 @@ public class Matrix {
         rows = resultMatrix.rows;
     }
 
-    public double getDeterminant() {
-        if (getRowsCount() != getColumnsCount()) {
-            throw new IllegalArgumentException("To calculate the determinant, the matrix must be square.");
-        }
-
-        return 0;
-    } //TODO: get Determinant of the matrix
-
     private void validateRowIndex(int index) {
         if (index < 0 || index >= rows.length) {
             throw new ArrayIndexOutOfBoundsException("The row index out of range.");
