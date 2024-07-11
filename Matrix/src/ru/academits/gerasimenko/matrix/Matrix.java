@@ -147,7 +147,7 @@ public class Matrix {
         }
 
         return 0;
-    } //TODO: get Determinant of the matrix
+    }
 
     private void validateRowIndex(int index) {
         if (index < 0 || index >= rows.length) {
