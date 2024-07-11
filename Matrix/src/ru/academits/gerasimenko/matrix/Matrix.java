@@ -57,10 +57,7 @@ public class Matrix {
 
     public void setRow(Vector row, int index) {
         validateRowIndex(index);
-
-        if (row.getSize() != getColumnsCount()) {
-            throw new IllegalArgumentException("The row size must match with the sizes of the matrix rows.");
-        }
+        validateRowSize(row);
 
         int rowSize = row.getSize();
 
@@ -70,9 +67,7 @@ public class Matrix {
     }
 
     public Vector getColumn(int index) {
-        if (index < 0 || index >= getColumnsCount()) {
-            throw new ArrayIndexOutOfBoundsException("The column index out of range.");
-        }
+        validateColumnIndex(index);
 
         int rowsCount = getRowsCount();
         Vector column = new Vector(rowsCount);
@@ -122,36 +117,32 @@ public class Matrix {
         }
     }
 
-    public void multiplyByVector(Vector vector) {
-        if (getColumnsCount() != 1) {
-            throw new IllegalArgumentException("To multiply by vector matrix must have only 1 column.");
-        }
-
-        int rowsCount = getRowsCount();
-
-        Matrix resultMatrix = new Matrix(rowsCount, vector.getSize());
-
-        for (int i = 0; i < rowsCount; i++) {
-            Vector row = new Vector(vector);
-
-            row.multiplyByScalar(rows[i].getComponent(0));
-            resultMatrix.rows[i] = row;
-        }
-
-        rows = resultMatrix.rows;
+    public double getDeterminant() {
+        validateSquareMatrix();
+        return 0;
     }
 
-    public double getDeterminant() {
-        if (getRowsCount() != getColumnsCount()) {
-            throw new IllegalArgumentException("To calculate the determinant, the matrix must be square.");
+    private void validateColumnIndex(int index) {
+        if (index < 0 || index >= getColumnsCount()) {
+            throw new ArrayIndexOutOfBoundsException("The column index out of range.");
         }
-
-        return 0;
     }
 
     private void validateRowIndex(int index) {
         if (index < 0 || index >= rows.length) {
             throw new ArrayIndexOutOfBoundsException("The row index out of range.");
+        }
+    }
+
+    private void validateRowSize(Vector row) {
+        if (row.getSize() != getColumnsCount()) {
+            throw new IllegalArgumentException("The row size must match with the sizes of the matrix rows.");
+        }
+    }
+
+    private void validateSquareMatrix() {
+        if (getRowsCount() != getColumnsCount()) {
+            throw new IllegalArgumentException("To calculate the determinant, the matrix must be square.");
         }
     }
 
@@ -165,51 +156,26 @@ public class Matrix {
         matrix1.validateArithmeticOperationsPossibility(matrix2);
 
         int rowsCount = matrix1.getRowsCount();
-        Matrix resultMatrix = new Matrix(rowsCount, matrix1.getColumnsCount());
+        Matrix sumMatrix = new Matrix(rowsCount, matrix1.getColumnsCount());
 
         for (int i = 0; i < rowsCount; i++) {
-            resultMatrix.rows[i] = Vector.getSum(matrix1.rows[i], matrix2.rows[i]);
+            sumMatrix.rows[i] = Vector.getSum(matrix1.rows[i], matrix2.rows[i]);
         }
 
-        return resultMatrix;
+        return sumMatrix;
     }
 
     public static Matrix getDifference(Matrix matrix1, Matrix matrix2) {
         matrix1.validateArithmeticOperationsPossibility(matrix2);
 
         int rowsCount = matrix1.getRowsCount();
-        Matrix resultMatrix = new Matrix(rowsCount, matrix1.getColumnsCount());
+        Matrix differenceMatrix = new Matrix(rowsCount, matrix1.getColumnsCount());
 
         for (int i = 0; i < rowsCount; i++) {
-            resultMatrix.rows[i] = Vector.getDifference(matrix1.rows[i], matrix2.rows[i]);
+            differenceMatrix.rows[i] = Vector.getDifference(matrix1.rows[i], matrix2.rows[i]);
         }
 
-        return resultMatrix;
-    }
-
-
-    public static Matrix getMultiplication(Matrix matrix1, Matrix matrix2) {
-        if (matrix1.getColumnsCount() != matrix2.getRowsCount()) {
-            throw new IllegalArgumentException("For multiplication columns number of the 1-st matrix " +
-                    "must be equal to the rows number of the 2-nd matrix.");
-        }
-
-        int rowsCount = matrix1.getRowsCount();
-        int columnsCount = matrix2.getColumnsCount();
-
-        Matrix resultMatrix = new Matrix(rowsCount, columnsCount);
-
-        for (int i = 0; i < rowsCount; i++) {
-            Vector row = matrix1.rows[i];
-
-            for (int j = 0; j < columnsCount; j++) {
-                Vector column = matrix2.getColumn(j);
-
-                resultMatrix.rows[i].setComponent(j, Vector.getDotProduct(row, column));
-            }
-        }
-
-        return resultMatrix;
+        return differenceMatrix;
     }
 
     @Override
