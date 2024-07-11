@@ -71,5 +71,25 @@ public class Main {
         System.out.println("6-th matrix now: " + matrix6);
         System.out.println("Sum of the 5-th and 6-th matrices: " + Matrix.getSum(matrix5, matrix6));
         System.out.println("Subtracting 6-th matrix from 5-th matrix: " + Matrix.getDifference(matrix5, matrix6));
+
+        System.out.println();
+
+        Matrix matrix7 = new Matrix(new double[][]{{1}, {2}, {3}, {4}});
+        System.out.println("7-th matrix: " + matrix7);
+
+        Vector vectorToMultiplication = new Vector(new double[]{2, 3, 4, 5, 6});
+        System.out.println("Vector to multiplication: " + vectorToMultiplication);
+
+        matrix7.multiplyByVector(vectorToMultiplication);
+        System.out.println("7-th matrix after multiplication by vector: " + matrix7);
+
+        System.out.println();
+
+        System.out.println("2-nd matrix: " + matrix2);
+
+        Matrix matrix8 = new Matrix(new double[][]{{1, 2, 3, 4, 5}, {2, 3, 4, 5, 6}, {0, 1, 2, 7, 1}});
+        System.out.println("8-th matrix: " + matrix8);
+
+        System.out.println("Result of multiplication of 2-nd and 8-th matrices: " + Matrix.getMultiplication(matrix2, matrix8));
     }
 }
