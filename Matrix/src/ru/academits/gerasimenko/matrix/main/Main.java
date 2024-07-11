@@ -1,6 +1,6 @@
-package ru.academits.gerasimenko.vector.main_matrix;
+package ru.academits.gerasimenko.matrix.main;
 
-import ru.academits.gerasimenko.vector.Matrix;
+import ru.academits.gerasimenko.matrix.Matrix;
 import ru.academits.gerasimenko.vector.Vector;
 
 public class Main {

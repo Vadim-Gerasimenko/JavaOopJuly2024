@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Matrix/Matrix.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/main_matrix/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/main_matrix/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/Matrix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/main_matrix/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +44,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.Test.executor": "Run",
+    "Application.ru.academits.gerasimenko.matrix.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.shapes.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.vector.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.vector.main_matrix.Main.executor": "Run",
@@ -67,7 +70,7 @@
       <recent name="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ru.academits.gerasimenko.vector.main_matrix.Main">
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.matrix.main.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.range.main.Main" />
       <module name="Range" />
@@ -81,12 +84,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.test.Test" />
-      <module name="Tests" />
+    <configuration name="ru.academits.gerasimenko.matrix.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.matrix.main.Main" />
+      <module name="Matrix" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.test.*" />
+          <option name="PATTERN" value="ru.academits.gerasimenko.matrix.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ru.academits.gerasimenko.matrix.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.vector.main_matrix.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.vector.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.shapes.main.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
