@@ -3,28 +3,28 @@ package ru.academits.gerasimenko.vector;
 import java.util.Arrays;
 
 public class Vector {
-    private double[] array;
+    private double[] components;
 
     public Vector(int size) {
         validateSize(size);
 
-        array = new double[size];
+        components = new double[size];
     }
 
     public Vector(Vector vectorToCopy) {
-        array = Arrays.copyOf(vectorToCopy.array, vectorToCopy.array.length);
+        components = Arrays.copyOf(vectorToCopy.components, vectorToCopy.components.length);
     }
 
-    public Vector(double[] array) {
-        validateSize(array.length);
+    public Vector(double[] components) {
+        validateSize(components.length);
 
-        this.array = Arrays.copyOf(array, array.length);
+        this.components = Arrays.copyOf(components, components.length);
     }
 
-    public Vector(int size, double[] array) {
+    public Vector(int size, double[] components) {
         validateSize(size);
 
-        this.array = Arrays.copyOf(array, size);
+        this.components = Arrays.copyOf(components, size);
     }
 
     private void validateSize(int size) {
@@ -36,7 +36,7 @@ public class Vector {
     }
 
     private void validateIndex(int index) {
-        if (index < 0 || index >= array.length) {
+        if (index < 0 || index >= components.length) {
             throw new IndexOutOfBoundsException("Index out of range. "
                     + System.lineSeparator()
                     + "Valid index : from \"0\" to \"vector size - 1\". "
@@ -50,7 +50,7 @@ public class Vector {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append('{');
 
-        for (double component : array) {
+        for (double component : components) {
             stringBuilder.append(component).append(", ");
         }
 
@@ -62,54 +62,54 @@ public class Vector {
     }
 
     public int getSize() {
-        return array.length;
+        return components.length;
     }
 
     public void add(Vector vector) {
-        if (array.length < vector.array.length) {
-            double[] sumArray = new double[vector.array.length];
+        if (components.length < vector.components.length) {
+            double[] sumComponents = new double[vector.components.length];
 
-            for (int i = 0; i < array.length; i++) {
-                sumArray[i] += array[i];
+            for (int i = 0; i < components.length; i++) {
+                sumComponents[i] += components[i];
             }
 
-            for (int i = 0; i < vector.array.length; i++) {
-                sumArray[i] += vector.array[i];
+            for (int i = 0; i < vector.components.length; i++) {
+                sumComponents[i] += vector.components[i];
             }
 
-            array = sumArray;
+            components = sumComponents;
             return;
         }
 
-        for (int i = 0; i < vector.array.length; i++) {
-            array[i] += vector.array[i];
+        for (int i = 0; i < vector.components.length; i++) {
+            components[i] += vector.components[i];
         }
     }
 
     public void subtract(Vector vector) {
-        if (array.length < vector.array.length) {
-            double[] differenceArray = new double[vector.array.length];
+        if (components.length < vector.components.length) {
+            double[] differenceComponents = new double[vector.components.length];
 
-            for (int i = 0; i < array.length; i++) {
-                differenceArray[i] += array[i];
+            for (int i = 0; i < components.length; i++) {
+                differenceComponents[i] += components[i];
             }
 
-            for (int i = 0; i < vector.array.length; i++) {
-                differenceArray[i] -= vector.array[i];
+            for (int i = 0; i < vector.components.length; i++) {
+                differenceComponents[i] -= vector.components[i];
             }
 
-            array = differenceArray;
+            components = differenceComponents;
             return;
         }
 
-        for (int i = 0; i < vector.array.length; i++) {
-            array[i] -= vector.array[i];
+        for (int i = 0; i < vector.components.length; i++) {
+            components[i] -= vector.components[i];
         }
     }
 
     public void multiplyByScalar(double scalar) {
-        for (int i = 0; i < array.length; i++) {
-            array[i] *= scalar;
+        for (int i = 0; i < components.length; i++) {
+            components[i] *= scalar;
         }
     }
 
@@ -122,7 +122,7 @@ public class Vector {
     public double getLength() {
         double componentsSquaresSum = 0;
 
-        for (double component : array) {
+        for (double component : components) {
             componentsSquaresSum += component * component;
         }
 
@@ -132,13 +132,13 @@ public class Vector {
     public double getComponent(int index) {
         validateIndex(index);
 
-        return array[index];
+        return components[index];
     }
 
     public void setComponent(int index, double component) {
         validateIndex(index);
 
-        array[index] = component;
+        components[index] = component;
     }
 
     @Override
@@ -153,14 +153,14 @@ public class Vector {
 
         Vector vector = (Vector) o;
 
-        return Arrays.equals(array, vector.array);
+        return Arrays.equals(components, vector.components);
     }
 
     @Override
     public int hashCode() {
         final int prime = 37;
 
-        return prime + Arrays.hashCode(array);
+        return prime + Arrays.hashCode(components);
     }
 
     public static Vector getSum(Vector vector1, Vector vector2) {
@@ -178,12 +178,12 @@ public class Vector {
     }
 
     public static double getDotProduct(Vector vector1, Vector vector2) {
-        int minSize = Math.min(vector1.array.length, vector2.array.length);
+        int minSize = Math.min(vector1.components.length, vector2.components.length);
 
         double dotProduct = 0;
 
         for (int i = 0; i < minSize; i++) {
-            dotProduct += vector1.array[i] * vector2.array[i];
+            dotProduct += vector1.components[i] * vector2.components[i];
         }
 
         return dotProduct;
