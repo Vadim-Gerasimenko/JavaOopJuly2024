@@ -5,10 +5,10 @@ import java.util.Arrays;
 public class Vector {
     private double[] array;
 
-    public Vector(int n) {
-        validateSize(n);
+    public Vector(int size) {
+        validateSize(size);
 
-        array = new double[n];
+        array = new double[size];
     }
 
     public Vector(Vector vectorToCopy) {
@@ -16,40 +16,49 @@ public class Vector {
     }
 
     public Vector(double[] array) {
+        validateSize(array.length);
+
         this.array = Arrays.copyOf(array, array.length);
     }
 
-    public Vector(int n, double[] array) {
-        validateSize(n);
+    public Vector(int size, double[] array) {
+        validateSize(size);
 
-        this.array = Arrays.copyOf(array, n);
+        this.array = Arrays.copyOf(array, size);
     }
 
-    private void validateSize(int n) {
-        if (n <= 0) {
-            throw new IllegalArgumentException("The size of the vector must be positive.");
+    private void validateSize(int size) {
+        if (size <= 0) {
+            throw new IllegalArgumentException("The size of the vector must be positive. "
+                    + System.lineSeparator()
+                    + "Current size : " + size);
         }
     }
 
     private void validateIndex(int index) {
-        if (index < 0 || index >= this.array.length) {
-            throw new IllegalArgumentException("Index out of range.");
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException("Index out of range. "
+                    + System.lineSeparator()
+                    + "Valid index : from \"0\" to \"vector size - 1\". "
+                    + System.lineSeparator()
+                    + "Current index : " + index);
         }
     }
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder("{");
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append('{');
 
         for (double component : array) {
-            stringBuilder.append(component);
-            stringBuilder.append(", ");
+            stringBuilder.append(component).append(", ");
         }
 
-        stringBuilder.delete(stringBuilder.lastIndexOf(", "), stringBuilder.length());
-        stringBuilder.append("}");
+        final int componentsSeparatorLength = 2;
 
-        return stringBuilder.toString();
+        stringBuilder.delete(stringBuilder.length() - componentsSeparatorLength, stringBuilder.length());
+
+        return stringBuilder.append('}').toString();
     }
 
     public int getSize() {
@@ -57,31 +66,45 @@ public class Vector {
     }
 
     public void add(Vector vector) {
-        double[] sumArray = new double[Math.max(array.length, vector.array.length)];
+        if (array.length < vector.array.length) {
+            double[] sumArray = new double[vector.array.length];
 
-        for (int i = 0; i < array.length; i++) {
-            sumArray[i] += array[i];
+            for (int i = 0; i < array.length; i++) {
+                sumArray[i] += array[i];
+            }
+
+            for (int i = 0; i < vector.array.length; i++) {
+                sumArray[i] += vector.array[i];
+            }
+
+            array = sumArray;
+            return;
         }
 
         for (int i = 0; i < vector.array.length; i++) {
-            sumArray[i] += vector.array[i];
+            array[i] += vector.array[i];
         }
-
-        array = sumArray;
     }
 
     public void subtract(Vector vector) {
-        double[] differenceArray = new double[Math.max(array.length, vector.array.length)];
+        if (array.length < vector.array.length) {
+            double[] differenceArray = new double[vector.array.length];
 
-        for (int i = 0; i < array.length; i++) {
-            differenceArray[i] += array[i];
+            for (int i = 0; i < array.length; i++) {
+                differenceArray[i] += array[i];
+            }
+
+            for (int i = 0; i < vector.array.length; i++) {
+                differenceArray[i] -= vector.array[i];
+            }
+
+            array = differenceArray;
+            return;
         }
 
         for (int i = 0; i < vector.array.length; i++) {
-            differenceArray[i] -= vector.array[i];
+            array[i] -= vector.array[i];
         }
-
-        array = differenceArray;
     }
 
     public void multiplyByScalar(double scalar) {
@@ -93,9 +116,7 @@ public class Vector {
     public void reverse() {
         final int reverseCoefficient = -1;
 
-        for (int i = 0; i < array.length; i++) {
-            array[i] *= reverseCoefficient;
-        }
+        multiplyByScalar(-reverseCoefficient);
     }
 
     public double getLength() {
@@ -132,17 +153,7 @@ public class Vector {
 
         Vector vector = (Vector) o;
 
-        if (array.length != vector.array.length) {
-            return false;
-        }
-
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] != vector.array[i]) {
-                return false;
-            }
-        }
-
-        return true;
+        return Arrays.equals(array, vector.array);
     }
 
     @Override
@@ -153,29 +164,15 @@ public class Vector {
     }
 
     public static Vector getSum(Vector vector1, Vector vector2) {
-        Vector resultVector = new Vector(Math.max(vector1.array.length, vector2.array.length));
-
-        for (int i = 0; i < vector1.array.length; i++) {
-            resultVector.array[i] += vector1.array[i];
-        }
-
-        for (int i = 0; i < vector2.array.length; i++) {
-            resultVector.array[i] += vector2.array[i];
-        }
+        Vector resultVector = new Vector(vector1);
+        resultVector.add(vector2);
 
         return resultVector;
     }
 
     public static Vector getDifference(Vector vector1, Vector vector2) {
-        Vector resultVector = new Vector(Math.max(vector1.array.length, vector2.array.length));
-
-        for (int i = 0; i < vector1.array.length; i++) {
-            resultVector.array[i] += vector1.array[i];
-        }
-
-        for (int i = 0; i < vector2.array.length; i++) {
-            resultVector.array[i] -= vector2.array[i];
-        }
+        Vector resultVector = new Vector(vector1);
+        resultVector.subtract(vector2);
 
         return resultVector;
     }
