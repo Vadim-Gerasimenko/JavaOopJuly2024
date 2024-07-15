@@ -7,9 +7,7 @@ public class Main {
         System.out.println("Часть 1.");
 
         Range range1 = new Range(-100, 0);
-
-        System.out.print("Заданный диапазон: ");
-        Range.print(range1);
+        System.out.println("Заданный диапазон: " + range1);
 
         System.out.println("Длина диапазона: " + range1.getLength());
         System.out.println();
@@ -17,17 +15,13 @@ public class Main {
         System.out.println("Доступ к полям объекта при помощи геттеров:");
         System.out.println("Начало диапазона: " + range1.getFrom());
         System.out.println("Конец диапазона: " + range1.getTo());
-
         System.out.println();
 
         range1.setFrom(1.4);
         range1.setTo(25.7);
 
-        System.out.print("Диапазон после изменения границ: ");
-        Range.print(range1);
-
+        System.out.println("Диапазон после изменения границ: " + range1);
         System.out.println("Длина диапазона: " + range1.getLength());
-        System.out.println();
 
         double number = 123;
 
@@ -37,19 +31,14 @@ public class Main {
             System.out.printf("Число %f не принадлежит диапазону ", number);
         }
 
-        Range.print(range1);
+        System.out.println(range1);
         System.out.println();
 
         System.out.println("Часть 2.");
+        System.out.println("Первый диапазон: " + range1);
 
-        System.out.print("Первый диапазон: ");
-        Range.print(range1);
-
-        Range range2 = new Range(14, 17);
-
-        System.out.print("Второй диапазон: ");
-        Range.print(range2);
-
+        Range range2 = new Range(25.7, 32);
+        System.out.println("Второй диапазон: " + range2);
         System.out.println();
 
         Range intersectionRange = range1.getIntersection(range2);
@@ -57,8 +46,7 @@ public class Main {
         if (intersectionRange == null) {
             System.out.println("Диапазоны не пересекаются.");
         } else {
-            System.out.println("Пересечение:");
-            Range.print(intersectionRange);
+            System.out.println("Пересечение:" + intersectionRange);
         }
 
         System.out.println();
@@ -72,14 +60,14 @@ public class Main {
         }
 
         for (Range range : unionRanges) {
-            Range.print(range);
+            System.out.println(range);
         }
 
         System.out.println();
 
         Range[] differenceRanges = range1.getDifference(range2);
 
-        if (differenceRanges == null) {
+        if (differenceRanges.length == 0) {
             System.out.println("Разность указанных диапазонов является пустым множеством.");
             return;
         }
@@ -91,7 +79,7 @@ public class Main {
         }
 
         for (Range range : differenceRanges) {
-            Range.print(range);
+            System.out.println(range);
         }
     }
 }

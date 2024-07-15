@@ -38,66 +38,43 @@ public class Range {
             return null;
         }
 
-        if (from >= range.from && to <= range.to) {
-            return this;
-        }
-
-        if (from <= range.from && to >= range.to) {
-            return range;
-        }
-
-        if (from < range.from && to < range.to) {
-            return new Range(range.from, to);
-        }
-
-        return new Range(from, range.to);
+        return new Range(Math.max(from, range.from), Math.min(to, range.to));
     }
 
     public Range[] getUnion(Range range) {
         if (to < range.from) {
-            return new Range[]{this, range};
+            return new Range[]{new Range(from, to), new Range(range.from, range.to)};
         }
 
         if (from > range.to) {
-            return new Range[]{range, this};
+            return new Range[]{new Range(range.from, range.to), new Range(from, to)};
         }
 
-        if (from <= range.from && to >= range.to) {
-            return new Range[]{this};
-        }
-
-        if (from >= range.from && to <= range.to) {
-            return new Range[]{range};
-        }
-
-        if (from < range.from) {
-            return new Range[]{new Range(from, range.to)};
-        }
-
-        return new Range[]{new Range(range.from, to)};
+        return new Range[]{new Range(Math.min(from, range.from), Math.max(to, range.to))};
     }
 
     public Range[] getDifference(Range range) {
         if (from >= range.from && to <= range.to) {
-            return null;
+            return new Range[]{};
         }
 
         if (from >= range.to || to <= range.from) {
-            return new Range[]{this};
+            return new Range[]{new Range(from, to)};
         }
 
-        if (from < range.from && to < range.to) {
-            return new Range[]{new Range(from, range.from)};
-        }
-
-        if (from > range.from && to > range.to) {
+        if (from >= range.from && to > range.to) {
             return new Range[]{new Range(range.to, to)};
+        }
+
+        if (to <= range.to) {
+            return new Range[]{new Range(from, range.from)};
         }
 
         return new Range[]{new Range(from, range.from), new Range(range.to, to)};
     }
 
-    public static void print(Range range) {
-        System.out.printf("[%f; %f]%n", range.from, range.to);
+    @Override
+    public String toString() {
+        return String.format("[%f; %f]", from, to);
     }
 }
