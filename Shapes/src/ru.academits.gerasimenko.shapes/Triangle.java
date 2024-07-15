@@ -36,20 +36,28 @@ public class Triangle implements Shape {
         return Math.abs((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1)) / 2;
     }
 
+    private double getSideLength(double x1, double y1, double x2, double y2) {
+        return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+    }
+
     @Override
     public double getPerimeter() {
-        double side1Length = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-        double side2Length = Math.sqrt((x3 - x1) * (x3 - x1) + (y3 - y1) * (y3 - y1));
-        double side3Length = Math.sqrt((x3 - x2) * (x3 - x2) - (y3 - y2) * (y3 - y2));
-
-        return side1Length + side2Length + side3Length;
+        return getSideLength(x1, y1, x2, y2)
+                + getSideLength(x1, y1, x3, y3)
+                + getSideLength(x2, y2, x3, y3);
     }
 
     @Override
     public String toString() {
-        return getClass().getSimpleName();
+        return "Shape : Triangle" + System.lineSeparator()
+                + "First point : " + String.format("(%f; %f)", x1, y1) + System.lineSeparator()
+                + "First point : " + String.format("(%f; %f)", x2, y2) + System.lineSeparator()
+                + "First point : " + String.format("(%f; %f)", x3, y3) + System.lineSeparator()
+                + "Area : " + getArea() + System.lineSeparator()
+                + "Perimeter : " + getPerimeter();
     }
 
+    @Override
     public boolean equals(Object o) {
         if (o == this) {
             return true;
@@ -61,9 +69,9 @@ public class Triangle implements Shape {
 
         Triangle triangle = (Triangle) o;
 
-        return (Math.abs(x1 - triangle.x1 + y1 - triangle.y1) <= EPSILON) &&
-                (Math.abs(x2 - triangle.x2 + y2 - triangle.y2) <= EPSILON) &&
-                (Math.abs(x3 - triangle.x3 + y3 - triangle.y3) <= EPSILON);
+        return Double.compare(x1, triangle.x1) == 0 && Double.compare(y1, triangle.y1) == 0 &&
+                Double.compare(x2, triangle.x2) == 0 && Double.compare(y2, triangle.y2) == 0 &&
+                Double.compare(x3, triangle.x3) == 0 && Double.compare(y3, triangle.y3) == 0;
     }
 
     @Override

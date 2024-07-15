@@ -26,12 +26,16 @@ public class Rectangle implements Shape {
 
     @Override
     public double getPerimeter() {
-        return width * 2 + height * 2;
+        return (width + height) * 2;
     }
 
     @Override
     public String toString() {
-        return getClass().getSimpleName();
+        return "Shape : Rectangle" + System.lineSeparator()
+                + "Height : " + getHeight() + System.lineSeparator()
+                + "Width : " + getWidth() + System.lineSeparator()
+                + "Area : " + getArea() + System.lineSeparator()
+                + "Perimeter : " + getPerimeter();
     }
 
     @Override
@@ -46,12 +50,12 @@ public class Rectangle implements Shape {
 
         Rectangle rectangle = (Rectangle) o;
 
-        return (Math.abs(height - rectangle.height) <= EPSILON) && (Math.abs(width - rectangle.width) <= EPSILON);
+        return Double.compare(height, rectangle.height) == 0 && Double.compare(width, rectangle.width) == 0;
     }
 
     @Override
     public int hashCode() {
-        final int prime = 41;
+        final int prime = 17;
         int hash = 1;
 
         hash = prime * hash + Double.hashCode(height);

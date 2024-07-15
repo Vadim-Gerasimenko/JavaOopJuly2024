@@ -29,7 +29,10 @@ public class Square implements Shape {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName();
+        return "Shape : Square" + System.lineSeparator()
+                + "Side length : " + sideLength + System.lineSeparator()
+                + "Area : " + getArea() + System.lineSeparator()
+                + "Perimeter : " + getPerimeter();
     }
 
     @Override
@@ -44,12 +47,12 @@ public class Square implements Shape {
 
         Square square = (Square) o;
 
-        return Math.abs(sideLength - square.sideLength) <= EPSILON;
+        return Double.compare(sideLength, square.sideLength) == 0;
     }
 
     @Override
     public int hashCode() {
-        final int prime = 101;
+        final int prime = 17;
 
         return prime + Double.hashCode(sideLength);
     }

@@ -5,23 +5,26 @@ import ru.academits.gerasimenko.shapes.*;
 public class Main {
     public static void main(String[] args) {
         Shape[] shapes = {
-                new Square(4), new Square(3),
-                new Triangle(0, 0, 5, 0, 0, 5),
-                new Triangle(-2, 0, 2, 0, 0, 2),
-                new Rectangle(2, 4),
-                new Rectangle(7, 2.5),
+                new Square(2), new Square(4),
+                new Triangle(1, 0, 5, 0, 4, 4),
+                new Triangle(7, 3, 5, 4, 4, 5),
+                new Rectangle(10, 20),
+                new Rectangle(11, 8),
                 new Circle(2),
                 new Circle(3),
-                new Circle(2)
+                new Circle(7)
         };
 
-        Shape shapeWithMaxArea = AreaComparator.getShapeWithMaxArea(shapes);
+        System.out.println("Information about shape with largest area:");
 
-        System.out.println("Информация о фигуре с максимальной площадью:");
-        System.out.println("Название фигуры: " + shapeWithMaxArea);
-        System.out.println("Ширина: " + shapeWithMaxArea.getWidth());
-        System.out.println("Высота: " + shapeWithMaxArea.getHeight());
-        System.out.println("Площадь: " + shapeWithMaxArea.getArea());
-        System.out.println("Периметр: " + shapeWithMaxArea.getPerimeter());
+        Shape shapeWithLargestArea = ShapesSort.getShapeWithOrderLargestArea(shapes, 1);
+        System.out.println(shapeWithLargestArea);
+
+        System.out.println();
+
+        System.out.println("Information about shape with second largest perimeter:");
+
+        Shape shapeWith2LargestArea = ShapesSort.getShapeWithOrderLargestPerimeter(shapes, 2);
+        System.out.println(shapeWith2LargestArea);
     }
 }

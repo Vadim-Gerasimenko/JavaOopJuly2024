@@ -29,7 +29,11 @@ public class Circle implements Shape {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName();
+        return "Shape : Circle" + System.lineSeparator()
+                + "Radius : " + radius + System.lineSeparator()
+                + "Diameter : " + getHeight() + System.lineSeparator()
+                + "Area : " + getArea() + System.lineSeparator()
+                + "Perimeter : " + getPerimeter();
     }
 
     @Override
@@ -44,12 +48,12 @@ public class Circle implements Shape {
 
         Circle circle = (Circle) o;
 
-        return Math.abs(radius - circle.radius) <= EPSILON;
+        return Double.compare(radius, circle.radius) == 0;
     }
 
     @Override
     public int hashCode() {
-        final int prime = 37;
+        final int prime = 17;
 
         return prime + Double.hashCode(radius);
     }
