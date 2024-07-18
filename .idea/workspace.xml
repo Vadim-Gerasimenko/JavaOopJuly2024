@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/List/List.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/ListNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/SinglyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/ListNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/SinglyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
