@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/comparators/AreaComparator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/comparators/PerimeterComparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/ShapesSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/Square.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/Triangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/comparators/AreaComparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/comparators/PerimeterComparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/main/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
