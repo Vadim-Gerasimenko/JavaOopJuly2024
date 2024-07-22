@@ -30,18 +30,15 @@ public class Vector {
     private void validateSize(int size) {
         if (size <= 0) {
             throw new IllegalArgumentException("The size of the vector must be positive. "
-                    + System.lineSeparator()
-                    + "Current size : " + size);
+                    + "Current size: " + size);
         }
     }
 
     private void validateIndex(int index) {
         if (index < 0 || index >= components.length) {
             throw new IndexOutOfBoundsException("Index out of range. "
-                    + System.lineSeparator()
-                    + "Valid index : from \"0\" to \"vector size - 1\". "
-                    + System.lineSeparator()
-                    + "Current index : " + index);
+                    + "Valid index: from \"0\" to " + (components.length - 1) + ". "
+                    + "Current index: " + index);
         }
     }
 
@@ -67,18 +64,7 @@ public class Vector {
 
     public void add(Vector vector) {
         if (components.length < vector.components.length) {
-            double[] sumComponents = new double[vector.components.length];
-
-            for (int i = 0; i < components.length; i++) {
-                sumComponents[i] += components[i];
-            }
-
-            for (int i = 0; i < vector.components.length; i++) {
-                sumComponents[i] += vector.components[i];
-            }
-
-            components = sumComponents;
-            return;
+            components = Arrays.copyOf(components, vector.components.length);
         }
 
         for (int i = 0; i < vector.components.length; i++) {
@@ -88,18 +74,7 @@ public class Vector {
 
     public void subtract(Vector vector) {
         if (components.length < vector.components.length) {
-            double[] differenceComponents = new double[vector.components.length];
-
-            for (int i = 0; i < components.length; i++) {
-                differenceComponents[i] += components[i];
-            }
-
-            for (int i = 0; i < vector.components.length; i++) {
-                differenceComponents[i] -= vector.components[i];
-            }
-
-            components = differenceComponents;
-            return;
+            components = Arrays.copyOf(components, vector.components.length);
         }
 
         for (int i = 0; i < vector.components.length; i++) {
