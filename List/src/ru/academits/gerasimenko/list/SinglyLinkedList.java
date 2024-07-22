@@ -128,18 +128,19 @@ public class SinglyLinkedList<E> {
         return false;
     }
 
-    public SinglyLinkedList<E> copy(SinglyLinkedList<E> list) {
+    public SinglyLinkedList<E> copy() {
         SinglyLinkedList<E> listCopy = new SinglyLinkedList<>();
 
-        for (ListNode<E> p = head, copyPointer = listCopy.head; p != null; p = p.getNext()) {
-            //copyPointer.setData(p.getData());
+        reverse();
 
+        for (ListNode<E> p = head; p != null; p = p.getNext()) {
+            listCopy.addFirst(p.getData());
         }
+
+        reverse();
 
         return listCopy;
     }
-
-
 
     public void reverse() {
         head = reverse(head);
@@ -165,7 +166,7 @@ public class SinglyLinkedList<E> {
 
     @Override
     public String toString() {
-        if (head == null) {
+        if (isEmpty()) {
             return "[]";
         }
 
