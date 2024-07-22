@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/Circle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/Rectangle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/Shape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/ShapesSort.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/Square.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/Triangle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/comparators/AreaComparator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/comparators/PerimeterComparator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/ru.academits.gerasimenko.shapes/main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSV/CSV.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/Csv.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/SinglyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +50,7 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.Test.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.arraylisthome.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.csv.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.matrix.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.shapes.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.vector.main.Main.executor&quot;: &quot;Run&quot;,
@@ -63,7 +63,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/List/src/ru/academits/gerasimenko/list/main/Main.java&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Csv/src/ru/academits/gerasimenko/csv/main/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
@@ -72,10 +72,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Csv" />
+      <recent name="$PROJECT_DIR$/Csv/src" />
+      <recent name="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv" />
       <recent name="$PROJECT_DIR$/ArrayListHome" />
-      <recent name="$PROJECT_DIR$/ArrayListHome/src" />
-      <recent name="$PROJECT_DIR$/Vector/src" />
-      <recent name="$PROJECT_DIR$/Matrix/src" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -118,6 +118,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ru.academits.gerasimenko.csv.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.csv.main.Main" />
+      <module name="Csv" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.academits.gerasimenko.csv.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ru.academits.gerasimenko.matrix.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.matrix.main.Main" />
       <module name="Matrix" />
@@ -131,26 +144,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.vector.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.vector.main.Main" />
-      <module name="Vector" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.vector.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ru.academits.gerasimenko.csv.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.arraylisthome.main.Main" />
         <item itemvalue="Application.ArrayListHome" />
         <item itemvalue="Application.ru.academits.gerasimenko.matrix.main.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.vector.main.Main" />
       </list>
     </recent_temporary>
   </component>
