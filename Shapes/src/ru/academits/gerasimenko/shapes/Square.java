@@ -29,10 +29,10 @@ public class Square implements Shape {
 
     @Override
     public String toString() {
-        return "Shape : Square" + System.lineSeparator()
-                + "Side length : " + sideLength + System.lineSeparator()
-                + "Area : " + getArea() + System.lineSeparator()
-                + "Perimeter : " + getPerimeter();
+        return "Shape: Square" + System.lineSeparator()
+                + "Side length: " + sideLength + System.lineSeparator()
+                + "Area: " + getArea() + System.lineSeparator()
+                + "Perimeter: " + getPerimeter();
     }
 
     @Override
@@ -47,7 +47,7 @@ public class Square implements Shape {
 
         Square square = (Square) o;
 
-        return Double.compare(sideLength, square.sideLength) == 0;
+        return sideLength == square.sideLength;
     }
 
     @Override

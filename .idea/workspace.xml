@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSV/CSV.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/Csv.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/SinglyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/ru/academits/gerasimenko/list/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/shapes/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/shapes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/shapes/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/shapes/ShapesSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/shapes/ShapesSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/shapes/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/ru/academits/gerasimenko/shapes/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source.csv" beforeDir="false" afterPath="$PROJECT_DIR$/source.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +76,7 @@
       <recent name="$PROJECT_DIR$/ArrayListHome" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.shapes.main.Main">
     <configuration name="ArrayListHome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylisthome.ArrayListHome" />
       <module name="ArrayListHome" />
@@ -131,12 +129,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.matrix.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.matrix.main.Main" />
-      <module name="Matrix" />
+    <configuration name="ru.academits.gerasimenko.shapes.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.shapes.main.Main" />
+      <module name="Shapes" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.matrix.main.*" />
+          <option name="PATTERN" value="ru.academits.gerasimenko.shapes.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ru.academits.gerasimenko.shapes.main.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.csv.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.arraylisthome.main.Main" />
         <item itemvalue="Application.ArrayListHome" />
-        <item itemvalue="Application.ru.academits.gerasimenko.matrix.main.Main" />
       </list>
     </recent_temporary>
   </component>

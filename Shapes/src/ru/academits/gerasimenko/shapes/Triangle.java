@@ -36,7 +36,7 @@ public class Triangle implements Shape {
         return Math.abs((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1)) / 2;
     }
 
-    private double getSideLength(double x1, double y1, double x2, double y2) {
+    private static double getSideLength(double x1, double y1, double x2, double y2) {
         return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
     }
 
@@ -49,12 +49,12 @@ public class Triangle implements Shape {
 
     @Override
     public String toString() {
-        return "Shape : Triangle" + System.lineSeparator()
-                + "First point : " + String.format("(%f; %f)", x1, y1) + System.lineSeparator()
-                + "First point : " + String.format("(%f; %f)", x2, y2) + System.lineSeparator()
-                + "First point : " + String.format("(%f; %f)", x3, y3) + System.lineSeparator()
-                + "Area : " + getArea() + System.lineSeparator()
-                + "Perimeter : " + getPerimeter();
+        return "Shape: Triangle" + System.lineSeparator()
+                + String.format("First point: (%f; %f)%n", x1, y1)
+                + String.format("Second point: (%f; %f)%n", x2, y2)
+                + String.format("Third point: (%f; %f)%n", x3, y3)
+                + "Area: " + getArea() + System.lineSeparator()
+                + "Perimeter: " + getPerimeter();
     }
 
     @Override
@@ -69,9 +69,9 @@ public class Triangle implements Shape {
 
         Triangle triangle = (Triangle) o;
 
-        return Double.compare(x1, triangle.x1) == 0 && Double.compare(y1, triangle.y1) == 0 &&
-                Double.compare(x2, triangle.x2) == 0 && Double.compare(y2, triangle.y2) == 0 &&
-                Double.compare(x3, triangle.x3) == 0 && Double.compare(y3, triangle.y3) == 0;
+        return x1 == triangle.x1 && y1 == triangle.y1 &&
+                x2 == triangle.x2 && y2 == triangle.y2 &&
+                x3 == triangle.x3 && y3 == triangle.y3;
     }
 
     @Override

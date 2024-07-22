@@ -12,22 +12,26 @@ public class ShapesSort {
     }
 
     public static Shape getShapeWithOrderLargestArea(Shape[] shapes, int order) {
-        validateOrderExistInArray(shapes, order);
+        validateOrderExistsInArray(shapes, order);
 
         sort(shapes, new AreaComparator());
         return shapes[shapes.length - order];
     }
 
     public static Shape getShapeWithOrderLargestPerimeter(Shape[] shapes, int order) {
-        validateOrderExistInArray(shapes, order);
+        validateOrderExistsInArray(shapes, order);
 
         sort(shapes, new PerimeterComparator());
         return shapes[shapes.length - order];
     }
 
-    private static void validateOrderExistInArray(Shape[] shapes, int order) {
+    private static void validateOrderExistsInArray(Shape[] shapes, int order) {
         if (shapes.length < order) {
-            throw new ArrayIndexOutOfBoundsException("There is no shape in the array with the specified order.");
+            throw new ArrayIndexOutOfBoundsException(
+                    "There is no shape in the array with the specified order. "
+                            + "Array length: " + shapes.length + ". "
+                            + "Current order: " + order
+            );
         }
     }
 }

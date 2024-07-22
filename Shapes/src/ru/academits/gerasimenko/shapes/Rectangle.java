@@ -31,11 +31,11 @@ public class Rectangle implements Shape {
 
     @Override
     public String toString() {
-        return "Shape : Rectangle" + System.lineSeparator()
-                + "Height : " + getHeight() + System.lineSeparator()
-                + "Width : " + getWidth() + System.lineSeparator()
-                + "Area : " + getArea() + System.lineSeparator()
-                + "Perimeter : " + getPerimeter();
+        return "Shape: Rectangle" + System.lineSeparator()
+                + "Height: " + height + System.lineSeparator()
+                + "Width: " + width + System.lineSeparator()
+                + "Area: " + getArea() + System.lineSeparator()
+                + "Perimeter: " + getPerimeter();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class Rectangle implements Shape {
 
         Rectangle rectangle = (Rectangle) o;
 
-        return Double.compare(height, rectangle.height) == 0 && Double.compare(width, rectangle.width) == 0;
+        return height == rectangle.height && width == rectangle.width;
     }
 
     @Override

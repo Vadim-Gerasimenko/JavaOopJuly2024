@@ -24,7 +24,7 @@ public class Main {
 
         System.out.println("Information about shape with second largest perimeter:");
 
-        Shape shapeWith2LargestArea = ShapesSort.getShapeWithOrderLargestPerimeter(shapes, 2);
-        System.out.println(shapeWith2LargestArea);
+        Shape shapeWith2LargestPerimeter = ShapesSort.getShapeWithOrderLargestPerimeter(shapes, 2);
+        System.out.println(shapeWith2LargestPerimeter);
     }
 }
