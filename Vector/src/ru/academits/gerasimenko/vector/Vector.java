@@ -37,7 +37,7 @@ public class Vector {
     private void validateIndex(int index) {
         if (index < 0 || index >= components.length) {
             throw new IndexOutOfBoundsException("Index out of range. "
-                    + "Valid index: from \"0\" to " + (components.length - 1) + ". "
+                    + "Valid index: from 0 to " + (components.length - 1) + ". "
                     + "Current index: " + index);
         }
     }
