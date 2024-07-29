@@ -28,21 +28,4 @@ public class ListNode<E> {
     public void setNext(ListNode<E> next) {
         this.next = next;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        return data.equals(o);
-    }
-
-    @Override
-    public String toString() {
-        return data.toString();
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 17;
-
-        return data.hashCode() * prime;
-    }
 }

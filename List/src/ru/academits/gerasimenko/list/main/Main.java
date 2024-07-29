@@ -35,8 +35,8 @@ public class Main {
         System.out.println();
 
         integersList.add(0, 4);
-        integersList.add(2, 6);
-        integersList.add(3, 5);
+        integersList.add(1, 6);
+        integersList.add(2, 5);
         System.out.println("List after adding new elements: " + integersList);
 
         integersList.reverse();
@@ -57,6 +57,6 @@ public class Main {
 
         SinglyLinkedList<Integer> integersListCopy = integersList.copy();
         System.out.println("Copy of integers list: " + integersListCopy);
-        System.out.println();
+        System.out.println("List copy size: " + integersListCopy.getSize());
     }
 }
