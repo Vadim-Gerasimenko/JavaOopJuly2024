@@ -1,4 +1,4 @@
-package ru.academits.gerasimenko.comparators;
+package ru.academits.gerasimenko.shapes.comparators;
 
 import java.util.Comparator;
 

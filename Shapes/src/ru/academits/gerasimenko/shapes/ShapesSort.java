@@ -1,7 +1,7 @@
 package ru.academits.gerasimenko.shapes;
 
-import ru.academits.gerasimenko.comparators.AreaComparator;
-import ru.academits.gerasimenko.comparators.PerimeterComparator;
+import ru.academits.gerasimenko.shapes.comparators.AreaComparator;
+import ru.academits.gerasimenko.shapes.comparators.PerimeterComparator;
 
 import java.util.Arrays;
 import java.util.Comparator;
