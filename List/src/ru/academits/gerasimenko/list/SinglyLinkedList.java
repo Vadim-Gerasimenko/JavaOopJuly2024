@@ -119,11 +119,11 @@ public class SinglyLinkedList<E> {
     }
 
     public boolean remove(E data) {
-        for (ListNode<E> currentNode = head, previousNode = null; currentNode != null;
+        for (ListNode<E> currentNode = head, previousNode = null;
+             currentNode != null;
              previousNode = currentNode, currentNode = currentNode.getNext()) {
             if (currentNode.getData().equals(data)) {
                 removeNext(previousNode);
-
                 return true;
             }
         }
@@ -141,7 +141,8 @@ public class SinglyLinkedList<E> {
         listCopy.head = new ListNode<>(head.getData());
         ++listCopy.size;
 
-        for (ListNode<E> listNode = head.getNext(), listNodeCopy = listCopy.head; listNode != null;
+        for (ListNode<E> listNode = head.getNext(), listNodeCopy = listCopy.head;
+             listNode != null;
              listNode = listNode.getNext(), listNodeCopy = listNodeCopy.getNext()) {
             listNodeCopy.setNext(new ListNode<>(listNode.getData()));
             ++listCopy.size;
@@ -151,25 +152,15 @@ public class SinglyLinkedList<E> {
     }
 
     public void reverse() {
-        head = reverse(head);
-    }
+        for (ListNode<E> currentNode = head, previousNode = null, nextNode;
+             currentNode != null;
+             currentNode = nextNode) {
+            nextNode = currentNode.getNext();
 
-    private ListNode<E> reverse(ListNode<E> node) {
-        if (node == null) {
-            return null;
+            currentNode.setNext(previousNode);
+            previousNode = currentNode;
+            head = currentNode;
         }
-
-        ListNode<E> nextNode = node.getNext();
-
-        if (nextNode == null) {
-            return node;
-        }
-
-        ListNode<E> head = reverse(nextNode);
-        nextNode.setNext(node);
-        node.setNext(null);
-
-        return head;
     }
 
     @Override
