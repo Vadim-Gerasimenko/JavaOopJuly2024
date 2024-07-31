@@ -5,7 +5,7 @@ import ru.academits.gerasimenko.vector.Vector;
 
 public class Main {
     public static void main(String[] args) {
-        Matrix matrix1 = new Matrix(4, 5);
+        Matrix matrix1 = new Matrix(3, 3);
 
         System.out.println("1-st matrix: " + matrix1);
         System.out.println("Rows count: " + matrix1.getRowsCount());
@@ -74,14 +74,12 @@ public class Main {
 
         System.out.println();
 
-        Matrix matrix7 = new Matrix(new double[][]{{1}, {2}, {3}, {4}});
+        Matrix matrix7 = new Matrix(new double[][]{{1, 2}, {2, 3}, {3, 4}, {4, 5}});
         System.out.println("7-th matrix: " + matrix7);
 
-        Vector vectorToMultiplication = new Vector(new double[]{2, 3, 4, 5, 6});
-        System.out.println("Vector to multiplication: " + vectorToMultiplication);
-
-        matrix7.multiplyByVector(vectorToMultiplication);
-        System.out.println("7-th matrix after multiplication by vector: " + matrix7);
+        Vector vectorToMultiplication = new Vector(new double[]{5, 7});
+        System.out.println("Column vector to multiplication: " + vectorToMultiplication);
+        System.out.println("The result of multiplying a 7-th matrix by the column vector: " + matrix7.multiplyByVector(vectorToMultiplication));
 
         System.out.println();
 
@@ -90,6 +88,6 @@ public class Main {
         Matrix matrix8 = new Matrix(new double[][]{{1, 2, 3, 4, 5}, {2, 3, 4, 5, 6}, {0, 1, 2, 7, 1}});
         System.out.println("8-th matrix: " + matrix8);
 
-        System.out.println("Result of multiplication of 2-nd and 8-th matrices: " + Matrix.getMultiplication(matrix2, matrix8));
+        System.out.println("Result of product of 2-nd and 8-th matrices: " + Matrix.getProduct(matrix2, matrix8));
     }
 }
