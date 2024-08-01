@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println();
 
-        Matrix matrix2 = new Matrix(new double[][]{{1, 2, 3}, {2, 5, 7}, {6, 0, 1}, {4, 1, 7}});
+        Matrix matrix2 = new Matrix(new double[][]{{1, 4, 3}, {2, 5, 7}, {6, 8, 9}});
         System.out.println("2-nd matrix: " + matrix2);
 
         Matrix matrix3 = new Matrix(matrix2);

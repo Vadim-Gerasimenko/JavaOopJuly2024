@@ -109,15 +109,11 @@ public class Matrix {
     }
 
     public void transpose() {
-        int columnsCount = getColumnsCount();
+        int rowsCount = getRowsCount();
 
-        Matrix transposedMatrix = new Matrix(columnsCount, getRowsCount());
-
-        for (int i = 0; i < columnsCount; i++) {
-            transposedMatrix.rows[i] = getColumn(i);
+        for (int i = 0; i < rowsCount; i++) {
+            rows[i] = getColumn(i);
         }
-
-        rows = transposedMatrix.rows;
     }
 
     public void multiplyByScalar(double scalar) {
@@ -272,5 +268,42 @@ public class Matrix {
         stringBuilder.append('}');
 
         return stringBuilder.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (o == null || o.getClass() != getClass()) {
+            return false;
+        }
+
+        Matrix matrix = (Matrix) o;
+
+        if (rows.length != matrix.rows.length || this.getColumnsCount() != matrix.getColumnsCount()) {
+            return false;
+        }
+
+        for (int i = 0; i < rows.length; i++) {
+            if (!rows[i].equals(matrix.rows[i])) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 17;
+        int hash = 1;
+
+        for (Vector row : rows) {
+            hash = prime * hash + row.hashCode();
+        }
+
+        return hash;
     }
 }
