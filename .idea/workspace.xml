@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Lamda/Lamda.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lamda/src/ru/academits/gerasimenko/lambda/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lamda/src/ru/academits/gerasimenko/lambda/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +28,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -48,6 +54,7 @@
     &quot;Application.ru.academits.gerasimenko.arraylist.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.arraylisthome.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.csv.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.lambda.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.matrix.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.shapes.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.vector.main.Main.executor&quot;: &quot;Run&quot;,
@@ -60,7 +67,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/ArrayList/src/ru/academits/gerasimenko/arraylist/main/Main.java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Lamda/src/ru/academits/gerasimenko/lambda/main/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
@@ -75,7 +83,7 @@
       <recent name="$PROJECT_DIR$/ArrayListHome" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ru.academits.gerasimenko.matrix.main.Main">
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.lambda.main.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.list.main.Main" />
       <module name="List" />
@@ -89,12 +97,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.arraylist.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylist.main.Main" />
-      <module name="ArrayList" />
+    <configuration name="ru.academits.gerasimenko.csv.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.csv.main.Main" />
+      <module name="Csv" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.arraylist.main.*" />
+          <option name="PATTERN" value="ru.academits.gerasimenko.csv.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.csv.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.csv.main.Main" />
-      <module name="Csv" />
+    <configuration name="ru.academits.gerasimenko.lambda.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.lambda.main.Main" />
+      <module name="Lambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.csv.*" />
+          <option name="PATTERN" value="ru.academits.gerasimenko.lambda.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ru.academits.gerasimenko.lambda.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.matrix.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.csv.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.shapes.main.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.arraylist.main.Main" />
       </list>
     </recent_temporary>
   </component>
