@@ -7,10 +7,10 @@
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="Added solution for 'Tree' task">
       <change afterPath="$PROJECT_DIR$/ArrayListHome/ArrayListHome.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/ArrayListHome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/files/in.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graph/src/ru/academits/gerasimenko/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/Graph/src/ru/academits/gerasimenko/graph/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +48,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ArrayListHome.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.Test.executor": "Run",
     "Application.ru.academits.gerasimenko.arraylist.main.Main.executor": "Run",
@@ -76,13 +77,27 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/files" />
+      <recent name="$PROJECT_DIR$/ArrayListHome" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Csv" />
       <recent name="$PROJECT_DIR$/Csv/src" />
-      <recent name="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ru.academits.gerasimenko.graph.main.Main">
+  <component name="RunManager" selected="Application.ArrayListHome">
+    <configuration name="ArrayListHome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylisthome.ArrayListHome" />
+      <module name="ArrayListHome" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.academits.gerasimenko.arraylisthome.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.hashtable.main.Main" />
       <module name="HashTable" />
@@ -122,19 +137,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.lambda.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.lambda.main.Main" />
-      <module name="Lambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.lambda.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ru.academits.gerasimenko.tree.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.tree.main.Main" />
       <module name="Tree" />
@@ -150,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArrayListHome" />
         <item itemvalue="Application.ru.academits.gerasimenko.graph.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.tree.main.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.arraylist.main.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.lambda.main.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723793894876</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Corrected typo">
+      <option name="closed" value="true" />
+      <created>1723795253997</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723795253997</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,9 +253,10 @@
     <MESSAGE value="Added solution for HashTable task" />
     <MESSAGE value="Changed ways to print tree traversal" />
     <MESSAGE value="Added BFS, DFS and recursive DFS" />
-    <MESSAGE value="Added solution for 'Tree' task" />
     <MESSAGE value="Changed vertices name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed vertices name" />
+    <MESSAGE value="Added solution for 'Tree' task" />
+    <MESSAGE value="Corrected typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected typo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
