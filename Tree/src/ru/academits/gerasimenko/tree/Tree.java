@@ -171,6 +171,8 @@ public class Tree<E extends Comparable<E>> {
             return;
         }
 
+        System.out.println("BFS and print nodes data:");
+
         Queue<TreeNode<E>> queue = new LinkedList<>();
         queue.add(tree.root);
 
@@ -190,11 +192,16 @@ public class Tree<E extends Comparable<E>> {
                 queue.add(nodeRightChild);
             }
         }
+
+        System.out.println();
     }
 
     public static <E extends Comparable<E>> void depthFirstSearchRecursive(Tree<E> tree) {
         validateTreeForNull(tree);
+
+        System.out.println("Recursive DFS and print nodes data:");
         visit(tree.root);
+        System.out.println();
     }
 
     private static <E extends Comparable<E>> void visit(TreeNode<E> node) {
@@ -213,6 +220,8 @@ public class Tree<E extends Comparable<E>> {
         if (tree.getTreeNodesCount() == 0) {
             return;
         }
+
+        System.out.println("DFS and print nodes data:");
 
         Deque<TreeNode<E>> stack = new LinkedList<>();
         stack.addFirst(tree.root);
@@ -233,5 +242,7 @@ public class Tree<E extends Comparable<E>> {
                 stack.addFirst(nodeLeftChild);
             }
         }
+
+        System.out.println();
     }
 }

@@ -17,13 +17,11 @@ public class Main {
         System.out.println("Tree nodes count: " + tree.getTreeNodesCount());
         System.out.println();
 
-        System.out.println("BFS and print nodes data:");
         Tree.breadthFirstSearch(tree);
-        System.out.printf("%n%n");
+        System.out.println();
 
-        System.out.println("DFS and print nodes data:");
         Tree.depthFirstSearch(tree);
-        System.out.printf("%n%n");
+        System.out.println();
 
         final int searchElement = 4;
 
@@ -43,8 +41,6 @@ public class Main {
 
         System.out.println();
 
-        System.out.println("Recursive DFS and print nodes data:");
         Tree.depthFirstSearchRecursive(tree);
-        System.out.println();
     }
 }
