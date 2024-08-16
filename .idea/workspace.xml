@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="">
+    <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="Added solution for 'Tree' task">
       <change afterPath="$PROJECT_DIR$/ArrayListHome/ArrayListHome.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/ArrayListHome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/Tree.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/src/ru/academits/gerasimenko/tree/Tree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/src/ru/academits/gerasimenko/tree/TreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/src/ru/academits/gerasimenko/tree/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Graph/Graph.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Graph/src/ru/academits/gerasimenko/graph/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Graph/src/ru/academits/gerasimenko/graph/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
@@ -56,6 +55,7 @@
     "Application.Test.executor": "Run",
     "Application.ru.academits.gerasimenko.arraylist.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.csv.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.graph.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.lambda.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.matrix.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.shapes.main.Main.executor": "Run",
@@ -71,7 +71,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024",
-    "onboarding.tips.debug.path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Tree/src/ru/academits/gerasimenko/tree/main/Main.java",
+    "onboarding.tips.debug.path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Graph/src/ru/academits/gerasimenko/graph/main/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -112,12 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.lambda.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.lambda.main.Main" />
-      <module name="Lambda" />
+    <configuration name="ru.academits.gerasimenko.graph.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.graph.main.Main" />
+      <module name="Graph" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.lambda.main.*" />
+          <option name="PATTERN" value="ru.academits.gerasimenko.graph.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,12 +125,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.matrix.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.matrix.main.Main" />
-      <module name="Matrix" />
+    <configuration name="ru.academits.gerasimenko.lambda.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.lambda.main.Main" />
+      <module name="Lambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.matrix.main.*" />
+          <option name="PATTERN" value="ru.academits.gerasimenko.lambda.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,10 +154,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ru.academits.gerasimenko.tree.main.Main" />
+        <item itemvalue="Application.ru.academits.gerasimenko.graph.main.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.arraylist.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.lambda.main.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.matrix.main.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +194,23 @@
       <option name="project" value="LOCAL" />
       <updated>1723573168772</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added solution for 'Tree' task">
+      <option name="closed" value="true" />
+      <created>1723742463430</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723742463430</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Changed ways to print tree traversal">
+      <option name="closed" value="true" />
+      <created>1723793277755</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1723793277755</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,7 +228,9 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add Range project" />
     <MESSAGE value="Added solution for HashTable task" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added solution for HashTable task" />
+    <MESSAGE value="Added solution for 'Tree' task" />
+    <MESSAGE value="Changed ways to print tree traversal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed ways to print tree traversal" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
