@@ -7,13 +7,9 @@
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="Added solution for 'Tree' task">
       <change afterPath="$PROJECT_DIR$/ArrayListHome/ArrayListHome.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/ArrayListHome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Graph/Graph.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Graph/src/ru/academits/gerasimenko/graph/Graph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Graph/src/ru/academits/gerasimenko/graph/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graph/src/ru/academits/gerasimenko/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/Graph/src/ru/academits/gerasimenko/graph/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +81,7 @@
       <recent name="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ru.academits.gerasimenko.tree.main.Main">
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.graph.main.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.hashtable.main.Main" />
       <module name="HashTable" />
@@ -153,8 +149,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ru.academits.gerasimenko.tree.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.graph.main.Main" />
+        <item itemvalue="Application.ru.academits.gerasimenko.tree.main.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.arraylist.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.lambda.main.Main" />
@@ -210,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723793277755</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added BFS, DFS and recursive DFS">
+      <option name="closed" value="true" />
+      <created>1723793515349</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723793515349</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,9 +232,10 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add Range project" />
     <MESSAGE value="Added solution for HashTable task" />
-    <MESSAGE value="Added solution for 'Tree' task" />
     <MESSAGE value="Changed ways to print tree traversal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed ways to print tree traversal" />
+    <MESSAGE value="Added solution for 'Tree' task" />
+    <MESSAGE value="Added BFS, DFS and recursive DFS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added BFS, DFS and recursive DFS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

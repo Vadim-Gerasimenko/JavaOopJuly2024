@@ -28,19 +28,19 @@ public class Graph {
             queue.add(i);
 
             while (!queue.isEmpty()) {
-                int currentElement = queue.remove();
+                int vertex = queue.remove();
 
-                if (!visited[currentElement]) {
-                    System.out.print(currentElement + " ");
+                if (!visited[vertex]) {
+                    System.out.print(vertex + " ");
 
                     for (int j = 0; j < verticesCount; ++j) {
-                        if (i != j && graph.graph[currentElement][j] && !visited[j]) {
+                        if (i != j && graph.graph[vertex][j] && !visited[j]) {
                             queue.add(j);
                         }
                     }
                 }
 
-                visited[currentElement] = true;
+                visited[vertex] = true;
             }
         }
 
@@ -59,18 +59,18 @@ public class Graph {
             stack.addFirst(i);
 
             while (!stack.isEmpty()) {
-                int currentElement = stack.removeFirst();
+                int vertex = stack.removeFirst();
 
-                if (!visited[currentElement]) {
-                    System.out.print(currentElement + " ");
+                if (!visited[vertex]) {
+                    System.out.print(vertex + " ");
 
                     for (int j = verticesCount - 1; j != 0; --j) {
-                        if (i != j && graph.graph[currentElement][j] && !visited[j]) {
+                        if (i != j && graph.graph[vertex][j] && !visited[j]) {
                             stack.addFirst(j);
                         }
                     }
 
-                    visited[currentElement] = true;
+                    visited[vertex] = true;
                 }
             }
         }
