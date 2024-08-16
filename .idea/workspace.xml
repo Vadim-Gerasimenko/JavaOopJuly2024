@@ -7,6 +7,7 @@
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="Added solution for 'Tree' task">
       <change afterPath="$PROJECT_DIR$/ArrayListHome/ArrayListHome.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/ArrayListHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Graph/src/ru/academits/gerasimenko/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/Graph/src/ru/academits/gerasimenko/graph/Graph.java" afterDir="false" />
@@ -214,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723793515349</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Changed vertices name">
+      <option name="closed" value="true" />
+      <created>1723793894876</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723793894876</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,9 +242,10 @@
     <MESSAGE value="Add Range project" />
     <MESSAGE value="Added solution for HashTable task" />
     <MESSAGE value="Changed ways to print tree traversal" />
-    <MESSAGE value="Added solution for 'Tree' task" />
     <MESSAGE value="Added BFS, DFS and recursive DFS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added BFS, DFS and recursive DFS" />
+    <MESSAGE value="Added solution for 'Tree' task" />
+    <MESSAGE value="Changed vertices name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed vertices name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

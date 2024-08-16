@@ -34,13 +34,13 @@ public class Graph {
                     System.out.print(vertex + " ");
 
                     for (int j = 0; j < verticesCount; ++j) {
-                        if (i != j && graph.graph[vertex][j] && !visited[j]) {
+                        if (vertex != j && graph.graph[vertex][j] && !visited[j]) {
                             queue.add(j);
                         }
                     }
-                }
 
-                visited[vertex] = true;
+                    visited[vertex] = true;
+                }
             }
         }
 
@@ -65,7 +65,7 @@ public class Graph {
                     System.out.print(vertex + " ");
 
                     for (int j = verticesCount - 1; j != 0; --j) {
-                        if (i != j && graph.graph[vertex][j] && !visited[j]) {
+                        if (vertex != j && graph.graph[vertex][j] && !visited[j]) {
                             stack.addFirst(j);
                         }
                     }
