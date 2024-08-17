@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="Added solution for 'Tree' task">
-      <change afterPath="$PROJECT_DIR$/ArrayListHome/ArrayListHome.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/ArrayListHome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/files/in.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/Temperature.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/ru/academits/gerasimenko/temperature/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/ru/academits/gerasimenko/temperature/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/ru/academits/gerasimenko/temperature/model/Converter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/ru/academits/gerasimenko/temperature/model/TemperatureConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/ru/academits/gerasimenko/temperature/view/ConsoleView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/ru/academits/gerasimenko/temperature/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
@@ -21,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -57,6 +63,7 @@
     "Application.ru.academits.gerasimenko.lambda.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.matrix.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.shapes.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.temperature.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.tree.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.vector.main.Main.executor": "Run",
     "Application.ru.academits.gerasimenko.vector.main_matrix.Main.executor": "Run",
@@ -69,7 +76,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024",
-    "onboarding.tips.debug.path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Graph/src/ru/academits/gerasimenko/graph/main/Main.java",
+    "onboarding.tips.debug.path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Temperature/src/ru/academits/gerasimenko/temperature/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -84,7 +91,7 @@
       <recent name="$PROJECT_DIR$/Csv/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ArrayListHome">
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.temperature.Main">
     <configuration name="ArrayListHome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylisthome.ArrayListHome" />
       <module name="ArrayListHome" />
@@ -111,12 +118,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.arraylist.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylist.main.Main" />
-      <module name="ArrayList" />
+    <configuration name="ru.academits.gerasimenko.graph.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.graph.main.Main" />
+      <module name="Graph" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.arraylist.main.*" />
+          <option name="PATTERN" value="ru.academits.gerasimenko.graph.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,12 +131,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.graph.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.graph.main.Main" />
-      <module name="Graph" />
+    <configuration name="ru.academits.gerasimenko.temperature.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.temperature.Main" />
+      <module name="Temperature" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.graph.main.*" />
+          <option name="PATTERN" value="ru.academits.gerasimenko.temperature.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ru.academits.gerasimenko.temperature.Main" />
         <item itemvalue="Application.ArrayListHome" />
         <item itemvalue="Application.ru.academits.gerasimenko.graph.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.tree.main.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.arraylist.main.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723795253997</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added solution for the task">
+      <option name="closed" value="true" />
+      <created>1723798659513</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723798659513</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,9 +269,10 @@
     <MESSAGE value="Changed ways to print tree traversal" />
     <MESSAGE value="Added BFS, DFS and recursive DFS" />
     <MESSAGE value="Changed vertices name" />
-    <MESSAGE value="Added solution for 'Tree' task" />
     <MESSAGE value="Corrected typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected typo" />
+    <MESSAGE value="Added solution for 'Tree' task" />
+    <MESSAGE value="Added solution for the task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added solution for the task" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
