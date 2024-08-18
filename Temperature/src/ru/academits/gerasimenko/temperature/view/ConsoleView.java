@@ -1,16 +1,13 @@
 package ru.academits.gerasimenko.temperature.view;
 
+import ru.academits.gerasimenko.temperature.constants.TemperatureScalesConstants;
 import ru.academits.gerasimenko.temperature.controller.Controller;
 
-import java.util.HashSet;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleView implements View {
     private Controller controller;
-
-    private static final HashSet<Integer> scalesNumbersSet = new HashSet<>(List.of(1, 2, 3));
 
     @Override
     public void start() {
@@ -20,97 +17,18 @@ public class ConsoleView implements View {
             while (isContinued) {
                 printHead();
 
-                boolean isCorrectInputDataScaleNumber = false;
-                int inputDataScaleNumber = -1;
+                final String messageToGetInputScale = "Enter the number of the input data scale: ";
+                int inputScaleNumber = getScaleNumber(messageToGetInputScale, scanner);
 
-                while (!isCorrectInputDataScaleNumber) {
-                    try {
-                        System.out.print("Enter the number of the input data scale: ");
-                        inputDataScaleNumber = getScaleNumber(scanner);
-                        isCorrectInputDataScaleNumber = true;
-                    } catch (IllegalArgumentException e) {
-                        System.out.println(e.getMessage());
-                    } catch (InputMismatchException e) {
-                        System.out.println("Scale number must be an integer. "
-                                + "Current value: " + scanner.nextLine()
-                        );
-                    }
-                }
+                final String messageToGetOutputScale = "Enter the number of the output data scale: ";
+                int outputScaleNumber = getScaleNumber(messageToGetOutputScale, scanner);
 
-                boolean isCorrectOutputDataScaleNumber = false;
-                int outputDataScaleNumber = -1;
+                double temperature = getCorrectTemperature(scanner);
 
-                while (!isCorrectOutputDataScaleNumber) {
-                    try {
-                        System.out.print("Enter the number of the output data scale: ");
-                        outputDataScaleNumber = getScaleNumber(scanner);
-                        isCorrectOutputDataScaleNumber = true;
-                    } catch (IllegalArgumentException e) {
-                        System.out.println(e.getMessage());
-                    } catch (InputMismatchException e) {
-                        System.out.println("Scale number must be an integer. "
-                                + "Current value: " + scanner.nextLine()
-                        );
-                    }
-                }
-
-                boolean isCorrectTemperature = false;
-                double temperature = 0;
-
-                while (!isCorrectTemperature) {
-                    try {
-                        System.out.print("Enter temperature: ");
-                        temperature = getTemperature(scanner);
-                        isCorrectTemperature = true;
-                    } catch (InputMismatchException e) {
-                        System.out.println("Temperature must be specified as a real number. "
-                                + "Current value: " + scanner.nextLine()
-                        );
-                    }
-                }
-
-                switch (inputDataScaleNumber) {
-                    case 1 -> {
-                        if (outputDataScaleNumber == 1) {
-                            showCelsiusTemperature(temperature);
-                        } else if (outputDataScaleNumber == 2) {
-                            controller.convertCelsiusToKelvin(temperature);
-                        } else {
-                            controller.convertCelsiusToFahrenheit(temperature);
-                        }
-                    }
-
-                    case 2 -> {
-                        if (outputDataScaleNumber == 1) {
-                            controller.convertKelvinToCelsius(temperature);
-                        } else if (outputDataScaleNumber == 2) {
-                            showKelvinTemperature(temperature);
-                        } else {
-                            controller.convertKelvinToFahrenheit(temperature);
-                        }
-                    }
-
-                    case 3 -> {
-                        if (outputDataScaleNumber == 1) {
-                            controller.convertFahrenheitToCelsius(temperature);
-                        } else if (outputDataScaleNumber == 2) {
-                            controller.convertFahrenheitToKelvin(temperature);
-                        } else {
-                            showFahrenheitTemperature(temperature);
-                        }
-                    }
-                }
-
+                controller.convert(inputScaleNumber, outputScaleNumber, temperature);
                 scanner.nextLine();
 
-                final String terminationText = "end";
-                System.out.print("To end enter \"" + terminationText + "\", to continue enter any character or sequence: ");
-
-                if (scanner.nextLine().equalsIgnoreCase(terminationText)) {
-                    isContinued = false;
-                } else {
-                    System.out.println();
-                }
+                isContinued = terminateOrContinue(scanner);
             }
         }
     }
@@ -154,10 +72,64 @@ public class ConsoleView implements View {
     }
 
     private static void validateScaleNumber(int scaleNumber) {
-        if (!scalesNumbersSet.contains(scaleNumber)) {
+        if (!TemperatureScalesConstants.SCALES_NUMBERS_SET.contains(scaleNumber)) {
             throw new IllegalArgumentException("Invalid value of scale number. "
-                    + "Valid numbers: " + scalesNumbersSet + ". "
+                    + "Valid numbers: " + TemperatureScalesConstants.SCALES_NUMBERS_SET + ". "
                     + "Current number: " + scaleNumber);
         }
+    }
+
+    private static int getScaleNumber(String welcomeMessage, Scanner scanner) {
+        boolean isCorrectScaleNumber = false;
+        int ScaleNumber = -1;
+
+        while (!isCorrectScaleNumber) {
+            try {
+                System.out.print(welcomeMessage);
+                ScaleNumber = getScaleNumber(scanner);
+                isCorrectScaleNumber = true;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            } catch (InputMismatchException e) {
+                System.out.println("Scale number must be an integer. "
+                        + "Current value: " + scanner.nextLine()
+                );
+            }
+        }
+
+        return ScaleNumber;
+    }
+
+    private static double getCorrectTemperature(Scanner scanner) {
+        boolean isCorrectTemperature = false;
+        Double temperature = null;
+
+        while (!isCorrectTemperature) {
+            try {
+                System.out.print("Enter temperature: ");
+                temperature = getTemperature(scanner);
+                isCorrectTemperature = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Temperature must be specified as a real number. "
+                        + "Current value: " + scanner.nextLine()
+                );
+            }
+        }
+
+        return temperature;
+    }
+
+    private static boolean terminateOrContinue(Scanner scanner) {
+        final String terminationText = "end";
+        System.out.print("To end enter \"" + terminationText + "\", to continue enter any character or sequence: ");
+        boolean isContinued = true;
+
+        if (scanner.nextLine().equalsIgnoreCase(terminationText)) {
+            isContinued = false;
+        } else {
+            System.out.println();
+        }
+
+        return isContinued;
     }
 }
