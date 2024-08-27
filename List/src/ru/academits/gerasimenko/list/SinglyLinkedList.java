@@ -184,20 +184,19 @@ public class SinglyLinkedList<E> {
 
     @Override
     public String toString() {
-        if (isEmpty()) {
-            return "[]";
-        }
-
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append('[');
 
-        final String separator = ", ";
+        if (!isEmpty()) {
+            final String separator = ", ";
 
-        for (ListNode<E> currentNode = head; currentNode != null; currentNode = currentNode.getNext()) {
-            stringBuilder.append(currentNode.getData()).append(", ");
+            for (ListNode<E> currentNode = head; currentNode != null; currentNode = currentNode.getNext()) {
+                stringBuilder.append(currentNode.getData()).append(", ");
+            }
+
+            stringBuilder.delete(stringBuilder.length() - separator.length(), stringBuilder.length());
         }
 
-        stringBuilder.delete(stringBuilder.length() - separator.length(), stringBuilder.length());
         return stringBuilder.append(']').toString();
     }
 }
