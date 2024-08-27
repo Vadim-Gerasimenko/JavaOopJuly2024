@@ -14,7 +14,7 @@ public class SinglyLinkedList<E> {
     }
 
     public E getFirst() {
-        validateForEmptiness();
+        validateEmpty();
         return head.getData();
     }
 
@@ -49,19 +49,25 @@ public class SinglyLinkedList<E> {
         return size == 0;
     }
 
-    private void validateForEmptiness() {
+    private void validateEmpty() {
         if (isEmpty()) {
             throw new NoSuchElementException("List is empty.");
         }
     }
 
     private void validateIndex(int index) {
-        validateForEmptiness();
-
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index out of range. "
                     + "Valid index: from 0 to " + (size - 1) + ". "
                     + "Current index: " + index);
+        }
+    }
+
+    private void validateInsertionIndex(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index out of range. "
+                    + "Valid insertion index: from 0 to " + size + ". "
+                    + "Current insertion index: " + index);
         }
     }
 
@@ -71,22 +77,20 @@ public class SinglyLinkedList<E> {
     }
 
     public void add(int index, E data) {
+        validateInsertionIndex(index);
+
         if (index == 0) {
             addFirst(data);
             return;
         }
 
-        validateIndex(index);
-
         ListNode<E> previousNode = getNode(index - 1);
-        ListNode<E> nextNode = previousNode.getNext();
-
-        previousNode.setNext(new ListNode<>(data, nextNode));
+        previousNode.setNext(new ListNode<>(data, previousNode.getNext()));
         ++size;
     }
 
     public E removeFirst() {
-        validateForEmptiness();
+        validateEmpty();
 
         E removedNodeData = head.getData();
         head = head.getNext();
@@ -122,9 +126,18 @@ public class SinglyLinkedList<E> {
         for (ListNode<E> currentNode = head, previousNode = null;
              currentNode != null;
              previousNode = currentNode, currentNode = currentNode.getNext()) {
-            if (currentNode.getData().equals(data)) {
-                removeNext(previousNode);
-                return true;
+            E currentNodeData = currentNode.getData();
+
+            if (currentNodeData == null) {
+                if (data == null) {
+                    removeNext(previousNode);
+                    return true;
+                }
+            } else {
+                if (currentNodeData.equals(data)) {
+                    removeNext(previousNode);
+                    return true;
+                }
             }
         }
 
@@ -139,28 +152,34 @@ public class SinglyLinkedList<E> {
         }
 
         listCopy.head = new ListNode<>(head.getData());
-        ++listCopy.size;
 
         for (ListNode<E> listNode = head.getNext(), listNodeCopy = listCopy.head;
              listNode != null;
              listNode = listNode.getNext(), listNodeCopy = listNodeCopy.getNext()) {
             listNodeCopy.setNext(new ListNode<>(listNode.getData()));
-            ++listCopy.size;
         }
 
+        listCopy.size = size;
         return listCopy;
     }
 
     public void reverse() {
-        for (ListNode<E> currentNode = head, previousNode = null, nextNode;
+        ListNode<E> currentNode = head;
+
+        for (ListNode<E> previousNode = null, nextNode;
              currentNode != null;
              currentNode = nextNode) {
             nextNode = currentNode.getNext();
 
             currentNode.setNext(previousNode);
             previousNode = currentNode;
-            head = currentNode;
+
+            if (nextNode == null) {
+                break;
+            }
         }
+
+        head = currentNode;
     }
 
     @Override
@@ -172,13 +191,13 @@ public class SinglyLinkedList<E> {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append('[');
 
+        final String separator = ", ";
+
         for (ListNode<E> currentNode = head; currentNode != null; currentNode = currentNode.getNext()) {
             stringBuilder.append(currentNode.getData()).append(", ");
         }
 
-        final int separatorSize = 2;
-        stringBuilder.delete(stringBuilder.length() - separatorSize, stringBuilder.length());
-
+        stringBuilder.delete(stringBuilder.length() - separator.length(), stringBuilder.length());
         return stringBuilder.append(']').toString();
     }
 }
