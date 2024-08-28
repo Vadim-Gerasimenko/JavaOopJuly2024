@@ -5,10 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayListHome {
-    public static void main(String[] args) {
-        String inputFilePath = "ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/files/in.txt";
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFilePath))) {
+    public static ArrayList<String> getFileLines(String filePath) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             ArrayList<String> lines = new ArrayList<>();
             String line;
 
@@ -16,11 +14,21 @@ public class ArrayListHome {
                 lines.add(line);
             }
 
+            return lines;
+        } catch (IOException e) {
+            System.out.println("File reading error: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public static void main(String[] args) {
+        String filePath = "ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/files/in.txt";
+        ArrayList<String> lines = getFileLines(filePath);
+
+        if (lines != null) {
             System.out.println("File lines:");
             lines.forEach(System.out::println);
             System.out.println();
-        } catch (IOException e) {
-            throw new RuntimeException("File reading error: " + e.getMessage());
         }
 
         ArrayList<Integer> numbers = new ArrayList<>(List.of(1, 2, 2, 4, 3, 4, 5, 6, 7, 8));
