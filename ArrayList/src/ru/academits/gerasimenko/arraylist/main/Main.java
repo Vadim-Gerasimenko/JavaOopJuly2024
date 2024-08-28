@@ -9,7 +9,7 @@ public class Main {
         ArrayList<Integer> integersArrayList1 = new ArrayList<>();
         integersArrayList1.add(5);
         integersArrayList1.addFirst(0);
-        integersArrayList1.add(1, 3);
+        integersArrayList1.add(2, 3);
 
         System.out.println("1-st list: " + integersArrayList1);
         System.out.println();
@@ -18,7 +18,7 @@ public class Main {
         System.out.println("2-nd list: " + integersArrayList2);
         System.out.println();
 
-        ArrayList<Integer> integersArrayList3 = new ArrayList<>(20);
+        ArrayList<Integer> integersArrayList3 = new ArrayList<>(30);
         integersArrayList3.addAll(integersArrayList1);
         integersArrayList3.addAll(2, integersArrayList2);
 
@@ -37,16 +37,16 @@ public class Main {
         System.out.println("1-st list to array: " + Arrays.toString(integersArrayList1.toArray()));
         System.out.println();
 
-        Integer deletedElement = 4;
-        System.out.printf("Trying to remove element \"%d\" from 3-rd list:%n", deletedElement);
+        Integer removedElement = 4;
+        System.out.printf("Trying to remove element \"%d\" from 3-rd list:%n", removedElement);
 
-        if (integersArrayList3.remove(deletedElement)) {
-            System.out.println("Element successfully deleted.");
+        if (integersArrayList3.remove(removedElement)) {
+            integersArrayList3.trimToSize();
+            System.out.println("Element successfully removed.");
         } else {
-            System.out.println("The element was not deleted because it is not in the list.");
+            System.out.println("The element was not removed because it is not in the list.");
         }
 
         System.out.println("3-rd list: " + integersArrayList3);
-        System.out.println();
     }
 }
