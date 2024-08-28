@@ -7,6 +7,7 @@
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="refactor: split start method into separate methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" afterDir="false" />
@@ -86,7 +87,7 @@
       <recent name="$PROJECT_DIR$/Csv/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ru.academits.gerasimenko.list.main.Main">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="ArrayListHome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylisthome.ArrayListHome" />
       <module name="ArrayListHome" />
@@ -154,8 +155,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ru.academits.gerasimenko.list.main.Main" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ru.academits.gerasimenko.list.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.temperature.Main" />
         <item itemvalue="Application.ArrayListHome" />
         <item itemvalue="Application.ru.academits.gerasimenko.graph.main.Main" />
@@ -339,7 +340,23 @@
       <option name="project" value="LOCAL" />
       <updated>1724763470920</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="refactor: rid toString method from special cases">
+      <option name="closed" value="true" />
+      <created>1724763536610</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1724763536610</updated>
+    </task>
+    <task id="LOCAL-00023" summary="style: bring variable names to a consistent style">
+      <option name="closed" value="true" />
+      <created>1724773323134</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1724773323134</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -373,9 +390,10 @@
     <MESSAGE value="feat: add desktop view" />
     <MESSAGE value="chore: change frame default height" />
     <MESSAGE value="fix: allow the remove method to work with null-value" />
-    <MESSAGE value="refactor: split start method into separate methods" />
     <MESSAGE value="refactor: rid toString method from special cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: rid toString method from special cases" />
+    <MESSAGE value="refactor: split start method into separate methods" />
+    <MESSAGE value="style: bring variable names to a consistent style" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: bring variable names to a consistent style" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
