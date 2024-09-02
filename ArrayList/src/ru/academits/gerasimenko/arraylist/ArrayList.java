@@ -352,19 +352,20 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public String toString() {
+        if (isEmpty()) {
+            return "[]";
+        }
+
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append('[');
 
-        if (!isEmpty()) {
-            final String separator = ", ";
+        final String separator = ", ";
 
-            for (E item : this) {
-                stringBuilder.append(item).append(separator);
-            }
-
-            stringBuilder.delete(stringBuilder.length() - separator.length(), stringBuilder.length());
+        for (E item : this) {
+            stringBuilder.append(item).append(separator);
         }
 
+        stringBuilder.delete(stringBuilder.length() - separator.length(), stringBuilder.length());
         return stringBuilder.append(']').toString();
     }
 
