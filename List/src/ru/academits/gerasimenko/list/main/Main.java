@@ -28,14 +28,14 @@ public class Main {
         System.out.println("List: " + integersList);
         System.out.println();
 
-        System.out.println("Value of deleted list element at index 2: " + integersList.remove(2));
+        System.out.println("Value of removed list element at index 2: " + integersList.remove(2));
         System.out.println("List: " + integersList);
-        System.out.println("Value of deleted first element: " + integersList.removeFirst());
+        System.out.println("Value of removed first element: " + integersList.removeFirst());
         System.out.println("List: " + integersList);
         System.out.println();
 
         integersList.add(0, 4);
-        integersList.add(1, 6);
+        integersList.add(1, null);
         integersList.add(2, 5);
         System.out.println("List after adding new elements: " + integersList);
 
@@ -43,10 +43,10 @@ public class Main {
         System.out.println("List after reverse: " + integersList);
         System.out.println();
 
-        System.out.println("Trying to delete element with value 5");
+        System.out.println("Trying to remove element with value 5");
 
-        if (integersList.remove(Integer.valueOf(5))) {
-            System.out.println("Element successfully deleted.");
+        if (integersList.remove(null)) {
+            System.out.println("Element successfully removed.");
         } else {
             System.out.println("This element is not in the list.");
         }
