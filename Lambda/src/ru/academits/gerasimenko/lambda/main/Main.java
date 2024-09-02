@@ -2,23 +2,20 @@ package ru.academits.gerasimenko.lambda.main;
 
 import ru.academits.gerasimenko.lambda.Person;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        List<Person> persons = new LinkedList<>();
-        persons.add(new Person("Svetlana", 15));
-        persons.add(new Person("Kirill", 23));
-        persons.add(new Person("Kirill", 14));
-        persons.add(new Person("Egor", 17));
-        persons.add(new Person("Ivan", 23));
-        persons.add(new Person("Alexandr", 45));
-        persons.add(new Person("Olga", 47));
-        persons.add(new Person("Olga", 13));
-        persons.add(new Person("Egor", 27));
+        List<Person> persons = new ArrayList<>(List.of(
+                new Person("Ivan", 23),
+                new Person("Alexandr", 45),
+                new Person("Olga", 47),
+                new Person("Olga", 25),
+                new Person("Egor", 27)
+        ));
 
         List<String> uniqueNames = persons.stream()
                 .map(Person::name)
@@ -35,14 +32,18 @@ public class Main {
                 .toList();
 
         double minorsAverageAge = minors.stream()
-                .collect(Collectors.averagingDouble(Person::age));
+                .collect(Collectors.averagingInt(Person::age));
 
-        System.out.println("Minors average age: " + minorsAverageAge);
+        if (minorsAverageAge == 0) {
+            System.out.println("There are no people under 18 years of age on the list.");
+        } else {
+            System.out.println("Minors average age: " + minorsAverageAge);
+        }
 
-        Map<String, Double> namesakesAverageAge = persons.stream()
+        Map<String, Double> namesakesAverageAges = persons.stream()
                 .collect(Collectors.groupingBy(Person::name, Collectors.averagingDouble(Person::age)));
 
-        System.out.println("Namesakes average age: " + namesakesAverageAge);
+        System.out.println("Namesakes average age: " + namesakesAverageAges);
 
         System.out.println("Names of people from 20 to 45 in descending order of age:");
         persons.stream()

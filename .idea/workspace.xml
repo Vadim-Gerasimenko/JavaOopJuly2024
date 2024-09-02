@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="refactor: split start method into separate methods">
+    <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="fix:">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/ArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/ArrayListHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/ArrayListHome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lambda/src/ru/academits/gerasimenko/lambda/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda/src/ru/academits/gerasimenko/lambda/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,37 +47,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ArrayListHome.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.Test.executor": "Run",
-    "Application.ru.academits.gerasimenko.arraylist.main.Main.executor": "Run",
-    "Application.ru.academits.gerasimenko.csv.main.Main.executor": "Run",
-    "Application.ru.academits.gerasimenko.graph.main.Main.executor": "Run",
-    "Application.ru.academits.gerasimenko.lambda.main.Main.executor": "Run",
-    "Application.ru.academits.gerasimenko.list.main.Main.executor": "Run",
-    "Application.ru.academits.gerasimenko.matrix.main.Main.executor": "Run",
-    "Application.ru.academits.gerasimenko.shapes.main.Main.executor": "Run",
-    "Application.ru.academits.gerasimenko.temperature.Main.executor": "Run",
-    "Application.ru.academits.gerasimenko.tree.main.Main.executor": "Run",
-    "Application.ru.academits.gerasimenko.vector.main.Main.executor": "Run",
-    "Application.ru.academits.gerasimenko.vector.main_matrix.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024",
-    "onboarding.tips.debug.path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Temperature/src/ru/academits/gerasimenko/temperature/Main.java",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ArrayListHome.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.arraylist.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.csv.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.graph.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.lambda.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.list.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.matrix.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.shapes.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.temperature.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.tree.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.vector.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.vector.main_matrix.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Temperature/src/ru/academits/gerasimenko/temperature/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/files" />
@@ -87,7 +87,7 @@
       <recent name="$PROJECT_DIR$/Csv/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.lambda.main.Main">
     <configuration name="ArrayListHome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylisthome.ArrayListHome" />
       <module name="ArrayListHome" />
@@ -114,12 +114,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.graph.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.graph.main.Main" />
-      <module name="Graph" />
+    <configuration name="ru.academits.gerasimenko.lambda.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.lambda.main.Main" />
+      <module name="Lambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.graph.main.*" />
+          <option name="PATTERN" value="ru.academits.gerasimenko.lambda.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ru.academits.gerasimenko.lambda.main.Main" />
+        <item itemvalue="Application.ArrayListHome" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.list.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.temperature.Main" />
-        <item itemvalue="Application.ArrayListHome" />
-        <item itemvalue="Application.ru.academits.gerasimenko.graph.main.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -356,7 +356,31 @@
       <option name="project" value="LOCAL" />
       <updated>1724773323134</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="feat: add equals() and hashcode() methods">
+      <option name="closed" value="true" />
+      <created>1724829001120</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1724829001120</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fix: rectify program crashing problem with missing file designate it as a separate method">
+      <option name="closed" value="true" />
+      <created>1724830195539</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1724830195539</updated>
+    </task>
+    <task id="LOCAL-00026" summary="style: fix typos in Main">
+      <option name="closed" value="true" />
+      <created>1724830322742</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1724830322742</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -371,7 +395,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Add Range project" />
     <MESSAGE value="Added solution for HashTable task" />
     <MESSAGE value="Changed ways to print tree traversal" />
@@ -391,9 +414,13 @@
     <MESSAGE value="chore: change frame default height" />
     <MESSAGE value="fix: allow the remove method to work with null-value" />
     <MESSAGE value="refactor: rid toString method from special cases" />
-    <MESSAGE value="refactor: split start method into separate methods" />
     <MESSAGE value="style: bring variable names to a consistent style" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: bring variable names to a consistent style" />
+    <MESSAGE value="feat: add equals() and hashcode() methods" />
+    <MESSAGE value="refactor: split start method into separate methods" />
+    <MESSAGE value="fix: rectify program crashing problem with missing file designate it as a separate method" />
+    <MESSAGE value="fix:" />
+    <MESSAGE value="style: fix typos in Main" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: fix typos in Main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
