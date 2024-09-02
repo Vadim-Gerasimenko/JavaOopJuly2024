@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="fix:">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/ArrayListHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/ArrayListHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/ru/academits/gerasimenko/arraylist/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" afterDir="false" />
@@ -52,6 +53,7 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.Test.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.arraylist.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.arraylisthome.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.csv.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.graph.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.lambda.main.Main.executor&quot;: &quot;Run&quot;,
@@ -86,7 +88,7 @@
       <recent name="$PROJECT_DIR$/Csv/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ru.academits.gerasimenko.arraylisthome.main.Main">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="ArrayListHome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylisthome.ArrayListHome" />
       <module name="ArrayListHome" />
@@ -154,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ru.academits.gerasimenko.list.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.arraylisthome.main.Main" />
         <item itemvalue="Application.ArrayListHome" />
         <item itemvalue="Application.ru.academits.gerasimenko.lambda.main.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.list.main.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -387,7 +389,47 @@
       <option name="project" value="LOCAL" />
       <updated>1725253366892</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="refactor: design subtasks as separate methods">
+      <option name="closed" value="true" />
+      <created>1725255124725</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1725255124725</updated>
+    </task>
+    <task id="LOCAL-00029" summary="fix: get rid of unnecessary dependencies">
+      <option name="closed" value="true" />
+      <created>1725255179442</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1725255179442</updated>
+    </task>
+    <task id="LOCAL-00030" summary="refactor: consider the case with an empty list in the toString() method">
+      <option name="closed" value="true" />
+      <created>1725284323547</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1725284323547</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fix: remove 'if' from loop">
+      <option name="closed" value="true" />
+      <created>1725285621503</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1725285621503</updated>
+    </task>
+    <task id="LOCAL-00032" summary="style: make the output text match the command names">
+      <option name="closed" value="true" />
+      <created>1725285727884</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1725285727884</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -402,11 +444,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added solution for HashTable task" />
-    <MESSAGE value="Changed ways to print tree traversal" />
-    <MESSAGE value="Added BFS, DFS and recursive DFS" />
-    <MESSAGE value="Changed vertices name" />
-    <MESSAGE value="Corrected typo" />
     <MESSAGE value="Added solution for the task" />
     <MESSAGE value="Added model 'TemperatureConverter'" />
     <MESSAGE value="Added controller and console view" />
@@ -425,9 +462,14 @@
     <MESSAGE value="refactor: split start method into separate methods" />
     <MESSAGE value="fix: rectify program crashing problem with missing file designate it as a separate method" />
     <MESSAGE value="style: fix typos in Main" />
-    <MESSAGE value="fix:" />
     <MESSAGE value="fix: consider a special case in the absence of people under 18 on the list" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: consider a special case in the absence of people under 18 on the list" />
+    <MESSAGE value="refactor: design subtasks as separate methods" />
+    <MESSAGE value="fix: get rid of unnecessary dependencies" />
+    <MESSAGE value="refactor: consider the case with an empty list in the toString() method" />
+    <MESSAGE value="fix: remove 'if' from loop" />
+    <MESSAGE value="fix:" />
+    <MESSAGE value="style: make the output text match the command names" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: make the output text match the command names" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
