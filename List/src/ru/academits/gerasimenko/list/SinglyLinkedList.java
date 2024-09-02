@@ -1,6 +1,7 @@
 package ru.academits.gerasimenko.list;
 
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class SinglyLinkedList<E> {
     private ListNode<E> head;
@@ -14,7 +15,7 @@ public class SinglyLinkedList<E> {
     }
 
     public E getFirst() {
-        validateEmpty();
+        validateForEmptiness();
         return head.getData();
     }
 
@@ -49,7 +50,7 @@ public class SinglyLinkedList<E> {
         return size == 0;
     }
 
-    private void validateEmpty() {
+    private void validateForEmptiness() {
         if (isEmpty()) {
             throw new NoSuchElementException("List is empty.");
         }
@@ -90,7 +91,7 @@ public class SinglyLinkedList<E> {
     }
 
     public E removeFirst() {
-        validateEmpty();
+        validateForEmptiness();
 
         E removedNodeData = head.getData();
         head = head.getNext();
@@ -99,7 +100,7 @@ public class SinglyLinkedList<E> {
         return removedNodeData;
     }
 
-    private E removeNext(ListNode<E> previousNode) {
+    private E removeNextNode(ListNode<E> previousNode) {
         if (previousNode == null) {
             return removeFirst();
         }
@@ -119,7 +120,7 @@ public class SinglyLinkedList<E> {
             return removeFirst();
         }
 
-        return removeNext(getNode(index - 1));
+        return removeNextNode(getNode(index - 1));
     }
 
     public boolean remove(E data) {
@@ -128,16 +129,9 @@ public class SinglyLinkedList<E> {
              previousNode = currentNode, currentNode = currentNode.getNext()) {
             E currentNodeData = currentNode.getData();
 
-            if (currentNodeData == null) {
-                if (data == null) {
-                    removeNext(previousNode);
-                    return true;
-                }
-            } else {
-                if (currentNodeData.equals(data)) {
-                    removeNext(previousNode);
-                    return true;
-                }
+            if (Objects.equals(currentNodeData, data)) {
+                removeNextNode(previousNode);
+                return true;
             }
         }
 
@@ -164,39 +158,34 @@ public class SinglyLinkedList<E> {
     }
 
     public void reverse() {
-        ListNode<E> currentNode = head;
+        ListNode<E> previousNode = null;
 
-        for (ListNode<E> previousNode = null, nextNode;
-             currentNode != null;
-             currentNode = nextNode) {
+        for (ListNode<E> currentNode = head, nextNode; currentNode != null; currentNode = nextNode) {
             nextNode = currentNode.getNext();
 
             currentNode.setNext(previousNode);
             previousNode = currentNode;
-
-            if (nextNode == null) {
-                break;
-            }
         }
 
-        head = currentNode;
+        head = previousNode;
     }
 
     @Override
     public String toString() {
+        if (isEmpty()) {
+            return "[]";
+        }
+
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append('[');
 
-        if (!isEmpty()) {
-            final String separator = ", ";
+        final String separator = ", ";
 
-            for (ListNode<E> currentNode = head; currentNode != null; currentNode = currentNode.getNext()) {
-                stringBuilder.append(currentNode.getData()).append(", ");
-            }
-
-            stringBuilder.delete(stringBuilder.length() - separator.length(), stringBuilder.length());
+        for (ListNode<E> currentNode = head; currentNode != null; currentNode = currentNode.getNext()) {
+            stringBuilder.append(currentNode.getData()).append(", ");
         }
 
+        stringBuilder.delete(stringBuilder.length() - separator.length(), stringBuilder.length());
         return stringBuilder.append(']').toString();
     }
 }
