@@ -2,7 +2,6 @@ package ru.academits.gerasimenko.arraylisthome;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ArrayListHome {
     public static ArrayList<String> getFileLines(String filePath) {
@@ -21,42 +20,27 @@ public class ArrayListHome {
         }
     }
 
-    public static void main(String[] args) {
-        String filePath = "ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/files/in.txt";
-        ArrayList<String> lines = getFileLines(filePath);
+    public static void removeEvenNumbers(ArrayList<Integer> numbers) {
+        int numbersCount = numbers.size();
 
-        if (lines != null) {
-            System.out.println("File lines:");
-            lines.forEach(System.out::println);
-            System.out.println();
+        for (int i = 0; i < numbersCount; ++i) {
+            if (numbers.get(i) % 2 == 0) {
+                numbers.remove(i);
+                --numbersCount;
+                --i;
+            }
         }
+    }
 
-        ArrayList<Integer> numbers = new ArrayList<>(List.of(1, 2, 2, 4, 3, 4, 5, 6, 7, 8));
-        numbers.removeIf(number -> number % 2 == 0);
-
-        System.out.println("List of numbers after removing even numbers:");
+    public static ArrayList<Integer> getUniqueNumbers(ArrayList<Integer> numbers) {
+        ArrayList<Integer> uniqueIntegers = new ArrayList<>(numbers.size());
 
         for (Integer number : numbers) {
-            System.out.print(number + " ");
-        }
-
-        System.out.println();
-
-        ArrayList<Integer> integers = new ArrayList<>(List.of(1, 5, 2, 1, 3, 5));
-        ArrayList<Integer> uniqueIntegers = new ArrayList<>();
-
-        for (Integer integer : integers) {
-            if (!uniqueIntegers.contains(integer)) {
-                uniqueIntegers.add(integer);
+            if (!uniqueIntegers.contains(number)) {
+                uniqueIntegers.add(number);
             }
         }
 
-        System.out.println("List of unique integers:");
-
-        for (Integer uniqueInteger : uniqueIntegers) {
-            System.out.print(uniqueInteger + " ");
-        }
-
-        System.out.println();
+        return uniqueIntegers;
     }
 }

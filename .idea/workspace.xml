@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/ArrayListHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/ArrayListHome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lambda/src/ru/academits/gerasimenko/lambda/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda/src/ru/academits/gerasimenko/lambda/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +86,7 @@
       <recent name="$PROJECT_DIR$/Csv/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ru.academits.gerasimenko.lambda.main.Main">
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.arraylisthome.main.Main">
     <configuration name="ArrayListHome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylisthome.ArrayListHome" />
       <module name="ArrayListHome" />
@@ -107,6 +106,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.academits.gerasimenko.arraylist.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ru.academits.gerasimenko.arraylisthome.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylisthome.main.Main" />
+      <module name="ArrayListHome" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.academits.gerasimenko.arraylisthome.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -140,26 +152,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.temperature.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.temperature.Main" />
-      <module name="Temperature" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.temperature.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ru.academits.gerasimenko.lambda.main.Main" />
+        <item itemvalue="Application.ru.academits.gerasimenko.arraylisthome.main.Main" />
         <item itemvalue="Application.ArrayListHome" />
+        <item itemvalue="Application.ru.academits.gerasimenko.lambda.main.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.list.main.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.temperature.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -380,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724830322742</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="fix: consider a special case in the absence of people under 18 on the list">
+      <option name="closed" value="true" />
+      <created>1725253366892</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1725253366892</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -395,7 +402,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Range project" />
     <MESSAGE value="Added solution for HashTable task" />
     <MESSAGE value="Changed ways to print tree traversal" />
     <MESSAGE value="Added BFS, DFS and recursive DFS" />
@@ -418,9 +424,10 @@
     <MESSAGE value="feat: add equals() and hashcode() methods" />
     <MESSAGE value="refactor: split start method into separate methods" />
     <MESSAGE value="fix: rectify program crashing problem with missing file designate it as a separate method" />
-    <MESSAGE value="fix:" />
     <MESSAGE value="style: fix typos in Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: fix typos in Main" />
+    <MESSAGE value="fix:" />
+    <MESSAGE value="fix: consider a special case in the absence of people under 18 on the list" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: consider a special case in the absence of people under 18 on the list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
