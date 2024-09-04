@@ -137,14 +137,12 @@ public class Tree<E> {
         rightSubtreeMinNode.setLeftChild(removedNodeLeftChild);
 
         if (removedNodeParent == null) {
-            root = removedNode.getRightChild();
+            root = removedNodeRightChild;
             --size;
             return true;
         }
 
-        if (rightSubtreeMinNodeParent == removedNode) {
-            rightSubtreeMinNode.setLeftChild(removedNodeLeftChild);
-        } else {
+        if (rightSubtreeMinNodeParent != removedNode) {
             rightSubtreeMinNodeParent.setLeftChild(rightSubtreeMinNode.getRightChild());
             rightSubtreeMinNode.setRightChild(removedNodeRightChild);
         }
