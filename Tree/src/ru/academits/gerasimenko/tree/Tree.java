@@ -1,9 +1,6 @@
 package ru.academits.gerasimenko.tree;
 
-import java.util.Comparator;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Tree<E> {
     private TreeNode<E> root;
@@ -18,8 +15,12 @@ public class Tree<E> {
         this.comparator = comparator;
     }
 
-    @SuppressWarnings("unchecked")
     private int compare(Object o1, Object o2) {
+        if (o1 == null || o2 == null) {
+            return o1 == o2 ? 0 : (o1 == null ? -1 : 1);
+        }
+
+        //noinspection unchecked
         return comparator == null
                 ? ((Comparable<E>) o1).compareTo((E) o2)
                 : comparator.compare((E) o1, (E) o2);
