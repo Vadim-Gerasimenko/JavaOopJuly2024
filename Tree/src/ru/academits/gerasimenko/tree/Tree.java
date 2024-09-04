@@ -6,17 +6,17 @@ import java.util.Queue;
 
 public class Tree<E extends Comparable<E>> {
     private TreeNode<E> root;
-    private int treeNodesCount;
+    private int size;
 
     public Tree() {
     }
 
-    public int getTreeNodesCount() {
-        return treeNodesCount;
+    public int getSize() {
+        return size;
     }
 
     public void insert(E data) {
-        validateData(data);
+        validateTreeNodeData(data);
         TreeNode<E> currentNode = root;
 
         while (currentNode != null) {
@@ -27,7 +27,7 @@ public class Tree<E extends Comparable<E>> {
                 }
 
                 currentNode.setLeftChild(new TreeNode<>(data));
-                ++treeNodesCount;
+                ++size;
                 return;
             }
 
@@ -37,16 +37,16 @@ public class Tree<E extends Comparable<E>> {
             }
 
             currentNode.setRightChild(new TreeNode<>(data));
-            ++treeNodesCount;
+            ++size;
             return;
         }
 
         root = new TreeNode<>(data);
-        ++treeNodesCount;
+        ++size;
     }
 
     public TreeNode<E> search(E data) {
-        validateData(data);
+        validateTreeNodeData(data);
         TreeNode<E> currentNode = root;
 
         while (currentNode != null) {
@@ -66,7 +66,7 @@ public class Tree<E extends Comparable<E>> {
     }
 
     public boolean remove(E data) {
-        validateData(data);
+        validateTreeNodeData(data);
 
         TreeNode<E> removedNode = root;
         TreeNode<E> removedNodeParent = null;
@@ -100,7 +100,7 @@ public class Tree<E extends Comparable<E>> {
 
             if (removedNodeParent == null) {
                 root = removedNodeSignificantChild;
-                --treeNodesCount;
+                --size;
                 return true;
             }
 
@@ -110,7 +110,7 @@ public class Tree<E extends Comparable<E>> {
                 removedNodeParent.setRightChild(removedNodeSignificantChild);
             }
 
-            --treeNodesCount;
+            --size;
             return true;
         }
 
@@ -126,7 +126,7 @@ public class Tree<E extends Comparable<E>> {
 
         if (removedNodeParent == null) {
             root = removedNode.getRightChild();
-            --treeNodesCount;
+            --size;
             return true;
         }
 
@@ -143,7 +143,7 @@ public class Tree<E extends Comparable<E>> {
             removedNodeParent.setRightChild(rightSubtreeMinNode);
         }
 
-        --treeNodesCount;
+        --size;
         return true;
 
     }
@@ -158,16 +158,16 @@ public class Tree<E extends Comparable<E>> {
         }
     }
 
-    private static <E extends Comparable<E>> void validateData(E data) {
+    private static <E extends Comparable<E>> void validateTreeNodeData(E data) {
         if (data == null) {
-            throw new IllegalArgumentException("Data should not be null.");
+            throw new IllegalArgumentException("Tree node data should not be null.");
         }
     }
 
     public static <E extends Comparable<E>> void breadthFirstSearch(Tree<E> tree) {
         validateTreeForNull(tree);
 
-        if (tree.getTreeNodesCount() == 0) {
+        if (tree.getSize() == 0) {
             return;
         }
 
@@ -196,28 +196,28 @@ public class Tree<E extends Comparable<E>> {
         System.out.println();
     }
 
-    public static <E extends Comparable<E>> void depthFirstSearchRecursive(Tree<E> tree) {
+    public static <E extends Comparable<E>> void depthFirstSearchRecursively(Tree<E> tree) {
         validateTreeForNull(tree);
 
         System.out.println("Recursive DFS and print nodes data:");
-        visit(tree.root);
+        visitTreeNodesRecursively(tree.root);
         System.out.println();
     }
 
-    private static <E extends Comparable<E>> void visit(TreeNode<E> node) {
+    private static <E extends Comparable<E>> void visitTreeNodesRecursively(TreeNode<E> node) {
         if (node == null) {
             return;
         }
 
         printNodeData(node);
-        visit(node.getLeftChild());
-        visit(node.getRightChild());
+        visitTreeNodesRecursively(node.getLeftChild());
+        visitTreeNodesRecursively(node.getRightChild());
     }
 
     public static <E extends Comparable<E>> void depthFirstSearch(Tree<E> tree) {
         validateTreeForNull(tree);
 
-        if (tree.getTreeNodesCount() == 0) {
+        if (tree.getSize() == 0) {
             return;
         }
 
