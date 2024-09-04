@@ -127,9 +127,7 @@ public class SinglyLinkedList<E> {
         for (ListNode<E> currentNode = head, previousNode = null;
              currentNode != null;
              previousNode = currentNode, currentNode = currentNode.getNext()) {
-            E currentNodeData = currentNode.getData();
-
-            if (Objects.equals(currentNodeData, data)) {
+            if (Objects.equals(currentNode.getData(), data)) {
                 removeNextNode(previousNode);
                 return true;
             }
@@ -147,10 +145,10 @@ public class SinglyLinkedList<E> {
 
         listCopy.head = new ListNode<>(head.getData());
 
-        for (ListNode<E> listNode = head.getNext(), listNodeCopy = listCopy.head;
+        for (ListNode<E> listNode = head.getNext(), listCopyNode = listCopy.head;
              listNode != null;
-             listNode = listNode.getNext(), listNodeCopy = listNodeCopy.getNext()) {
-            listNodeCopy.setNext(new ListNode<>(listNode.getData()));
+             listNode = listNode.getNext(), listCopyNode = listCopyNode.getNext()) {
+            listCopyNode.setNext(new ListNode<>(listNode.getData()));
         }
 
         listCopy.size = size;
