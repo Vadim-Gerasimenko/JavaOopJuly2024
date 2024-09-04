@@ -1,14 +1,28 @@
 package ru.academits.gerasimenko.tree;
 
+import java.util.Comparator;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Tree<E extends Comparable<E>> {
+public class Tree<E> {
     private TreeNode<E> root;
     private int size;
 
+    private Comparator<E> comparator;
+
     public Tree() {
+    }
+
+    public Tree(Comparator<E> comparator) {
+        this.comparator = comparator;
+    }
+
+    @SuppressWarnings("unchecked")
+    private int compare(Object o1, Object o2) {
+        return comparator == null
+                ? ((Comparable<E>) o1).compareTo((E) o2)
+                : comparator.compare((E) o1, (E) o2);
     }
 
     public int getSize() {
@@ -16,11 +30,16 @@ public class Tree<E extends Comparable<E>> {
     }
 
     public void insert(E data) {
-        validateTreeNodeData(data);
+        if (root == null) {
+            root = new TreeNode<>(data);
+            ++size;
+            return;
+        }
+
         TreeNode<E> currentNode = root;
 
         while (currentNode != null) {
-            if (data.compareTo(currentNode.getData()) < 0) {
+            if (compare(data, currentNode.getData()) < 0) {
                 if (currentNode.getLeftChild() != null) {
                     currentNode = currentNode.getLeftChild();
                     continue;
@@ -40,43 +59,34 @@ public class Tree<E extends Comparable<E>> {
             ++size;
             return;
         }
-
-        root = new TreeNode<>(data);
-        ++size;
     }
 
-    public TreeNode<E> search(E data) {
-        validateTreeNodeData(data);
+    public boolean contains(E data) {
         TreeNode<E> currentNode = root;
 
         while (currentNode != null) {
-            if (data.equals(currentNode.getData())) {
-                return currentNode;
+            if (compare(data, currentNode.getData()) == 0) {
+                return true;
             }
 
-            if (data.compareTo(currentNode.getData()) < 0) {
-                currentNode = currentNode.getLeftChild();
-                continue;
-            }
-
-            currentNode = currentNode.getRightChild();
+            currentNode = compare(data, currentNode.getData()) < 0
+                    ? currentNode.getLeftChild()
+                    : currentNode.getRightChild();
         }
 
-        return null;
+        return false;
     }
 
     public boolean remove(E data) {
-        validateTreeNodeData(data);
-
         TreeNode<E> removedNode = root;
         TreeNode<E> removedNodeParent = null;
 
         while (removedNode != null) {
-            if (data.equals(removedNode.getData())) {
+            if (compare(data, removedNode.getData()) == 0) {
                 break;
             }
 
-            if (data.compareTo(removedNode.getData()) < 0) {
+            if (compare(data, removedNode.getData()) < 0) {
                 removedNodeParent = removedNode;
                 removedNode = removedNode.getLeftChild();
                 continue;
@@ -148,23 +158,17 @@ public class Tree<E extends Comparable<E>> {
 
     }
 
-    private static <E extends Comparable<E>> void printNodeData(TreeNode<E> node) {
+    private static <E> void printNodeData(TreeNode<E> node) {
         System.out.print(node.getData() + " ");
     }
 
-    private static <E extends Comparable<E>> void validateTreeForNull(Tree<E> tree) {
+    private static <E> void validateTreeForNull(Tree<E> tree) {
         if (tree == null) {
             throw new NullPointerException("Tree should not refer to null.");
         }
     }
 
-    private static <E extends Comparable<E>> void validateTreeNodeData(E data) {
-        if (data == null) {
-            throw new IllegalArgumentException("Tree node data should not be null.");
-        }
-    }
-
-    public static <E extends Comparable<E>> void breadthFirstSearch(Tree<E> tree) {
+    public static <E> void breadthFirstSearch(Tree<E> tree) {
         validateTreeForNull(tree);
 
         if (tree.getSize() == 0) {
@@ -196,7 +200,7 @@ public class Tree<E extends Comparable<E>> {
         System.out.println();
     }
 
-    public static <E extends Comparable<E>> void depthFirstSearchRecursively(Tree<E> tree) {
+    public static <E> void depthFirstSearchRecursively(Tree<E> tree) {
         validateTreeForNull(tree);
 
         System.out.println("Recursive DFS and print nodes data:");
@@ -204,7 +208,7 @@ public class Tree<E extends Comparable<E>> {
         System.out.println();
     }
 
-    private static <E extends Comparable<E>> void visitTreeNodesRecursively(TreeNode<E> node) {
+    private static <E> void visitTreeNodesRecursively(TreeNode<E> node) {
         if (node == null) {
             return;
         }
@@ -214,7 +218,7 @@ public class Tree<E extends Comparable<E>> {
         visitTreeNodesRecursively(node.getRightChild());
     }
 
-    public static <E extends Comparable<E>> void depthFirstSearch(Tree<E> tree) {
+    public static <E> void depthFirstSearch(Tree<E> tree) {
         validateTreeForNull(tree);
 
         if (tree.getSize() == 0) {
