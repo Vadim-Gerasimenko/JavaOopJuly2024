@@ -206,22 +206,22 @@ public class Tree<E> {
         }
 
         Deque<TreeNode<E>> stack = new LinkedList<>();
-        stack.addFirst(root);
+        stack.push(root);
 
         while (!stack.isEmpty()) {
-            TreeNode<E> node = stack.removeFirst();
+            TreeNode<E> node = stack.pop();
             consumer.accept(node.getData());
 
             TreeNode<E> nodeRightChild = node.getRightChild();
 
             if (nodeRightChild != null) {
-                stack.addFirst(nodeRightChild);
+                stack.push(nodeRightChild);
             }
 
             TreeNode<E> nodeLeftChild = node.getLeftChild();
 
             if (nodeLeftChild != null) {
-                stack.addFirst(nodeLeftChild);
+                stack.push(nodeLeftChild);
             }
         }
     }
