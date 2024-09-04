@@ -1,6 +1,7 @@
 package ru.academits.gerasimenko.tree;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 public class Tree<E> {
     private TreeNode<E> root;
@@ -159,31 +160,17 @@ public class Tree<E> {
 
     }
 
-    private static <E> void printNodeData(TreeNode<E> node) {
-        System.out.print(node.getData() + " ");
-    }
-
-    private static <E> void validateTreeForNull(Tree<E> tree) {
-        if (tree == null) {
-            throw new NullPointerException("Tree should not refer to null.");
-        }
-    }
-
-    public static <E> void breadthFirstSearch(Tree<E> tree) {
-        validateTreeForNull(tree);
-
-        if (tree.getSize() == 0) {
+    public void breadthFirstSearch(Consumer<E> consumer) {
+        if (getSize() == 0) {
             return;
         }
 
-        System.out.println("BFS and print nodes data:");
-
         Queue<TreeNode<E>> queue = new LinkedList<>();
-        queue.add(tree.root);
+        queue.add(root);
 
         while (!queue.isEmpty()) {
             TreeNode<E> node = queue.remove();
-            printNodeData(node);
+            consumer.accept(node.getData());
 
             TreeNode<E> nodeLeftChild = node.getLeftChild();
 
@@ -197,43 +184,33 @@ public class Tree<E> {
                 queue.add(nodeRightChild);
             }
         }
-
-        System.out.println();
     }
 
-    public static <E> void depthFirstSearchRecursively(Tree<E> tree) {
-        validateTreeForNull(tree);
-
-        System.out.println("Recursive DFS and print nodes data:");
-        visitTreeNodesRecursively(tree.root);
-        System.out.println();
+    public void depthFirstSearchRecursively(Consumer<E> consumer) {
+        visitTreeNodesRecursively(root, consumer);
     }
 
-    private static <E> void visitTreeNodesRecursively(TreeNode<E> node) {
+    private static <E> void visitTreeNodesRecursively(TreeNode<E> node, Consumer<E> consumer) {
         if (node == null) {
             return;
         }
 
-        printNodeData(node);
-        visitTreeNodesRecursively(node.getLeftChild());
-        visitTreeNodesRecursively(node.getRightChild());
+        consumer.accept(node.getData());
+        visitTreeNodesRecursively(node.getLeftChild(), consumer);
+        visitTreeNodesRecursively(node.getRightChild(), consumer);
     }
 
-    public static <E> void depthFirstSearch(Tree<E> tree) {
-        validateTreeForNull(tree);
-
-        if (tree.getSize() == 0) {
+    public void depthFirstSearch(Consumer<E> consumer) {
+        if (getSize() == 0) {
             return;
         }
 
-        System.out.println("DFS and print nodes data:");
-
         Deque<TreeNode<E>> stack = new LinkedList<>();
-        stack.addFirst(tree.root);
+        stack.addFirst(root);
 
         while (!stack.isEmpty()) {
             TreeNode<E> node = stack.removeFirst();
-            printNodeData(node);
+            consumer.accept(node.getData());
 
             TreeNode<E> nodeRightChild = node.getRightChild();
 
@@ -247,7 +224,5 @@ public class Tree<E> {
                 stack.addFirst(nodeLeftChild);
             }
         }
-
-        System.out.println();
     }
 }
