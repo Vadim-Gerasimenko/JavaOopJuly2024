@@ -74,6 +74,10 @@ public class HashTable<E> implements Collection<E> {
                 throw new NoSuchElementException("Collection is over.");
             }
 
+            if (initialModCount != modCount) {
+                throw new ConcurrentModificationException("The collection was modified.");
+            }
+
             while (true) {
                 while ((list = arrayList.get(arrayIndex)) == null) {
                     ++arrayIndex;
@@ -89,22 +93,16 @@ public class HashTable<E> implements Collection<E> {
                 ++arrayIndex;
             }
 
-            if (initialModCount != modCount) {
-                throw new ConcurrentModificationException("The collection was modified.");
-            }
-
             ++passedElementsCount;
             return list.get(listIndex);
         }
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public Iterator<E> iterator() {
         return new HashTableIterator();
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public Object[] toArray() {
         Object[] array = new Object[size];
@@ -113,26 +111,32 @@ public class HashTable<E> implements Collection<E> {
         return array;
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public <T> T[] toArray(T[] a) {
-        if (a != null && a.length >= size) {
+        if (a == null) {
+            throw new NullPointerException("The passed array must not refer to null.");
+        }
+
+        if (a.length >= size) {
             copyToArray(a);
+
+            if (a.length > size) {
+                a[size] = null;
+            }
+
             return a;
         }
 
-        @SuppressWarnings("unchecked") T[] array = (T[]) toArray();
-        return array;
+        //noinspection unchecked
+        return (T[]) Arrays.copyOf(toArray(), size, a.getClass());
     }
 
     private void copyToArray(Object[] array) {
         int i = 0;
 
-        for (List<E> list : arrayList) {
-            if (list != null) {
-                System.arraycopy(list.toArray(), 0, array, i, list.size());
-                i += list.size();
-            }
+        for (E e : this) {
+            array[i] = e;
+            ++i;
         }
     }
 
