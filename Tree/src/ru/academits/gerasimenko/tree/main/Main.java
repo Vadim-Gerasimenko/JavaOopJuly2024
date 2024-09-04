@@ -23,11 +23,8 @@ public class Main {
         System.out.println();
 
         System.out.println("BFS and print nodes data:");
-        tree.breadthFirstSearch(integer -> System.out.print(integer + " "));
-        System.out.printf("%n%n");
 
-        System.out.println("DFS and print nodes data:");
-        tree.depthFirstSearch(integer -> System.out.print(integer + " "));
+        tree.breadthFirstSearch(integer -> System.out.print(integer + " "));
         System.out.printf("%n%n");
 
         final int searchElement = 4;
@@ -46,6 +43,16 @@ public class Main {
             System.out.println("The element '" + removedElement + "' was not removed.");
         }
 
+        System.out.println("BFS and print nodes data:");
+
+        tree.breadthFirstSearch(integer -> System.out.print(integer + " "));
+        System.out.printf("%n%n");
+
+        System.out.println("DFS and print nodes data:");
+
+        tree.depthFirstSearch(integer -> System.out.print(integer + " "));
+        System.out.printf("%n%n");
+
         System.out.println();
 
         Tree<Rectangle> rectanglesTree = new Tree<>(Comparator.comparingDouble(Rectangle::getArea));
@@ -56,9 +63,10 @@ public class Main {
         rectanglesTree.insert(new Rectangle(2, 4));
         rectanglesTree.insert(new Rectangle(50, 4));
 
+        System.out.println("Recursive DFS and print info about rectangles:");
+
         AtomicInteger i = new AtomicInteger(1);
 
-        System.out.println("Recursive DFS and print info about rectangles:");
         rectanglesTree.depthFirstSearchRecursively(rectangle -> {
             System.out.println("Rectangle #" + i.getAndIncrement());
             System.out.println(rectangle);
