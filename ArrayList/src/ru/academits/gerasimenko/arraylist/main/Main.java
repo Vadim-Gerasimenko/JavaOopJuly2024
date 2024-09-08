@@ -26,7 +26,7 @@ public class Main {
         System.out.println("Size: " + integersArrayList3.size());
         System.out.println();
 
-        System.out.println("Traversing a 3-rd list through an iterator (forEach): ");
+        System.out.println("Traversing a 3-rd list through an iterator (forEach):");
 
         for (Integer integer : integersArrayList3) {
             System.out.print(integer + " ");
