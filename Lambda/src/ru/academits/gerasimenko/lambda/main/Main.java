@@ -2,20 +2,20 @@ package ru.academits.gerasimenko.lambda.main;
 
 import ru.academits.gerasimenko.lambda.Person;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        List<Person> persons = new ArrayList<>(List.of(
+        List<Person> persons = List.of(
                 new Person("Ivan", 23),
-                new Person("Alexandr", 45),
+                new Person("Alexandr", 25),
                 new Person("Olga", 47),
                 new Person("Olga", 25),
                 new Person("Egor", 27)
-        ));
+        );
 
         List<String> uniqueNames = persons.stream()
                 .map(Person::name)
@@ -31,17 +31,18 @@ public class Main {
                 .filter(person -> person.age() < 18)
                 .toList();
 
-        double minorsAverageAge = minors.stream()
-                .collect(Collectors.averagingInt(Person::age));
+        OptionalDouble minorsAverageAge = minors.isEmpty()
+                ? OptionalDouble.empty()
+                : OptionalDouble.of(minors.stream().collect(Collectors.averagingInt(Person::age)));
 
-        if (minorsAverageAge == 0) {
+        if (minorsAverageAge.isEmpty()) {
             System.out.println("There are no people under 18 years of age on the list.");
         } else {
-            System.out.println("Minors average age: " + minorsAverageAge);
+            System.out.println("Minors average age: " + minorsAverageAge.getAsDouble());
         }
 
         Map<String, Double> namesakesAverageAges = persons.stream()
-                .collect(Collectors.groupingBy(Person::name, Collectors.averagingDouble(Person::age)));
+                .collect(Collectors.groupingBy(Person::name, Collectors.averagingInt(Person::age)));
 
         System.out.println("Namesakes average age: " + namesakesAverageAges);
 
