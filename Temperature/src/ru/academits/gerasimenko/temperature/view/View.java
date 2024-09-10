@@ -7,9 +7,5 @@ public interface View {
 
     void setController(Controller controller);
 
-    void showCelsiusTemperature(double celsiusTemperature);
-
-    void showKelvinTemperature(double kelvinTemperature);
-
-    void showFahrenheitTemperature(double fahrenheitTemperature);
+    void showTemperature(double temperature);
 }
