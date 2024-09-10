@@ -1,15 +1,7 @@
 package ru.academits.gerasimenko.temperature.model;
 
+import ru.academits.gerasimenko.temperature.scales.Scale;
+
 public interface Converter {
-    double convertCelsiusToKelvin(double celsiusTemperature);
-
-    double convertCelsiusToFahrenheit(double celsiusTemperature);
-
-    double convertKelvinToCelsius(double kelvinTemperature);
-
-    double convertKelvinToFahrenheit(double kelvinTemperature);
-
-    double convertFahrenheitToCelsius(double fahrenheitTemperature);
-
-    double convertFahrenheitToKelvin(double fahrenheitTemperature);
+    double convert(double temperature, Scale inputScale, Scale outputScale);
 }
