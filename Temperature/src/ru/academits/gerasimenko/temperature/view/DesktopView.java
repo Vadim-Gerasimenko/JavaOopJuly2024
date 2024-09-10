@@ -1,13 +1,11 @@
 package ru.academits.gerasimenko.temperature.view;
 
-import ru.academits.gerasimenko.temperature.constants.FrameConfigureConstants;
-import ru.academits.gerasimenko.temperature.constants.ImagesConstants;
-import ru.academits.gerasimenko.temperature.constants.TemperatureScalesConstants;
+import ru.academits.gerasimenko.temperature.view.constants.*;
 import ru.academits.gerasimenko.temperature.controller.Controller;
+import ru.academits.gerasimenko.temperature.scales.*;
 
 import javax.swing.*;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class DesktopView implements View {
@@ -15,8 +13,8 @@ public class DesktopView implements View {
 
     private JLabel resultLabel;
 
-    private int inputScaleNumber;
-    private int outputScaleNumber;
+    private Scale inputScale;
+    private Scale outputScale;
 
     @Override
     public void start() {
@@ -24,99 +22,87 @@ public class DesktopView implements View {
             JFrame frame = new JFrame("Temperature converter");
             configureFrameWithDefaultSettings(frame);
 
-            JPanel panel = new JPanel();
+            List<Scale> scales = List.of(
+                    new CelsiusScale(),
+                    new KelvinScale(),
+                    new FahrenheitScale()
+            );
 
-            JRadioButton celsiusInputScaleSelectButton = getInputScaleSelectButton(TemperatureScalesConstants.CELSIUS_SCALE, TemperatureScalesConstants.CELSIUS_SCALE_NUMBER);
-            JRadioButton kelvinInputScaleSelectButton = getInputScaleSelectButton(TemperatureScalesConstants.KELVIN_SCALE, TemperatureScalesConstants.KELVIN_SCALE_NUMBER);
-            JRadioButton fahrenheitInputScaleSelectButton = getInputScaleSelectButton(TemperatureScalesConstants.FAHRENHEIT_SCALE, TemperatureScalesConstants.FAHRENHEIT_SCALE_NUMBER);
-            ButtonGroup inputScalesSelectButtons = getButtonGroup(List.of(celsiusInputScaleSelectButton, kelvinInputScaleSelectButton, fahrenheitInputScaleSelectButton));
+            List<AbstractButton> inputScalesSelectButtons = new LinkedList<>();
+            List<AbstractButton> outputScalesSelectButtons = new LinkedList<>();
 
-            JRadioButton celsiusOutputScaleSelectButton = getOutputScaleSelectButton(TemperatureScalesConstants.CELSIUS_SCALE, TemperatureScalesConstants.CELSIUS_SCALE_NUMBER);
-            JRadioButton kelvinOutputScaleSelectButton = getOutputScaleSelectButton(TemperatureScalesConstants.KELVIN_SCALE, TemperatureScalesConstants.KELVIN_SCALE_NUMBER);
-            JRadioButton fahrenheitOutputScaleSelectButton = getOutputScaleSelectButton(TemperatureScalesConstants.FAHRENHEIT_SCALE, TemperatureScalesConstants.FAHRENHEIT_SCALE_NUMBER);
-            ButtonGroup outputScalesSelectButtons = getButtonGroup(List.of(celsiusOutputScaleSelectButton, kelvinOutputScaleSelectButton, fahrenheitOutputScaleSelectButton));
+            ButtonGroup inputScalesSelectButtonsGroup = new ButtonGroup();
+            ButtonGroup outputScalesSelectButtonsGroup = new ButtonGroup();
 
-            JLabel inputScaleLabel = new JLabel("Input scale:");
-            JLabel inputTemperatureLabel = new JLabel("Enter temperature:");
-            JLabel outputScaleLabel = new JLabel("Output scale:");
+            for (Scale scale : scales) {
+                AbstractButton inputScaleSelectButton = getInputScaleSelectButton(scale);
+                inputScalesSelectButtons.add(inputScaleSelectButton);
+                inputScalesSelectButtonsGroup.add(inputScaleSelectButton);
+
+                AbstractButton outputScaleSelectButton = getOutputScaleSelectButton(scale);
+                outputScalesSelectButtons.add(outputScaleSelectButton);
+                outputScalesSelectButtonsGroup.add(outputScaleSelectButton);
+            }
+
+            inputScalesSelectButtons.getFirst().doClick();
+            outputScalesSelectButtons.getLast().doClick();
+
+            final JLabel inputScaleLabel = new JLabel("Input scale:");
+            final JLabel inputTemperatureLabel = new JLabel("Enter temperature:");
+            final JLabel outputScaleLabel = new JLabel("Output scale:");
 
             final int inputTextFieldColumnsCount = 10;
             JTextField inputTemperatureTextField = new JTextField(inputTextFieldColumnsCount);
+            JButton temperatureConvertingButton = getTemperatureConvertingButton(inputTemperatureTextField, frame);
 
-            JButton temperatureConvertingButton = new JButton("convert");
-            temperatureConvertingButton.addActionListener(e -> {
-                try {
-                    validateSelectedButton(inputScalesSelectButtons);
-                    validateSelectedButton(outputScalesSelectButtons);
-
-                    double inputTemperature = Double.parseDouble(inputTemperatureTextField.getText());
-                    controller.convert(inputScaleNumber, outputScaleNumber, inputTemperature);
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(frame, "Temperature must be a real number.", "Error", JOptionPane.ERROR_MESSAGE, ImagesConstants.TEMPERATURE_ICON);
-                } catch (IllegalCallerException ex) {
-                    JOptionPane.showMessageDialog(frame, "Select I/O scales.", "Warning", JOptionPane.WARNING_MESSAGE, ImagesConstants.TEMPERATURE_ICON);
-                }
-            });
-
-            resultLabel = new JLabel();
-
+            JPanel panel = new JPanel();
             panel.add(inputScaleLabel);
-            panel.add(celsiusInputScaleSelectButton);
-            panel.add(kelvinInputScaleSelectButton);
-            panel.add(fahrenheitInputScaleSelectButton);
+
+            for (AbstractButton button : inputScalesSelectButtons) {
+                panel.add(button);
+            }
 
             panel.add(inputTemperatureLabel);
             panel.add(inputTemperatureTextField);
             panel.add(temperatureConvertingButton);
-
             panel.add(outputScaleLabel);
-            panel.add(celsiusOutputScaleSelectButton);
-            panel.add(kelvinOutputScaleSelectButton);
-            panel.add(fahrenheitOutputScaleSelectButton);
 
+            for (AbstractButton button : outputScalesSelectButtons) {
+                panel.add(button);
+            }
+
+            resultLabel = new JLabel();
             panel.add(resultLabel);
 
             frame.add(panel);
         });
     }
 
-    private JRadioButton getInputScaleSelectButton(String buttonText, int scaleNumber) {
-        JRadioButton scaleSelectButton = new JRadioButton(buttonText);
-        scaleSelectButton.addActionListener(e -> inputScaleNumber = scaleNumber);
+    private JRadioButton getInputScaleSelectButton(Scale inputScale) {
+        JRadioButton scaleSelectButton = new JRadioButton(inputScale.getScaleName());
+        scaleSelectButton.addActionListener(e -> this.inputScale = inputScale);
         return scaleSelectButton;
     }
 
-    private JRadioButton getOutputScaleSelectButton(String buttonText, int scaleNumber) {
-        JRadioButton scaleSelectButton = new JRadioButton(buttonText);
-        scaleSelectButton.addActionListener(e -> outputScaleNumber = scaleNumber);
+    private JRadioButton getOutputScaleSelectButton(Scale outputScale) {
+        JRadioButton scaleSelectButton = new JRadioButton(outputScale.getScaleName());
+        scaleSelectButton.addActionListener(e -> this.outputScale = outputScale);
         return scaleSelectButton;
     }
 
-    private static void validateSelectedButton(ButtonGroup buttonGroup) {
-        boolean isSelected = false;
+    private JButton getTemperatureConvertingButton(JTextField inputTemperatureTextField, JFrame frame) {
+        JButton temperatureConvertingButton = new JButton("Convert");
 
-        for (Iterator<AbstractButton> buttonsIterator = buttonGroup.getElements().asIterator();
-             buttonsIterator.hasNext();
-             ) {
-            if (buttonsIterator.next().isSelected()) {
-                isSelected = true;
-                break;
+        temperatureConvertingButton.addActionListener(e -> {
+            try {
+                double inputTemperature = Double.parseDouble(inputTemperatureTextField.getText());
+                controller.convert(inputTemperature, inputScale, outputScale);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(frame, "Temperature must be a real number.", "Error", JOptionPane.ERROR_MESSAGE, ImagesConstants.TEMPERATURE_ICON);
             }
-        }
+        });
 
-        if (!isSelected) {
-            throw new IllegalCallerException();
-        }
-    }
-
-    private static ButtonGroup getButtonGroup(Collection<AbstractButton> buttonsCollection) {
-        ButtonGroup buttonGroup = new ButtonGroup();
-
-        for (AbstractButton button : buttonsCollection) {
-            buttonGroup.add(button);
-        }
-
-        return buttonGroup;
+        return temperatureConvertingButton;
     }
 
     private static void configureFrameWithDefaultSettings(JFrame frame) {
@@ -134,17 +120,7 @@ public class DesktopView implements View {
     }
 
     @Override
-    public void showCelsiusTemperature(double celsiusTemperature) {
-        resultLabel.setText("Temperature in Celsius degrees: " + celsiusTemperature);
-    }
-
-    @Override
-    public void showKelvinTemperature(double kelvinTemperature) {
-        resultLabel.setText("Temperature in Kelvin degrees: " + kelvinTemperature);
-    }
-
-    @Override
-    public void showFahrenheitTemperature(double fahrenheitTemperature) {
-        resultLabel.setText("Temperature in Fahrenheit degrees: " + fahrenheitTemperature);
+    public void showTemperature(double temperature) {
+        resultLabel.setText("Temperature in " + outputScale.getScaleName() + " degrees: " + temperature);
     }
 }
