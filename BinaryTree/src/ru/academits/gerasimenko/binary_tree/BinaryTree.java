@@ -38,6 +38,10 @@ public class BinaryTree<E> {
         return size;
     }
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
     public void insert(E data) {
         if (root == null) {
             root = new TreeNode<>(data);
@@ -163,7 +167,7 @@ public class BinaryTree<E> {
     }
 
     public void breadthFirstSearch(Consumer<E> consumer) {
-        if (size == 0) {
+        if (isEmpty()) {
             return;
         }
 
@@ -189,21 +193,21 @@ public class BinaryTree<E> {
     }
 
     public void depthFirstSearchRecursively(Consumer<E> consumer) {
-        visitTreeNodesRecursively(root, consumer);
+        depthFirstSearchRecursively(root, consumer);
     }
 
-    private static <E> void visitTreeNodesRecursively(TreeNode<E> node, Consumer<E> consumer) {
+    private void depthFirstSearchRecursively(TreeNode<E> node, Consumer<E> consumer) {
         if (node == null) {
             return;
         }
 
         consumer.accept(node.getData());
-        visitTreeNodesRecursively(node.getLeftChild(), consumer);
-        visitTreeNodesRecursively(node.getRightChild(), consumer);
+        depthFirstSearchRecursively(node.getLeftChild(), consumer);
+        depthFirstSearchRecursively(node.getRightChild(), consumer);
     }
 
     public void depthFirstSearch(Consumer<E> consumer) {
-        if (size == 0) {
+        if (isEmpty()) {
             return;
         }
 
@@ -226,5 +230,23 @@ public class BinaryTree<E> {
                 stack.push(nodeLeftChild);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        if (isEmpty()) {
+            return "<>";
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append('<');
+
+        final String separator = ", ";
+        breadthFirstSearch(e -> stringBuilder.append(e).append(separator));
+
+        int stringBuilderLength = stringBuilder.length();
+        stringBuilder.delete(stringBuilderLength - separator.length(), stringBuilderLength);
+
+        return stringBuilder.append('>').toString();
     }
 }
