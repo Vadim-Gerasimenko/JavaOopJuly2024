@@ -7,24 +7,31 @@ public class BinaryTree<E> {
     private TreeNode<E> root;
     private int size;
 
-    private Comparator<E> comparator;
+    private final Comparator<E> comparator;
 
     public BinaryTree() {
+        comparator = null;
     }
 
     public BinaryTree(Comparator<E> comparator) {
         this.comparator = comparator;
     }
 
-    private int compare(Object o1, Object o2) {
-        if (o1 == null || o2 == null) {
-            return o1 == o2 ? 0 : (o1 == null ? -1 : 1);
+    private int compare(E data1, E data2) {
+        if (comparator != null) {
+            return comparator.compare(data1, data2);
+        }
+
+        if (data1 == null) {
+            return data2 == null ? 0 : -1;
+        }
+
+        if (data2 == null) {
+            return 1;
         }
 
         //noinspection unchecked
-        return comparator == null
-                ? ((Comparable<E>) o1).compareTo((E) o2)
-                : comparator.compare((E) o1, (E) o2);
+        return ((Comparable<E>) data1).compareTo(data2);
     }
 
     public int getSize() {

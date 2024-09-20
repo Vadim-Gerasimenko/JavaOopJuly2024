@@ -3,7 +3,6 @@ package ru.academits.gerasimenko.binary_tree.main;
 import ru.academits.gerasimenko.shapes.Rectangle;
 import ru.academits.gerasimenko.binary_tree.BinaryTree;
 
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -53,7 +52,17 @@ public class Main {
         binaryTree.depthFirstSearch(integer -> System.out.print(integer + " "));
         System.out.printf("%n%n");
 
-        BinaryTree<Rectangle> rectanglesBinaryTree = new BinaryTree<>(Comparator.comparingDouble(Rectangle::getArea));
+        BinaryTree<Rectangle> rectanglesBinaryTree = new BinaryTree<>((rectangle1, rectangle2) -> {
+            if (rectangle1 == null) {
+                return rectangle2 == null ? 0 : -1;
+            }
+
+            if (rectangle2 == null) {
+                return 1;
+            }
+
+            return Double.compare(rectangle1.getArea(), rectangle2.getArea());
+        });
 
         rectanglesBinaryTree.insert(new Rectangle(10, 9));
         rectanglesBinaryTree.insert(new Rectangle(5, 4));
