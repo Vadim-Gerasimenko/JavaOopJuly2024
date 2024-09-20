@@ -31,8 +31,12 @@ public class ArrayList<E> implements List<E> {
     }
 
     private void increaseCapacity() {
-        int newCapacity = items.length > 0 ? (items.length * 2) : (items.length + 1) * 2;
-        items = Arrays.copyOf(items, newCapacity);
+        if (items.length > 0) {
+            items = Arrays.copyOf(items, items.length * 2);
+        } else {
+            final int newCapacity = 10;
+            items = Arrays.copyOf(items, newCapacity);
+        }
     }
 
     public void ensureCapacity(int capacity) {
@@ -110,7 +114,7 @@ public class ArrayList<E> implements List<E> {
         }
 
         private void validateListModified() {
-            if (initialModCount != ArrayList.this.modCount) {
+            if (initialModCount != modCount) {
                 throw new ConcurrentModificationException("The arraylist has been modified.");
             }
         }
@@ -239,7 +243,7 @@ public class ArrayList<E> implements List<E> {
             return;
         }
 
-        Arrays.fill(items, null);
+        Arrays.fill(items, 0, size - 1, null);
         size = 0;
         ++modCount;
     }
