@@ -31,11 +31,11 @@ public class ArrayList<E> implements List<E> {
     }
 
     private void increaseCapacity() {
-        if (items.length > 0) {
-            items = Arrays.copyOf(items, items.length * 2);
-        } else {
+        if (items.length == 0) {
             final int newCapacity = 10;
             items = Arrays.copyOf(items, newCapacity);
+        } else {
+            items = Arrays.copyOf(items, items.length * 2);
         }
     }
 
