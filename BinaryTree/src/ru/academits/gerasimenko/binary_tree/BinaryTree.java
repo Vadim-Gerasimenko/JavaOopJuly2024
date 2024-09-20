@@ -1,18 +1,18 @@
-package ru.academits.gerasimenko.tree;
+package ru.academits.gerasimenko.binary_tree;
 
 import java.util.*;
 import java.util.function.Consumer;
 
-public class Tree<E> {
+public class BinaryTree<E> {
     private TreeNode<E> root;
     private int size;
 
     private Comparator<E> comparator;
 
-    public Tree() {
+    public BinaryTree() {
     }
 
-    public Tree(Comparator<E> comparator) {
+    public BinaryTree(Comparator<E> comparator) {
         this.comparator = comparator;
     }
 
@@ -154,7 +154,7 @@ public class Tree<E> {
     }
 
     public void breadthFirstSearch(Consumer<E> consumer) {
-        if (getSize() == 0) {
+        if (size == 0) {
             return;
         }
 
@@ -194,7 +194,7 @@ public class Tree<E> {
     }
 
     public void depthFirstSearch(Consumer<E> consumer) {
-        if (getSize() == 0) {
+        if (size == 0) {
             return;
         }
 

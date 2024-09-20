@@ -1,4 +1,4 @@
-package ru.academits.gerasimenko.tree;
+package ru.academits.gerasimenko.binary_tree;
 
 public class TreeNode<E> {
     private TreeNode<E> leftChild;
