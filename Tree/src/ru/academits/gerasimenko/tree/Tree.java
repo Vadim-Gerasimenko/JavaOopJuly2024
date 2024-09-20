@@ -44,22 +44,20 @@ public class Tree<E> {
             if (compare(data, currentNode.getData()) < 0) {
                 if (currentNode.getLeftChild() != null) {
                     currentNode = currentNode.getLeftChild();
-                    continue;
+                } else {
+                    currentNode.setLeftChild(new TreeNode<>(data));
+                    ++size;
+                    return;
                 }
-
-                currentNode.setLeftChild(new TreeNode<>(data));
-                ++size;
-                return;
+            } else {
+                if (currentNode.getRightChild() != null) {
+                    currentNode = currentNode.getRightChild();
+                } else {
+                    currentNode.setRightChild(new TreeNode<>(data));
+                    ++size;
+                    return;
+                }
             }
-
-            if (currentNode.getRightChild() != null) {
-                currentNode = currentNode.getRightChild();
-                continue;
-            }
-
-            currentNode.setRightChild(new TreeNode<>(data));
-            ++size;
-            return;
         }
     }
 
@@ -84,18 +82,16 @@ public class Tree<E> {
         TreeNode<E> removedNodeParent = null;
 
         while (removedNode != null) {
-            if (compare(data, removedNode.getData()) == 0) {
+            int nodesDataComparisonResult = compare(data, removedNode.getData());
+
+            if (nodesDataComparisonResult == 0) {
                 break;
             }
 
-            if (compare(data, removedNode.getData()) < 0) {
-                removedNodeParent = removedNode;
-                removedNode = removedNode.getLeftChild();
-                continue;
-            }
-
             removedNodeParent = removedNode;
-            removedNode = removedNode.getRightChild();
+            removedNode = nodesDataComparisonResult < 0
+                    ? removedNode.getLeftChild()
+                    : removedNode.getRightChild();
         }
 
         if (removedNode == null) {
@@ -155,7 +151,6 @@ public class Tree<E> {
 
         --size;
         return true;
-
     }
 
     public void breadthFirstSearch(Consumer<E> consumer) {
