@@ -19,12 +19,7 @@ public class Main {
         binaryTree.insert(null);
 
         System.out.println("Binary tree nodes count: " + binaryTree.getSize());
-        System.out.println();
-
-        System.out.println("BFS and print nodes data:");
-
-        binaryTree.breadthFirstSearch(integer -> System.out.print(integer + " "));
-        System.out.printf("%n%n");
+        System.out.printf("Nodes data: " + binaryTree + "%n%n");
 
         final int searchElement = 4;
 
