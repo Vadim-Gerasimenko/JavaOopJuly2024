@@ -72,11 +72,13 @@ public class BinaryTree<E> {
         TreeNode<E> currentNode = root;
 
         while (currentNode != null) {
-            if (compare(data, currentNode.getData()) == 0) {
+            int nodesDataComparisonResult = compare(data, currentNode.getData());
+
+            if (nodesDataComparisonResult == 0) {
                 return true;
             }
 
-            currentNode = compare(data, currentNode.getData()) < 0
+            currentNode = nodesDataComparisonResult < 0
                     ? currentNode.getLeftChild()
                     : currentNode.getRightChild();
         }
