@@ -145,7 +145,7 @@ public class BinaryTree<E> {
 
         rightSubtreeMinNode.setLeftChild(removedNodeLeftChild);
 
-        if (removedNodeParent == null) {
+        if (removedNodeParent == null && rightSubtreeMinNode == removedNodeRightChild) {
             root = removedNodeRightChild;
             --size;
             return true;
@@ -154,6 +154,12 @@ public class BinaryTree<E> {
         if (rightSubtreeMinNodeParent != removedNode) {
             rightSubtreeMinNodeParent.setLeftChild(rightSubtreeMinNode.getRightChild());
             rightSubtreeMinNode.setRightChild(removedNodeRightChild);
+        }
+
+        if (removedNodeParent == null) {
+            root = rightSubtreeMinNode;
+            --size;
+            return true;
         }
 
         if (removedNodeParent.getLeftChild() == removedNode) {
