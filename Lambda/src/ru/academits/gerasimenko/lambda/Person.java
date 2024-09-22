@@ -3,7 +3,7 @@ package ru.academits.gerasimenko.lambda;
 public record Person(String name, int age) {
     public Person {
         if (name == null) {
-            throw new IllegalArgumentException("The 'name' field must not refer to null.");
+            throw new NullPointerException("The 'name' field must not refer to null.");
         }
 
         if (age < 0) {
