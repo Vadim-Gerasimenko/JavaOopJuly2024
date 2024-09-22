@@ -31,9 +31,9 @@ public class Main {
                 .filter(person -> person.age() < 18)
                 .toList();
 
-        OptionalDouble minorsAverageAge = minors.isEmpty()
-                ? OptionalDouble.empty()
-                : OptionalDouble.of(minors.stream().collect(Collectors.averagingInt(Person::age)));
+        OptionalDouble minorsAverageAge = minors.stream()
+                .mapToInt(Person::age)
+                .average();
 
         if (minorsAverageAge.isEmpty()) {
             System.out.println("There are no people under 18 years of age on the list.");
