@@ -68,8 +68,6 @@ public class HashTable<E> implements Collection<E> {
 
         @Override
         public E next() {
-            List<E> list;
-
             if (!hasNext()) {
                 throw new NoSuchElementException("Collection is over.");
             }
@@ -77,6 +75,8 @@ public class HashTable<E> implements Collection<E> {
             if (initialModCount != modCount) {
                 throw new ConcurrentModificationException("The collection was modified.");
             }
+
+            List<E> list;
 
             while (true) {
                 while ((list = arrayList.get(arrayIndex)) == null) {
@@ -112,23 +112,23 @@ public class HashTable<E> implements Collection<E> {
     }
 
     @Override
-    public <T> T[] toArray(T[] a) {
-        if (a == null) {
+    public <T> T[] toArray(T[] array) {
+        if (array == null) {
             throw new NullPointerException("The passed array must not refer to null.");
         }
 
-        if (a.length >= size) {
-            copyToArray(a);
-
-            if (a.length > size) {
-                a[size] = null;
-            }
-
-            return a;
+        if (array.length < size) {
+            //noinspection unchecked
+            return (T[]) Arrays.copyOf(toArray(), size, array.getClass());
         }
 
-        //noinspection unchecked
-        return (T[]) Arrays.copyOf(toArray(), size, a.getClass());
+        copyToArray(array);
+
+        if (array.length > size) {
+            array[size] = null;
+        }
+
+        return array;
     }
 
     private void copyToArray(Object[] array) {
@@ -201,26 +201,33 @@ public class HashTable<E> implements Collection<E> {
     public boolean removeAll(Collection<?> c) {
         validateCollectionForNullReference(c);
 
-        int oldSize = size;
-        int newSize = size;
+        if (isEmpty()) {
+            return false;
+        }
 
-        for (Object e : c) {
-            while (remove(e)) {
-                --newSize;
+        int oldSize = size;
+
+        for (List<E> list : arrayList) {
+            if (list != null) {
+                int listSize = list.size();
+
+                if (list.removeAll(c)) {
+                    size -= listSize - list.size();
+                }
             }
         }
 
-        if (oldSize != newSize) {
-            size = newSize;
-            ++modCount;
-        }
-
-        return oldSize != newSize;
+        ++modCount;
+        return oldSize != size;
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
         validateCollectionForNullReference(c);
+
+        if (isEmpty()) {
+            return false;
+        }
 
         int oldSize = size;
 
@@ -230,11 +237,11 @@ public class HashTable<E> implements Collection<E> {
 
                 if (list.retainAll(c)) {
                     size -= listSize - list.size();
-                    ++modCount;
                 }
             }
         }
 
+        ++modCount;
         return oldSize != size;
     }
 
@@ -265,11 +272,12 @@ public class HashTable<E> implements Collection<E> {
 
         final String separator = ", ";
 
-        for (E element : this) {
-            stringBuilder.append(element).append(separator);
+        for (E e : this) {
+            stringBuilder.append(e).append(separator);
         }
 
-        stringBuilder.delete(stringBuilder.length() - separator.length(), stringBuilder.length());
+        int stringBuilderLength = stringBuilder.length();
+        stringBuilder.delete(stringBuilderLength - separator.length(), stringBuilderLength);
         return stringBuilder.append(']').toString();
     }
 }
