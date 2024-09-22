@@ -57,8 +57,7 @@ public class Main {
         hashTable.retainAll(list3);
         System.out.println("Hash table after retains all elements from 3-rd list: " + hashTable);
         System.out.println("Hash table elements count: " + hashTable.size());
-        System.out.println();
-        System.out.print("All elements of hash table: ");
+        System.out.printf("%nAll elements of hash table: ");
 
         for (Integer element : hashTable) {
             System.out.print(element + " ");
