@@ -4,20 +4,27 @@ import ru.academits.gerasimenko.graph.Graph;
 
 public class Main {
     public static void main(String[] args) {
-        boolean[][] adjacencyMatrix = new boolean[][]{
-                {false, true, false, false, false, false, false},
-                {true, false, true, true, true, true, false},
-                {false, true, false, false, false, false, true},
-                {false, true, false, false, false, false, false},
-                {false, true, false, false, false, true, false},
-                {false, true, false, false, true, false, true},
-                {false, false, true, false, false, true, false},
+        int[][] adjacencyMatrix = {
+                {0, 1, 0, 0, 0, 0, 0},
+                {0, 0, 1, 1, 1, 1, 0},
+                {0, 1, 0, 1, 0, 0, 1},
+                {0, 1, 0, 0, 0, 0, 0},
+                {0, 1, 0, 0, 0, 1, 0},
+                {0, 1, 0, 0, 1, 0, 1},
+                {0, 0, 1, 0, 0, 1, 0}
         };
 
         Graph graph = new Graph(adjacencyMatrix);
 
-        Graph.breadthFirstSearch(graph);
-        Graph.depthFirstSearch(graph);
-        Graph.depthFirstSearchRecursive(graph);
+        System.out.println("BFS and print vertices numbers:");
+        graph.searchBreadthFirst(e -> System.out.print(e + " "));
+        System.out.println();
+
+        System.out.println("DFS and print vertices numbers:");
+        graph.searchDepthFirst(e -> System.out.print(e + " "));
+        System.out.println();
+
+        System.out.println("Recursively DFS and print vertices numbers:");
+        graph.searchDepthFirstRecursively(e -> System.out.print(e + " "));
     }
 }
