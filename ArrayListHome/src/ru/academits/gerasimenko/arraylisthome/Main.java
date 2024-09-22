@@ -10,11 +10,11 @@ public class Main {
     public static void main(String[] args) {
         try {
             final String filePath = "ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/files/in.txt";
-            ArrayList<String> lines = getFileLines(filePath);
+            ArrayList<String> fileLines = getFileLines(filePath);
 
-            if (!lines.isEmpty()) {
+            if (!fileLines.isEmpty()) {
                 System.out.println("File lines:");
-                lines.forEach(System.out::println);
+                fileLines.forEach(System.out::println);
 
                 System.out.println();
             } else {
@@ -35,7 +35,7 @@ public class Main {
 
         System.out.println();
 
-        ArrayList<Integer> uniqueNumbers = getUniqueNumbers(numbers);
+        ArrayList<Integer> uniqueNumbers = getUniqueElements(numbers);
 
         System.out.print("List of unique numbers: ");
 
@@ -46,14 +46,14 @@ public class Main {
 
     public static ArrayList<String> getFileLines(String filePath) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            ArrayList<String> lines = new ArrayList<>();
-            String line;
+            ArrayList<String> fileLines = new ArrayList<>();
+            String fileLine;
 
-            while ((line = reader.readLine()) != null) {
-                lines.add(line);
+            while ((fileLine = reader.readLine()) != null) {
+                fileLines.add(fileLine);
             }
 
-            return lines;
+            return fileLines;
         }
     }
 
@@ -65,15 +65,15 @@ public class Main {
         }
     }
 
-    public static <N> ArrayList<N> getUniqueNumbers(ArrayList<N> numbers) {
-        ArrayList<N> uniqueNumbers = new ArrayList<>(numbers.size());
+    public static <E> ArrayList<E> getUniqueElements(ArrayList<E> elements) {
+        ArrayList<E> uniqueElements = new ArrayList<>(elements.size());
 
-        for (N number : numbers) {
-            if (!uniqueNumbers.contains(number)) {
-                uniqueNumbers.add(number);
+        for (E element : elements) {
+            if (!uniqueElements.contains(element)) {
+                uniqueElements.add(element);
             }
         }
 
-        return uniqueNumbers;
+        return uniqueElements;
     }
 }
