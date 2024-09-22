@@ -3,7 +3,7 @@ package ru.academits.gerasimenko.hashtable;
 import java.util.*;
 
 public class HashTable<E> implements Collection<E> {
-    private final ArrayList<LinkedList<E>> arrayList;
+    private final List<E>[] listsArray;
     private int size;
     private int modCount;
 
@@ -13,15 +13,12 @@ public class HashTable<E> implements Collection<E> {
 
     public HashTable(int capacity) {
         validateCapacity(capacity);
-        arrayList = new ArrayList<>(capacity);
-
-        for (int i = 0; i < capacity; ++i) {
-            arrayList.add(null);
-        }
+        //noinspection unchecked
+        listsArray = new List[capacity];
     }
 
     private int getIndex(Object o) {
-        return Math.abs(Objects.hashCode(o) % arrayList.size());
+        return Math.abs(Objects.hashCode(o) % listsArray.length);
     }
 
     private static void validateCapacity(int capacity) {
@@ -50,7 +47,7 @@ public class HashTable<E> implements Collection<E> {
     @Override
     public boolean contains(Object o) {
         int index = getIndex(o);
-        List<E> list = arrayList.get(index);
+        List<E> list = listsArray[index];
 
         return list != null && list.contains(o);
     }
@@ -79,7 +76,7 @@ public class HashTable<E> implements Collection<E> {
             List<E> list;
 
             while (true) {
-                while ((list = arrayList.get(arrayIndex)) == null) {
+                while ((list = listsArray[arrayIndex]) == null) {
                     ++arrayIndex;
                 }
 
@@ -144,11 +141,11 @@ public class HashTable<E> implements Collection<E> {
     public boolean add(E e) {
         int index = getIndex(e);
 
-        if (arrayList.get(index) == null) {
-            arrayList.set(index, new LinkedList<>());
+        if (listsArray[index] == null) {
+            listsArray[index] = new LinkedList<>();
         }
 
-        arrayList.get(index).add(e);
+        listsArray[index].add(e);
         ++modCount;
         ++size;
 
@@ -158,7 +155,7 @@ public class HashTable<E> implements Collection<E> {
     @Override
     public boolean remove(Object o) {
         int index = getIndex(o);
-        List<E> list = arrayList.get(index);
+        List<E> list = listsArray[index];
 
         if (list == null || !list.remove(o)) {
             return false;
@@ -207,7 +204,7 @@ public class HashTable<E> implements Collection<E> {
 
         int oldSize = size;
 
-        for (List<E> list : arrayList) {
+        for (List<E> list : listsArray) {
             if (list != null) {
                 int listSize = list.size();
 
@@ -231,7 +228,7 @@ public class HashTable<E> implements Collection<E> {
 
         int oldSize = size;
 
-        for (List<E> list : arrayList) {
+        for (List<E> list : listsArray) {
             if (list != null) {
                 int listSize = list.size();
 
@@ -251,7 +248,7 @@ public class HashTable<E> implements Collection<E> {
             return;
         }
 
-        for (List<E> list : arrayList) {
+        for (List<E> list : listsArray) {
             if (list != null) {
                 list.clear();
             }
@@ -278,6 +275,7 @@ public class HashTable<E> implements Collection<E> {
 
         int stringBuilderLength = stringBuilder.length();
         stringBuilder.delete(stringBuilderLength - separator.length(), stringBuilderLength);
+
         return stringBuilder.append(']').toString();
     }
 }
