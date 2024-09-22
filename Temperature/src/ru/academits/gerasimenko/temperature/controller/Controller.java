@@ -17,4 +17,8 @@ public class Controller {
         double convertedTemperature = converter.convert(temperature, inputScale, outputScale);
         view.showTemperature(convertedTemperature);
     }
+
+    public void setAvailableScales() {
+        view.setAvailableScales(converter.getAvailableScalesList());
+    }
 }
