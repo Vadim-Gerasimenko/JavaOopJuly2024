@@ -13,21 +13,10 @@ public class ConsoleView implements View {
 
     @Override
     public void start() {
-        List<Scale> scales = List.of(
-                new CelsiusScale(),
-                new KelvinScale(),
-                new FahrenheitScale()
-        );
-
-        int i = 1;
-
-        for (Scale scale : scales) {
-            availableScales.put(i, scale);
-            ++i;
-        }
-
         Scanner scanner = new Scanner(System.in);
         boolean isContinued = true;
+
+        controller.setAvailableScales();
 
         while (isContinued) {
             printHead();
@@ -58,8 +47,18 @@ public class ConsoleView implements View {
         System.out.println("Temperature in " + outputScale.getScaleName() + " degrees: " + temperature);
     }
 
+    @Override
+    public void setAvailableScales(List<Scale> scales) {
+        int i = 1;
+
+        for (Scale scale : scales) {
+            availableScales.put(i, scale);
+            ++i;
+        }
+    }
+
     private void printHead() {
-        System.out.println("[CONVERTING TEMPERATURE]");
+        System.out.println("[TEMPERATURE CONVERSION]");
         System.out.println("Available scales:");
         availableScales.forEach((k, v) -> System.out.println(k + ". " + v.getScaleName()));
     }

@@ -13,6 +13,7 @@ public class DesktopView implements View {
 
     private JLabel resultLabel;
 
+    private List<Scale> scales = new LinkedList<>();
     private Scale inputScale;
     private Scale outputScale;
 
@@ -22,11 +23,7 @@ public class DesktopView implements View {
             JFrame frame = new JFrame("Temperature converter");
             configureFrameWithDefaultSettings(frame);
 
-            List<Scale> scales = List.of(
-                    new CelsiusScale(),
-                    new KelvinScale(),
-                    new FahrenheitScale()
-            );
+            controller.setAvailableScales();
 
             List<AbstractButton> inputScalesSelectButtons = new LinkedList<>();
             List<AbstractButton> outputScalesSelectButtons = new LinkedList<>();
@@ -53,7 +50,7 @@ public class DesktopView implements View {
 
             final int inputTextFieldColumnsCount = 10;
             JTextField inputTemperatureTextField = new JTextField(inputTextFieldColumnsCount);
-            JButton temperatureConvertingButton = getTemperatureConvertingButton(inputTemperatureTextField, frame);
+            JButton temperatureConversionButton = getTemperatureConversionButton(inputTemperatureTextField, frame);
 
             JPanel panel = new JPanel();
             panel.add(inputScaleLabel);
@@ -64,7 +61,7 @@ public class DesktopView implements View {
 
             panel.add(inputTemperatureLabel);
             panel.add(inputTemperatureTextField);
-            panel.add(temperatureConvertingButton);
+            panel.add(temperatureConversionButton);
             panel.add(outputScaleLabel);
 
             for (AbstractButton button : outputScalesSelectButtons) {
@@ -90,10 +87,10 @@ public class DesktopView implements View {
         return scaleSelectButton;
     }
 
-    private JButton getTemperatureConvertingButton(JTextField inputTemperatureTextField, JFrame frame) {
-        JButton temperatureConvertingButton = new JButton("Convert");
+    private JButton getTemperatureConversionButton(JTextField inputTemperatureTextField, JFrame frame) {
+        JButton temperatureConversionButton = new JButton("Convert");
 
-        temperatureConvertingButton.addActionListener(e -> {
+        temperatureConversionButton.addActionListener(e -> {
             try {
                 double inputTemperature = Double.parseDouble(inputTemperatureTextField.getText());
                 controller.convert(inputTemperature, inputScale, outputScale);
@@ -102,7 +99,7 @@ public class DesktopView implements View {
             }
         });
 
-        return temperatureConvertingButton;
+        return temperatureConversionButton;
     }
 
     private static void configureFrameWithDefaultSettings(JFrame frame) {
@@ -122,5 +119,10 @@ public class DesktopView implements View {
     @Override
     public void showTemperature(double temperature) {
         resultLabel.setText("Temperature in " + outputScale.getScaleName() + " degrees: " + temperature);
+    }
+
+    @Override
+    public void setAvailableScales(List<Scale> scales) {
+        this.scales = scales;
     }
 }
