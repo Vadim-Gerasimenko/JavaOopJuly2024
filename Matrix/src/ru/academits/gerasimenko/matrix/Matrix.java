@@ -3,7 +3,7 @@ package ru.academits.gerasimenko.matrix;
 import ru.academits.gerasimenko.vector.Vector;
 
 public class Matrix {
-    private Vector[] rows;
+    private final Vector[] rows;
 
     public Matrix(int rowsCount, int columnsCount) {
         validateRowsCount(rowsCount);
@@ -109,11 +109,60 @@ public class Matrix {
     }
 
     public void transpose() {
+        validateIsSquareMatrix();
+
         int rowsCount = getRowsCount();
 
         for (int i = 0; i < rowsCount; i++) {
-            rows[i] = getColumn(i);
+            for (int j = 0; j < i; j++) {
+                double temp = rows[i].getComponent(j);
+                rows[i].setComponent(j, rows[j].getComponent(i));
+                rows[j].setComponent(i, temp);
+            }
         }
+    }
+
+    public double getDeterminant() {
+        validateIsSquareMatrix();
+        return getDeterminant(this);
+    }
+
+    private static double getDeterminant(Matrix matrix) {
+        int size = matrix.getRowsCount();
+
+        if (size == 1) {
+            return matrix.rows[0].getComponent(0);
+        }
+
+        double determinant = 0;
+
+        for (int i = 0; i < size; ++i) {
+            determinant += matrix.rows[0].getComponent(i)
+                    * Math.pow(-1, i)
+                    * getMinorMatrix(matrix, i).getDeterminant();
+        }
+
+        return determinant;
+    }
+
+    private static Matrix getMinorMatrix(Matrix matrix, int removedColumnIndex) {
+        int oldSize = matrix.getRowsCount();
+        int newSize = oldSize - 1;
+
+        Matrix minorMatrix = new Matrix(newSize, newSize);
+
+        for (int i = 1; i < oldSize; ++i) {
+            Vector row = matrix.rows[i];
+
+            for (int j = 0, k = 0; j < oldSize; ++j) {
+                if (j != removedColumnIndex) {
+                    minorMatrix.rows[i - 1].setComponent(k, row.getComponent(j));
+                    ++k;
+                }
+            }
+        }
+
+        return minorMatrix;
     }
 
     public void multiplyByScalar(double scalar) {
@@ -204,6 +253,18 @@ public class Matrix {
         }
     }
 
+    private void validateIsSquareMatrix() {
+        int rowsCount = getRowsCount();
+        int columnsCount = getColumnsCount();
+
+        if (rowsCount != columnsCount) {
+            throw new IllegalArgumentException("Matrix must be squared. "
+                    + "Current rows count: " + rowsCount + ". "
+                    + " Current columns count: " + columnsCount + "."
+            );
+        }
+    }
+
     public static Matrix getSum(Matrix matrix1, Matrix matrix2) {
         matrix1.validateSizeEquality(matrix2);
 
@@ -265,9 +326,7 @@ public class Matrix {
         final int separatorLength = 2;
 
         stringBuilder.delete(stringBuilder.length() - separatorLength, stringBuilder.length());
-        stringBuilder.append('}');
-
-        return stringBuilder.toString();
+        return stringBuilder.append('}').toString();
     }
 
     @Override
