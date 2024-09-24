@@ -55,6 +55,9 @@ public class Main {
 
         Matrix matrix5 = new Matrix(new double[][]{{2, 3, 4}, {-5, 6, -7}, {8, -9, 10}});
         System.out.println("5-th matrix: " + matrix5);
+        System.out.println("5-th matrix determinant: " + matrix5.getDeterminant());
+
+        System.out.println();
 
         Matrix matrix6 = new Matrix(new double[][]{{-1, 3, 5}, {5, 6, -3}, {1, -1, -1}});
         System.out.println("6-th matrix: " + matrix6);
