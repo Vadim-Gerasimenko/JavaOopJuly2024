@@ -1,18 +1,16 @@
 package ru.academits.gerasimenko.temperature.model;
 
-import ru.academits.gerasimenko.temperature.scales.CelsiusScale;
-import ru.academits.gerasimenko.temperature.scales.FahrenheitScale;
-import ru.academits.gerasimenko.temperature.scales.KelvinScale;
 import ru.academits.gerasimenko.temperature.scales.Scale;
 
+import java.util.Collections;
 import java.util.List;
 
 public class TemperatureConverter implements Converter {
-    private final List<Scale> scalesList = List.of(
-            new CelsiusScale(),
-            new KelvinScale(),
-            new FahrenheitScale()
-    );
+    private final List<Scale> scalesList;
+
+    public TemperatureConverter(List<Scale> scalesList) {
+        this.scalesList = scalesList;
+    }
 
     @Override
     public double convert(double temperature, Scale inputScale, Scale outputScale) {
@@ -21,6 +19,6 @@ public class TemperatureConverter implements Converter {
 
     @Override
     public List<Scale> getAvailableScalesList() {
-        return scalesList;
+        return Collections.unmodifiableList(scalesList);
     }
 }
