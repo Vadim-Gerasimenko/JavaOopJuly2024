@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="fix: add a method for setting available scales">
+    <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="fix: change">
+      <change afterPath="$PROJECT_DIR$/BinaryTree/src/ru/academits/gerasimenko/binary_tree/BinaryTreeNode.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/controller/Controller.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/controller/GameController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/level/AdjustableLevel.java" afterDir="false" />
@@ -16,10 +17,11 @@
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/GameField.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/GamePanel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/MenuPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinaryTree/src/ru/academits/gerasimenko/binary_tree/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryTree/src/ru/academits/gerasimenko/binary_tree/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinaryTree/src/ru/academits/gerasimenko/binary_tree/TreeNode.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/HtmlCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/model/Minesweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/model/Minesweeper.java" afterDir="false" />
@@ -30,6 +32,7 @@
       <change beforePath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/panel/MenuPanel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/panel/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/panel/PlayingPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/files/source.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,20 +107,46 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/files" />
       <recent name="$PROJECT_DIR$/ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/files" />
       <recent name="$PROJECT_DIR$/ArrayListHome" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Csv" />
-      <recent name="$PROJECT_DIR$/Csv/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.binary_tree.main.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.matrix.main.Main" />
       <module name="Matrix" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.academits.gerasimenko.matrix.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ru.academits.gerasimenko.arraylist.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylist.main.Main" />
+      <module name="ArrayList" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.academits.gerasimenko.arraylist.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ru.academits.gerasimenko.binary_tree.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.binary_tree.main.Main" />
+      <module name="BinaryTree" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.academits.gerasimenko.binary_tree.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,39 +180,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.lambda.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.lambda.main.Main" />
-      <module name="Lambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.lambda.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ru.academits.gerasimenko.temperature.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.temperature.Main" />
-      <module name="Temperature" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.temperature.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ru.academits.gerasimenko.binary_tree.main.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.temperature.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.graph.main.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.lambda.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.hashtable.main.Main" />
+        <item itemvalue="Application.ru.academits.gerasimenko.arraylist.main.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -195,62 +198,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720019151845</updated>
-    </task>
-    <task id="LOCAL-00035" summary="fix: rid the iterator of recursion">
-      <option name="closed" value="true" />
-      <created>1725437036036</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1725437036036</updated>
-    </task>
-    <task id="LOCAL-00036" summary="fix: redo toArray() methods according to documentation">
-      <option name="closed" value="true" />
-      <created>1725439749980</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1725439749980</updated>
-    </task>
-    <task id="LOCAL-00037" summary="style: change variable and method names to more appropriate ones">
-      <option name="closed" value="true" />
-      <created>1725441325463</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1725441325463</updated>
-    </task>
-    <task id="LOCAL-00038" summary="fix: relieve from required implementation of comparable">
-      <option name="closed" value="true" />
-      <created>1725447610116</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1725447610116</updated>
-    </task>
-    <task id="LOCAL-00039" summary="feature: add constructor receiving comparator">
-      <option name="closed" value="true" />
-      <created>1725447663555</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1725447663555</updated>
-    </task>
-    <task id="LOCAL-00040" summary="chore: allow module to access the Shapes module">
-      <option name="closed" value="true" />
-      <created>1725449199001</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1725449199001</updated>
-    </task>
-    <task id="LOCAL-00041" summary="fix: allow null values in tree nodes">
-      <option name="closed" value="true" />
-      <created>1725449215672</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1725449215672</updated>
     </task>
     <task id="LOCAL-00042" summary="feature: enable traversal methods to accept a functional interface 'Consumer'">
       <option name="closed" value="true" />
@@ -588,7 +535,63 @@
       <option name="project" value="LOCAL" />
       <updated>1726998743056</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="feature: add method for getting determinant">
+      <option name="closed" value="true" />
+      <created>1727198668984</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1727198668985</updated>
+    </task>
+    <task id="LOCAL-00085" summary="fix: change module name">
+      <option name="closed" value="true" />
+      <created>1727198770884</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1727198770884</updated>
+    </task>
+    <task id="LOCAL-00086" summary="test: check functionality of method for getting determinant">
+      <option name="closed" value="true" />
+      <created>1727198903600</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1727198903600</updated>
+    </task>
+    <task id="LOCAL-00087" summary="style: swap if-else for readability">
+      <option name="closed" value="true" />
+      <created>1727596126737</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1727596126737</updated>
+    </task>
+    <task id="LOCAL-00088" summary="fix: take into account the last index in the clear() method">
+      <option name="closed" value="true" />
+      <created>1727596721741</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1727596721741</updated>
+    </task>
+    <task id="LOCAL-00089" summary="fix: fix the way to change modcount in removeAll and retainAll methods">
+      <option name="closed" value="true" />
+      <created>1727599479808</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1727599479808</updated>
+    </task>
+    <task id="LOCAL-00090" summary="refactor: add continue to search methods for readability">
+      <option name="closed" value="true" />
+      <created>1727600132826</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1727600132826</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -603,14 +606,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add a model interface and a minesweeper class that implements Model" />
-    <MESSAGE value="feat: add View interface and DesktopView class" />
-    <MESSAGE value="feat: add menu and playing panels" />
-    <MESSAGE value="fix: set value of array size in the increase capacity method with zero dimension" />
-    <MESSAGE value="refactor: change zero dimension check in capacity increase method" />
-    <MESSAGE value="refactor: bring code of remove and insert methods to a uniform" />
-    <MESSAGE value="refactor: change Tree class name to BinaryTree" />
-    <MESSAGE value="refactor: rewrite compare method so that check depends only on comparator" />
     <MESSAGE value="refactor: get rid of repeated calls to compare in contains method" />
     <MESSAGE value="feature: override toString method" />
     <MESSAGE value="test: try using toString method in main" />
@@ -626,9 +621,17 @@
     <MESSAGE value="fix: implement the ability to receive a scales list from the model" />
     <MESSAGE value="fix: change the key field to an array of lists" />
     <MESSAGE value="fix: add a method for setting available scales in view" />
-    <MESSAGE value="fix: add a method for setting available scales" />
     <MESSAGE value="fix: add method for setting available scales to controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: add method for setting available scales to controller" />
+    <MESSAGE value="feature: add method for getting determinant" />
+    <MESSAGE value="fix: change module name" />
+    <MESSAGE value="test: check functionality of method for getting determinant" />
+    <MESSAGE value="style: swap if-else for readability" />
+    <MESSAGE value="fix: take into account the last index in the clear() method" />
+    <MESSAGE value="fix: add a method for setting available scales" />
+    <MESSAGE value="fix: fix the way to change modcount in removeAll and retainAll methods" />
+    <MESSAGE value="fix: change" />
+    <MESSAGE value="refactor: add continue to search methods for readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: add continue to search methods for readability" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
