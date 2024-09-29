@@ -13,7 +13,7 @@ public class DesktopView implements View {
 
     private JLabel resultLabel;
 
-    private List<Scale> scales = new LinkedList<>();
+    private List<Scale> scales;
     private Scale inputScale;
     private Scale outputScale;
 
@@ -44,9 +44,9 @@ public class DesktopView implements View {
             inputScalesSelectButtons.getFirst().doClick();
             outputScalesSelectButtons.getLast().doClick();
 
-            final JLabel inputScaleLabel = new JLabel("Input scale:");
-            final JLabel inputTemperatureLabel = new JLabel("Enter temperature:");
-            final JLabel outputScaleLabel = new JLabel("Output scale:");
+            JLabel inputScaleLabel = new JLabel("Input scale:");
+            JLabel inputTemperatureLabel = new JLabel("Enter temperature:");
+            JLabel outputScaleLabel = new JLabel("Output scale:");
 
             final int inputTextFieldColumnsCount = 10;
             JTextField inputTemperatureTextField = new JTextField(inputTextFieldColumnsCount);
