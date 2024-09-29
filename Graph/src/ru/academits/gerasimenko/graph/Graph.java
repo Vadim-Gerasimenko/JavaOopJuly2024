@@ -3,7 +3,7 @@ package ru.academits.gerasimenko.graph;
 import java.util.Deque;
 import java.util.Queue;
 import java.util.LinkedList;
-import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
 public class Graph {
     private final int[][] adjacencyMatrix;
@@ -18,78 +18,86 @@ public class Graph {
         this.adjacencyMatrix = adjacencyMatrix;
     }
 
-    public void searchBreadthFirst(Consumer<Integer> consumer) {
+    public void searchBreadthFirst(IntConsumer consumer) {
         int verticesCount = adjacencyMatrix.length;
         boolean[] visited = new boolean[verticesCount];
         Queue<Integer> queue = new LinkedList<>();
 
         for (int i = 0; i < verticesCount; ++i) {
-            if (!visited[i]) {
-                queue.add(i);
+            if (visited[i]) {
+                continue;
+            }
 
-                while (!queue.isEmpty()) {
-                    int vertex = queue.remove();
+            queue.add(i);
 
-                    if (!visited[vertex]) {
-                        consumer.accept(vertex);
-                        visited[vertex] = true;
+            while (!queue.isEmpty()) {
+                int vertex = queue.remove();
 
-                        for (int j = 0; j < verticesCount; ++j) {
-                            if (vertex != j && adjacencyMatrix[vertex][j] != 0 && !visited[j]) {
-                                queue.add(j);
-                            }
-                        }
+                if (visited[vertex]) {
+                    continue;
+                }
+
+                consumer.accept(vertex);
+                visited[vertex] = true;
+
+                for (int j = 0; j < verticesCount; ++j) {
+                    if (vertex != j && adjacencyMatrix[vertex][j] != 0 && !visited[j]) {
+                        queue.add(j);
                     }
                 }
             }
         }
     }
 
-    public void searchDepthFirst(Consumer<Integer> consumer) {
+    public void searchDepthFirst(IntConsumer consumer) {
         int verticesCount = adjacencyMatrix.length;
         boolean[] visited = new boolean[verticesCount];
         Deque<Integer> stack = new LinkedList<>();
 
         for (int i = 0; i < verticesCount; ++i) {
-            if (!visited[i]) {
-                stack.push(i);
+            if (visited[i]) {
+                continue;
+            }
 
-                while (!stack.isEmpty()) {
-                    int vertex = stack.pop();
+            stack.push(i);
 
-                    if (!visited[vertex]) {
-                        consumer.accept(vertex);
-                        visited[vertex] = true;
+            while (!stack.isEmpty()) {
+                int vertex = stack.pop();
 
-                        for (int j = verticesCount - 1; j != 0; --j) {
-                            if (vertex != j && adjacencyMatrix[vertex][j] != 0 && !visited[j]) {
-                                stack.push(j);
-                            }
-                        }
+                if (visited[vertex]) {
+                    continue;
+                }
+
+                consumer.accept(vertex);
+                visited[vertex] = true;
+
+                for (int j = verticesCount - 1; j != 0; --j) {
+                    if (vertex != j && adjacencyMatrix[vertex][j] != 0 && !visited[j]) {
+                        stack.push(j);
                     }
                 }
             }
         }
     }
 
-    public void searchDepthFirstRecursively(Consumer<Integer> consumer) {
+    public void searchDepthFirstRecursively(IntConsumer consumer) {
         int verticesCount = adjacencyMatrix.length;
         boolean[] visited = new boolean[verticesCount];
 
         for (int i = 0; i < verticesCount; ++i) {
             if (!visited[i]) {
-                visitVertexWithSearchDepthFirstRecursively(visited, i, consumer);
+                searchDepthFirstRecursively(visited, i, consumer);
             }
         }
     }
 
-    private void visitVertexWithSearchDepthFirstRecursively(boolean[] visited, int vertex, Consumer<Integer> consumer) {
+    private void searchDepthFirstRecursively(boolean[] visited, int vertex, IntConsumer consumer) {
         consumer.accept(vertex);
         visited[vertex] = true;
 
         for (int i = 0; i < visited.length; ++i) {
             if (vertex != i && adjacencyMatrix[vertex][i] != 0 && !visited[i]) {
-                visitVertexWithSearchDepthFirstRecursively(visited, i, consumer);
+                searchDepthFirstRecursively(visited, i, consumer);
             }
         }
     }
