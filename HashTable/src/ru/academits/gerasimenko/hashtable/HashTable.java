@@ -214,8 +214,13 @@ public class HashTable<E> implements Collection<E> {
             }
         }
 
-        ++modCount;
-        return oldSize != size;
+        boolean isModified = oldSize != size;
+
+        if (isModified) {
+            ++modCount;
+        }
+
+        return isModified;
     }
 
     @Override
@@ -238,8 +243,13 @@ public class HashTable<E> implements Collection<E> {
             }
         }
 
-        ++modCount;
-        return oldSize != size;
+        boolean isModified = oldSize != size;
+
+        if (isModified) {
+            ++modCount;
+        }
+
+        return isModified;
     }
 
     @Override
