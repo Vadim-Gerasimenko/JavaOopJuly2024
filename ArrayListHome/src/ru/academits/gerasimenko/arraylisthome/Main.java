@@ -12,13 +12,13 @@ public class Main {
             final String filePath = "ArrayListHome/src/ru/academits/gerasimenko/arraylisthome/files/in.txt";
             ArrayList<String> fileLines = getFileLines(filePath);
 
-            if (!fileLines.isEmpty()) {
+            if (fileLines.isEmpty()) {
+                System.out.println("File is empty.");
+            } else {
                 System.out.println("File lines:");
                 fileLines.forEach(System.out::println);
 
                 System.out.println();
-            } else {
-                System.out.println("File is empty.");
             }
         } catch (IOException e) {
             System.out.println("File reading error: " + e.getMessage());
