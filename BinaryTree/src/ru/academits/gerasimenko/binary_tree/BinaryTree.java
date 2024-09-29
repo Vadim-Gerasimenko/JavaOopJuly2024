@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.function.Consumer;
 
 public class BinaryTree<E> {
-    private TreeNode<E> root;
+    private BinaryTreeNode<E> root;
     private int size;
 
     private final Comparator<E> comparator;
@@ -44,19 +44,19 @@ public class BinaryTree<E> {
 
     public void insert(E data) {
         if (root == null) {
-            root = new TreeNode<>(data);
+            root = new BinaryTreeNode<>(data);
             ++size;
             return;
         }
 
-        TreeNode<E> currentNode = root;
+        BinaryTreeNode<E> currentNode = root;
 
         while (currentNode != null) {
             if (compare(data, currentNode.getData()) < 0) {
                 if (currentNode.getLeftChild() != null) {
                     currentNode = currentNode.getLeftChild();
                 } else {
-                    currentNode.setLeftChild(new TreeNode<>(data));
+                    currentNode.setLeftChild(new BinaryTreeNode<>(data));
                     ++size;
                     return;
                 }
@@ -64,7 +64,7 @@ public class BinaryTree<E> {
                 if (currentNode.getRightChild() != null) {
                     currentNode = currentNode.getRightChild();
                 } else {
-                    currentNode.setRightChild(new TreeNode<>(data));
+                    currentNode.setRightChild(new BinaryTreeNode<>(data));
                     ++size;
                     return;
                 }
@@ -73,16 +73,16 @@ public class BinaryTree<E> {
     }
 
     public boolean contains(E data) {
-        TreeNode<E> currentNode = root;
+        BinaryTreeNode<E> currentNode = root;
 
         while (currentNode != null) {
-            int nodesDataComparisonResult = compare(data, currentNode.getData());
+            int comparisonResult = compare(data, currentNode.getData());
 
-            if (nodesDataComparisonResult == 0) {
+            if (comparisonResult == 0) {
                 return true;
             }
 
-            currentNode = nodesDataComparisonResult < 0
+            currentNode = comparisonResult < 0
                     ? currentNode.getLeftChild()
                     : currentNode.getRightChild();
         }
@@ -91,18 +91,18 @@ public class BinaryTree<E> {
     }
 
     public boolean remove(E data) {
-        TreeNode<E> removedNode = root;
-        TreeNode<E> removedNodeParent = null;
+        BinaryTreeNode<E> removedNode = root;
+        BinaryTreeNode<E> removedNodeParent = null;
 
         while (removedNode != null) {
-            int nodesDataComparisonResult = compare(data, removedNode.getData());
+            int comparisonResult = compare(data, removedNode.getData());
 
-            if (nodesDataComparisonResult == 0) {
+            if (comparisonResult == 0) {
                 break;
             }
 
             removedNodeParent = removedNode;
-            removedNode = nodesDataComparisonResult < 0
+            removedNode = comparisonResult < 0
                     ? removedNode.getLeftChild()
                     : removedNode.getRightChild();
         }
@@ -111,32 +111,22 @@ public class BinaryTree<E> {
             return false;
         }
 
-        TreeNode<E> removedNodeLeftChild = removedNode.getLeftChild();
-        TreeNode<E> removedNodeRightChild = removedNode.getRightChild();
+        --size;
+
+        BinaryTreeNode<E> removedNodeLeftChild = removedNode.getLeftChild();
+        BinaryTreeNode<E> removedNodeRightChild = removedNode.getRightChild();
 
         if (removedNodeLeftChild == null || removedNodeRightChild == null) {
-            TreeNode<E> removedNodeSignificantChild = removedNodeLeftChild != null
+            BinaryTreeNode<E> removedNodeSignificantChild = removedNodeLeftChild != null
                     ? removedNodeLeftChild
                     : removedNodeRightChild;
 
-            if (removedNodeParent == null) {
-                root = removedNodeSignificantChild;
-                --size;
-                return true;
-            }
-
-            if (removedNodeParent.getLeftChild() == removedNode) {
-                removedNodeParent.setLeftChild(removedNodeSignificantChild);
-            } else {
-                removedNodeParent.setRightChild(removedNodeSignificantChild);
-            }
-
-            --size;
+            remove(removedNodeParent, removedNode, removedNodeSignificantChild);
             return true;
         }
 
-        TreeNode<E> rightSubtreeMinNode = removedNodeRightChild;
-        TreeNode<E> rightSubtreeMinNodeParent = removedNode;
+        BinaryTreeNode<E> rightSubtreeMinNode = removedNodeRightChild;
+        BinaryTreeNode<E> rightSubtreeMinNodeParent = removedNode;
 
         while (rightSubtreeMinNode.getLeftChild() != null) {
             rightSubtreeMinNodeParent = rightSubtreeMinNode;
@@ -144,32 +134,29 @@ public class BinaryTree<E> {
         }
 
         rightSubtreeMinNode.setLeftChild(removedNodeLeftChild);
+        remove(removedNodeParent, removedNode, rightSubtreeMinNode);
 
-        if (removedNodeParent == null && rightSubtreeMinNode == removedNodeRightChild) {
-            root = removedNodeRightChild;
-            --size;
-            return true;
-        }
-
-        if (rightSubtreeMinNodeParent != removedNode) {
+        if (removedNodeParent != null && rightSubtreeMinNodeParent != removedNode) {
             rightSubtreeMinNodeParent.setLeftChild(rightSubtreeMinNode.getRightChild());
             rightSubtreeMinNode.setRightChild(removedNodeRightChild);
         }
 
+        return true;
+    }
+
+    private void remove(BinaryTreeNode<E> removedNodeParent,
+                        BinaryTreeNode<E> removedNode,
+                        BinaryTreeNode<E> nextNode) {
         if (removedNodeParent == null) {
-            root = rightSubtreeMinNode;
-            --size;
-            return true;
+            root = nextNode;
+            return;
         }
 
         if (removedNodeParent.getLeftChild() == removedNode) {
-            removedNodeParent.setLeftChild(rightSubtreeMinNode);
+            removedNodeParent.setLeftChild(nextNode);
         } else {
-            removedNodeParent.setRightChild(rightSubtreeMinNode);
+            removedNodeParent.setRightChild(nextNode);
         }
-
-        --size;
-        return true;
     }
 
     public void breadthFirstSearch(Consumer<E> consumer) {
@@ -177,20 +164,20 @@ public class BinaryTree<E> {
             return;
         }
 
-        Queue<TreeNode<E>> queue = new LinkedList<>();
+        Queue<BinaryTreeNode<E>> queue = new LinkedList<>();
         queue.add(root);
 
         while (!queue.isEmpty()) {
-            TreeNode<E> node = queue.remove();
+            BinaryTreeNode<E> node = queue.remove();
             consumer.accept(node.getData());
 
-            TreeNode<E> nodeLeftChild = node.getLeftChild();
+            BinaryTreeNode<E> nodeLeftChild = node.getLeftChild();
 
             if (nodeLeftChild != null) {
                 queue.add(nodeLeftChild);
             }
 
-            TreeNode<E> nodeRightChild = node.getRightChild();
+            BinaryTreeNode<E> nodeRightChild = node.getRightChild();
 
             if (nodeRightChild != null) {
                 queue.add(nodeRightChild);
@@ -202,7 +189,7 @@ public class BinaryTree<E> {
         depthFirstSearchRecursively(root, consumer);
     }
 
-    private void depthFirstSearchRecursively(TreeNode<E> node, Consumer<E> consumer) {
+    private void depthFirstSearchRecursively(BinaryTreeNode<E> node, Consumer<E> consumer) {
         if (node == null) {
             return;
         }
@@ -217,20 +204,20 @@ public class BinaryTree<E> {
             return;
         }
 
-        Deque<TreeNode<E>> stack = new LinkedList<>();
+        Deque<BinaryTreeNode<E>> stack = new LinkedList<>();
         stack.push(root);
 
         while (!stack.isEmpty()) {
-            TreeNode<E> node = stack.pop();
+            BinaryTreeNode<E> node = stack.pop();
             consumer.accept(node.getData());
 
-            TreeNode<E> nodeRightChild = node.getRightChild();
+            BinaryTreeNode<E> nodeRightChild = node.getRightChild();
 
             if (nodeRightChild != null) {
                 stack.push(nodeRightChild);
             }
 
-            TreeNode<E> nodeLeftChild = node.getLeftChild();
+            BinaryTreeNode<E> nodeLeftChild = node.getLeftChild();
 
             if (nodeLeftChild != null) {
                 stack.push(nodeLeftChild);
