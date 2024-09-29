@@ -7,9 +7,11 @@ public class ArrayList<E> implements List<E> {
     private int size;
     private int modCount;
 
+    private static final int INIT_CAPACITY = 10;
+
     public ArrayList() {
         //noinspection unchecked
-        items = (E[]) new Object[10];
+        items = (E[]) new Object[INIT_CAPACITY];
     }
 
     public ArrayList(int capacity) {
@@ -32,8 +34,8 @@ public class ArrayList<E> implements List<E> {
 
     private void increaseCapacity() {
         if (items.length == 0) {
-            final int newCapacity = 10;
-            items = Arrays.copyOf(items, newCapacity);
+            //noinspection unchecked
+            items = (E[]) new Object[INIT_CAPACITY];
         } else {
             items = Arrays.copyOf(items, items.length * 2);
         }
@@ -243,7 +245,7 @@ public class ArrayList<E> implements List<E> {
             return;
         }
 
-        Arrays.fill(items, 0, size - 1, null);
+        Arrays.fill(items, 0, size, null);
         size = 0;
         ++modCount;
     }
