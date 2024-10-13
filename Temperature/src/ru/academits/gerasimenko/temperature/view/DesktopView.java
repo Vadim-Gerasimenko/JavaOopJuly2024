@@ -95,7 +95,8 @@ public class DesktopView implements View {
                 double inputTemperature = Double.parseDouble(inputTemperatureTextField.getText());
                 controller.convert(inputTemperature, inputScale, outputScale);
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(frame, "Temperature must be a real number.", "Error", JOptionPane.ERROR_MESSAGE, ImagesConstants.TEMPERATURE_ICON);
+                JOptionPane.showMessageDialog(frame, "Temperature must be a real number.", "Error",
+                        JOptionPane.ERROR_MESSAGE, ImagesConstants.TEMPERATURE_ICON);
             }
         });
 
@@ -113,6 +114,10 @@ public class DesktopView implements View {
 
     @Override
     public void setController(Controller controller) {
+        if (controller == null) {
+            throw new NullPointerException("Controller must not refer to null");
+        }
+
         this.controller = controller;
     }
 
@@ -123,6 +128,10 @@ public class DesktopView implements View {
 
     @Override
     public void setAvailableScales(List<Scale> scales) {
+        if (scales == null) {
+            throw new NullPointerException("The list of available scales must not refer to null");
+        }
+
         this.scales = scales;
     }
 }

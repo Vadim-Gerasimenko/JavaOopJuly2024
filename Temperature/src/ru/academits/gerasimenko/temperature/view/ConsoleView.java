@@ -39,6 +39,10 @@ public class ConsoleView implements View {
 
     @Override
     public void setController(Controller controller) {
+        if (controller == null) {
+            throw new NullPointerException("Controller must not refer to null");
+        }
+
         this.controller = controller;
     }
 
@@ -49,6 +53,10 @@ public class ConsoleView implements View {
 
     @Override
     public void setAvailableScales(List<Scale> scales) {
+        if (scales == null) {
+            throw new NullPointerException("The list of available scales must not refer to null");
+        }
+
         int i = 1;
 
         for (Scale scale : scales) {
