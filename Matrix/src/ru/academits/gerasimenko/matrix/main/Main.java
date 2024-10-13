@@ -22,7 +22,7 @@ public class Main {
         Vector vector = new Vector(new double[]{17, 23, 42});
         Vector vectorCopy = new Vector(vector);
 
-        Vector[] vectorsArray = new Vector[]{vectorCopy, vector, vectorCopy};
+        Vector[] vectorsArray = {vectorCopy, vector, vectorCopy};
 
         Matrix matrix4 = new Matrix(vectorsArray);
         System.out.println("4-th matrix: " + matrix4);
@@ -39,14 +39,6 @@ public class Main {
         System.out.println();
 
         System.out.println("2-nd matrix: " + matrix2);
-
-        matrix2.transpose();
-        System.out.println("2-nd matrix after transposition: " + matrix2);
-
-        matrix2.transpose();
-        System.out.println("2-nd matrix after re-transposition: " + matrix2);
-
-        System.out.println();
 
         matrix2.multiplyByScalar(3);
         System.out.println("2-nd matrix after multiplication by scalar: " + matrix2);
@@ -82,7 +74,8 @@ public class Main {
 
         Vector vectorToMultiplication = new Vector(new double[]{5, 7});
         System.out.println("Column vector to multiplication: " + vectorToMultiplication);
-        System.out.println("The result of multiplying a 7-th matrix by the column vector: " + matrix7.multiplyByVector(vectorToMultiplication));
+        System.out.println("The result of multiplying a 7-th matrix by the column vector: "
+                + matrix7.multiplyByVector(vectorToMultiplication));
 
         System.out.println();
 
@@ -90,6 +83,12 @@ public class Main {
 
         Matrix matrix8 = new Matrix(new double[][]{{1, 2, 3, 4, 5}, {2, 3, 4, 5, 6}, {0, 1, 2, 7, 1}});
         System.out.println("8-th matrix: " + matrix8);
+
+        matrix8.transpose();
+        System.out.println("8-th matrix after transposition: " + matrix8);
+
+        matrix8.transpose();
+        System.out.println("8-th matrix after re-transposition: " + matrix8);
 
         System.out.println("Result of product of 2-nd and 8-th matrices: " + Matrix.getProduct(matrix2, matrix8));
     }
