@@ -1,7 +1,7 @@
-package ru.academits.gerasimenko.binary_tree.main;
+package ru.academits.gerasimenko.binary_search_tree.main;
 
 import ru.academits.gerasimenko.shapes.Rectangle;
-import ru.academits.gerasimenko.binary_tree.BinaryTree;
+import ru.academits.gerasimenko.binary_search_tree.BinarySearchTree;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -9,29 +9,29 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
     public static void main(String[] args) {
-        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         List<Integer> elements = new LinkedList<>(List.of(8, 3, 10, 1, 0, 6, 14, 4, 7, 13, 30, 25, 23, 24, 35, 27));
 
         for (Integer element : elements) {
-            binaryTree.insert(element);
+            binarySearchTree.insert(element);
         }
 
-        binaryTree.insert(null);
+        binarySearchTree.insert(null);
 
-        System.out.println("Binary tree nodes count: " + binaryTree.getSize());
-        System.out.printf("Nodes data: " + binaryTree + "%n%n");
+        System.out.println("Binary search tree nodes count: " + binarySearchTree.getSize());
+        System.out.printf("Nodes data: " + binarySearchTree + "%n%n");
 
         final int searchElement = 4;
 
-        if (binaryTree.contains(searchElement)) {
-            System.out.println("Search element '" + searchElement + "' in the binary tree.");
+        if (binarySearchTree.contains(searchElement)) {
+            System.out.println("Search element '" + searchElement + "' in the binary search tree.");
         } else {
-            System.out.println("Search element '" + searchElement + "' not in the binary tree.");
+            System.out.println("Search element '" + searchElement + "' not in the binary search tree.");
         }
 
         final int removedElement = 14;
 
-        if (binaryTree.remove(removedElement)) {
+        if (binarySearchTree.remove(removedElement)) {
             System.out.println("The element '" + removedElement + "' was removed.");
         } else {
             System.out.println("The element '" + removedElement + "' was not removed.");
@@ -39,15 +39,15 @@ public class Main {
 
         System.out.println("BFS and print nodes data:");
 
-        binaryTree.breadthFirstSearch(integer -> System.out.print(integer + " "));
+        binarySearchTree.breadthFirstSearch(integer -> System.out.print(integer + " "));
         System.out.printf("%n%n");
 
         System.out.println("DFS and print nodes data:");
 
-        binaryTree.depthFirstSearch(integer -> System.out.print(integer + " "));
+        binarySearchTree.depthFirstSearch(integer -> System.out.print(integer + " "));
         System.out.printf("%n%n");
 
-        BinaryTree<Rectangle> rectanglesBinaryTree = new BinaryTree<>((rectangle1, rectangle2) -> {
+        BinarySearchTree<Rectangle> rectanglesBinarySearchTree = new BinarySearchTree<>((rectangle1, rectangle2) -> {
             if (rectangle1 == null) {
                 return rectangle2 == null ? 0 : -1;
             }
@@ -59,17 +59,17 @@ public class Main {
             return Double.compare(rectangle1.getArea(), rectangle2.getArea());
         });
 
-        rectanglesBinaryTree.insert(new Rectangle(10, 9));
-        rectanglesBinaryTree.insert(new Rectangle(5, 4));
-        rectanglesBinaryTree.insert(null);
-        rectanglesBinaryTree.insert(new Rectangle(2, 4));
-        rectanglesBinaryTree.insert(new Rectangle(50, 4));
+        rectanglesBinarySearchTree.insert(new Rectangle(10, 9));
+        rectanglesBinarySearchTree.insert(new Rectangle(5, 4));
+        rectanglesBinarySearchTree.insert(null);
+        rectanglesBinarySearchTree.insert(new Rectangle(2, 4));
+        rectanglesBinarySearchTree.insert(new Rectangle(50, 4));
 
         System.out.println("Recursive DFS and print info about rectangles:");
 
         AtomicInteger i = new AtomicInteger(1);
 
-        rectanglesBinaryTree.depthFirstSearchRecursively(rectangle -> {
+        rectanglesBinarySearchTree.depthFirstSearchRecursively(rectangle -> {
             System.out.println("Rectangle #" + i.getAndIncrement());
             System.out.println(rectangle);
             System.out.println();
