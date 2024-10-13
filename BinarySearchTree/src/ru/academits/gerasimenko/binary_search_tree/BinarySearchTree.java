@@ -148,7 +148,7 @@ public class BinarySearchTree<E> {
                         BinarySearchTreeNode<E> removedNode,
                         BinarySearchTreeNode<E> removedNodeChild) {
         if (removedNodeParent == null) {
-            root = removedNodeChild;
+            root = removedNode.getRightChild();
             return;
         }
 
