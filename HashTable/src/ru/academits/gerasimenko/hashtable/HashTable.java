@@ -53,7 +53,7 @@ public class HashTable<E> implements Collection<E> {
     }
 
     private class HashTableIterator implements Iterator<E> {
-        private int listIndex = -1;
+        private Iterator<E> listIterator;
         private int arrayIndex;
         private int passedElementsCount;
         private final int initialModCount = modCount;
@@ -80,18 +80,20 @@ public class HashTable<E> implements Collection<E> {
                     ++arrayIndex;
                 }
 
-                ++listIndex;
+                if (listIterator == null) {
+                    listIterator = list.iterator();
+                }
 
-                if (listIndex < list.size()) {
+                if (listIterator.hasNext()) {
                     break;
                 }
 
-                listIndex = -1;
+                listIterator = null;
                 ++arrayIndex;
             }
 
             ++passedElementsCount;
-            return list.get(listIndex);
+            return listIterator.next();
         }
     }
 
