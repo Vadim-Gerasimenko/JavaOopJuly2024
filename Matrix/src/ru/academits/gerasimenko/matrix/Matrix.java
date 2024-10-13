@@ -3,7 +3,7 @@ package ru.academits.gerasimenko.matrix;
 import ru.academits.gerasimenko.vector.Vector;
 
 public class Matrix {
-    private final Vector[] rows;
+    private Vector[] rows;
 
     public Matrix(int rowsCount, int columnsCount) {
         validateRowsCount(rowsCount);
@@ -30,8 +30,8 @@ public class Matrix {
 
         int maxRowLength = 0;
 
-        for (double[] arrayRow : array) {
-            maxRowLength = Math.max(maxRowLength, arrayRow.length);
+        for (double[] rowArray : array) {
+            maxRowLength = Math.max(maxRowLength, rowArray.length);
         }
 
         validateColumnsCount(maxRowLength);
@@ -77,8 +77,8 @@ public class Matrix {
         validateRowIndex(index);
 
         if (row.getSize() != getColumnsCount()) {
-            throw new IllegalArgumentException("The row size must match with the sizes of the matrix rows. "
-                    + "Matrix rows size: " + getColumnsCount() + ". "
+            throw new IllegalArgumentException("The row size must match with the number of the matrix columns. "
+                    + "Matrix columns number: " + getColumnsCount() + ". "
                     + "Current row size: " + row.getSize() + "."
             );
         }
@@ -109,21 +109,39 @@ public class Matrix {
     }
 
     public void transpose() {
-        validateIsSquareMatrix();
-
         int rowsCount = getRowsCount();
+        int columnsCount = getColumnsCount();
 
-        for (int i = 0; i < rowsCount; i++) {
-            for (int j = 0; j < i; j++) {
-                double temp = rows[i].getComponent(j);
-                rows[i].setComponent(j, rows[j].getComponent(i));
-                rows[j].setComponent(i, temp);
+        if (rowsCount == columnsCount) {
+            for (int i = 0; i < rowsCount; i++) {
+                for (int j = 0; j < i; j++) {
+                    double temp = rows[i].getComponent(j);
+                    rows[i].setComponent(j, rows[j].getComponent(i));
+                    rows[j].setComponent(i, temp);
+                }
             }
+        } else {
+            Vector[] transposedRows = new Vector[columnsCount];
+
+            for (int i = 0; i < columnsCount; ++i) {
+                transposedRows[i] = getColumn(i);
+            }
+
+            rows = transposedRows;
         }
     }
 
     public double getDeterminant() {
-        validateIsSquareMatrix();
+        int rowsCount = getRowsCount();
+        int columnsCount = getColumnsCount();
+
+        if (rowsCount != columnsCount) {
+            throw new UnsupportedOperationException("Matrix must be squared. "
+                    + "Current rows count: " + rowsCount + ". "
+                    + " Current columns count: " + columnsCount + "."
+            );
+        }
+
         return getDeterminant(this);
     }
 
@@ -172,7 +190,7 @@ public class Matrix {
     }
 
     public void add(Matrix matrix) {
-        validateSizeEquality(matrix);
+        validateSizesEquality(matrix);
 
         int rowsCount = getRowsCount();
 
@@ -182,7 +200,7 @@ public class Matrix {
     }
 
     public void subtract(Matrix matrix) {
-        validateSizeEquality(matrix);
+        validateSizesEquality(matrix);
 
         int rowsCount = getRowsCount();
 
@@ -200,24 +218,16 @@ public class Matrix {
         }
 
         int rowsCount = getRowsCount();
-        int vectorSize = vector.getSize();
-
         Vector resultVector = new Vector(rowsCount);
 
         for (int i = 0; i < rowsCount; i++) {
-            double component = 0;
-
-            for (int j = 0; j < vectorSize; j++) {
-                component += rows[i].getComponent(j) * vector.getComponent(j);
-            }
-
-            resultVector.setComponent(i, component);
+            resultVector.setComponent(i, Vector.getDotProduct(rows[i], vector));
         }
 
         return resultVector;
     }
 
-    private void validateRowsCount(int rowsCount) {
+    private static void validateRowsCount(int rowsCount) {
         if (rowsCount <= 0) {
             throw new IllegalArgumentException("Matrix rows count must be positive. "
                     + "Current rows count: " + rowsCount + "."
@@ -225,7 +235,7 @@ public class Matrix {
         }
     }
 
-    private void validateColumnsCount(int columnsCount) {
+    private static void validateColumnsCount(int columnsCount) {
         if (columnsCount <= 0) {
             throw new IllegalArgumentException("Matrix columns count must be positive. "
                     + "Current columns count: " + columnsCount + "."
@@ -242,7 +252,7 @@ public class Matrix {
         }
     }
 
-    private void validateSizeEquality(Matrix matrix) {
+    private void validateSizesEquality(Matrix matrix) {
         if (getRowsCount() != matrix.getRowsCount() || getColumnsCount() != matrix.getColumnsCount()) {
             throw new IllegalArgumentException("For arithmetic operations, the matrices must be the same size. "
                     + "Current matrix rows count: " + getRowsCount() + ", "
@@ -253,35 +263,19 @@ public class Matrix {
         }
     }
 
-    private void validateIsSquareMatrix() {
-        int rowsCount = getRowsCount();
-        int columnsCount = getColumnsCount();
-
-        if (rowsCount != columnsCount) {
-            throw new IllegalArgumentException("Matrix must be squared. "
-                    + "Current rows count: " + rowsCount + ". "
-                    + " Current columns count: " + columnsCount + "."
-            );
-        }
-    }
-
     public static Matrix getSum(Matrix matrix1, Matrix matrix2) {
-        matrix1.validateSizeEquality(matrix2);
+        matrix1.validateSizesEquality(matrix2);
 
-        Matrix resultMatrix = new Matrix(matrix1.getRowsCount(), matrix1.getColumnsCount());
-
-        resultMatrix.add(matrix1);
+        Matrix resultMatrix = new Matrix(matrix1);
         resultMatrix.add(matrix2);
 
         return resultMatrix;
     }
 
     public static Matrix getDifference(Matrix matrix1, Matrix matrix2) {
-        matrix1.validateSizeEquality(matrix2);
+        matrix1.validateSizesEquality(matrix2);
 
-        Matrix resultMatrix = new Matrix(matrix1.getRowsCount(), matrix1.getColumnsCount());
-
-        resultMatrix.add(matrix1);
+        Matrix resultMatrix = new Matrix(matrix1);
         resultMatrix.subtract(matrix2);
 
         return resultMatrix;
@@ -341,7 +335,7 @@ public class Matrix {
 
         Matrix matrix = (Matrix) o;
 
-        if (rows.length != matrix.rows.length || this.getColumnsCount() != matrix.getColumnsCount()) {
+        if (rows.length != matrix.rows.length || getColumnsCount() != matrix.getColumnsCount()) {
             return false;
         }
 
