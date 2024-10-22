@@ -18,8 +18,12 @@ public class TemperatureConverter implements Converter {
 
     @Override
     public double convert(double temperature, Scale inputScale, Scale outputScale) {
-        if (inputScale == null || outputScale == null) {
-            throw new NullPointerException("Passed scales must not refer to null");
+        if (inputScale == null) {
+            throw new NullPointerException("Input scale must not refer to null");
+        }
+
+        if (outputScale == null) {
+            throw new NullPointerException("Output scale must not refer to null");
         }
 
         return outputScale.convertFromCelsius(inputScale.convertToCelsius(temperature));
