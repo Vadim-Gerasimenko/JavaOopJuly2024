@@ -11,4 +11,7 @@ public final class FrameConfigureConstants {
     public static final boolean IS_VISIBLE_BY_DEFAULT = true;
     public static final Component DEFAULT_LOCATION_RELATIVE_TO = null;
     public static final Color DEFAULT_BACKGROUND_COLOR = Color.CYAN;
+
+    private FrameConfigureConstants() {
+    }
 }
