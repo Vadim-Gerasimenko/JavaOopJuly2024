@@ -31,7 +31,7 @@ public class Main {
 
         System.out.println("3-rd row from 2-nd matrix: " + matrix2.getRow(2));
 
-        matrix2.setRow(vector, 2);
+        matrix2.setRow(2, vector);
         System.out.println("2-nd matrix after setting the 3-rd row: " + matrix2);
 
         System.out.println("3-rd column from 2-nd matrix: " + matrix2.getColumn(2));
