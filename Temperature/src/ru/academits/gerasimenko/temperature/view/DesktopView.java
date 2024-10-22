@@ -17,8 +17,16 @@ public class DesktopView implements View {
     private Scale inputScale;
     private Scale outputScale;
 
+    private boolean isActive;
+
     @Override
     public void start() {
+        if (isActive) {
+            throw new IllegalStateException("Error: the start method has already been called and is active");
+        }
+
+        isActive = true;
+
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Temperature converter");
             configureFrameWithDefaultSettings(frame);

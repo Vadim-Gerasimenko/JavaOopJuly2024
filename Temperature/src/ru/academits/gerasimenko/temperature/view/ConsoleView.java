@@ -11,14 +11,20 @@ public class ConsoleView implements View {
     private final TreeMap<Integer, Scale> availableScales = new TreeMap<>();
     private Scale outputScale;
 
+    private boolean isActive;
+
     @Override
     public void start() {
+        if (isActive) {
+            throw new IllegalStateException("Error: the start method has already been called and is active");
+        }
+
+        isActive = true;
         Scanner scanner = new Scanner(System.in);
-        boolean isContinued = true;
 
         controller.setAvailableScales();
 
-        while (isContinued) {
+        while (isActive) {
             printHead();
 
             final String messageToGetInputScale = "Enter the number of the input data scale: ";
@@ -33,7 +39,7 @@ public class ConsoleView implements View {
             controller.convert(temperature, availableScales.get(inputScaleNumber), outputScale);
             scanner.nextLine();
 
-            isContinued = terminateOrContinue(scanner);
+            isActive = terminateOrContinue(scanner);
         }
     }
 
