@@ -73,7 +73,7 @@ public class Matrix {
         return new Vector(rows[index]);
     }
 
-    public void setRow(Vector row, int index) {
+    public void setRow(int index, Vector row) {
         validateRowIndex(index);
 
         if (row.getSize() != getColumnsCount()) {
@@ -150,6 +150,11 @@ public class Matrix {
 
         if (size == 1) {
             return matrix.rows[0].getComponent(0);
+        }
+
+        if (size == 2) {
+            return matrix.rows[0].getComponent(0) * matrix.rows[1].getComponent(1)
+                    - matrix.rows[0].getComponent(1) * matrix.rows[1].getComponent(0);
         }
 
         double determinant = 0;
@@ -313,13 +318,13 @@ public class Matrix {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append('{');
 
+        final String separator = ", ";
+
         for (Vector row : rows) {
-            stringBuilder.append(row).append(", ");
+            stringBuilder.append(row).append(separator);
         }
 
-        final int separatorLength = 2;
-
-        stringBuilder.delete(stringBuilder.length() - separatorLength, stringBuilder.length());
+        stringBuilder.delete(stringBuilder.length() - separator.length(), stringBuilder.length());
         return stringBuilder.append('}').toString();
     }
 
