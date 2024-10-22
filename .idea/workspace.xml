@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e312d97-8e8e-4f4d-8cc5-420f539bab56" name="Changes" comment="fix: change">
-      <change afterPath="$PROJECT_DIR$/BinaryTree/src/ru/academits/gerasimenko/binary_tree/BinaryTreeNode.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/controller/Controller.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/controller/GameController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/level/AdjustableLevel.java" afterDir="false" />
@@ -17,13 +16,10 @@
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/GameField.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/GamePanel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/MenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryTree/src/ru/academits/gerasimenko/binary_tree/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryTree/src/ru/academits/gerasimenko/binary_tree/BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryTree/src/ru/academits/gerasimenko/binary_tree/TreeNode.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/model/Minesweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/model/Minesweeper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/model/field/PlayingField.java" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/model/field/PlayingField.java" afterDir="false" />
@@ -77,6 +73,7 @@
     &quot;Application.ru.academits.gerasimenko.arraylist.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.arraylisthome.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.arraylisthome.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ru.academits.gerasimenko.binary_search_tree.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.binary_tree.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.csv.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ru.academits.gerasimenko.graph.main.Main.executor&quot;: &quot;Run&quot;,
@@ -114,7 +111,7 @@
       <recent name="$PROJECT_DIR$/Csv" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ru.academits.gerasimenko.binary_tree.main.Main">
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.temperature.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.matrix.main.Main" />
       <module name="Matrix" />
@@ -128,25 +125,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.academits.gerasimenko.arraylist.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.arraylist.main.Main" />
-      <module name="ArrayList" />
+    <configuration name="ru.academits.gerasimenko.binary_search_tree.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.binary_search_tree.main.Main" />
+      <module name="BinarySearchTree" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.arraylist.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ru.academits.gerasimenko.binary_tree.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.binary_tree.main.Main" />
-      <module name="BinaryTree" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.academits.gerasimenko.binary_tree.main.*" />
+          <option name="PATTERN" value="ru.academits.gerasimenko.binary_search_tree.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -180,13 +164,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ru.academits.gerasimenko.temperature.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.temperature.Main" />
+      <module name="Temperature" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.academits.gerasimenko.temperature.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ru.academits.gerasimenko.binary_tree.main.Main" />
+        <item itemvalue="Application.ru.academits.gerasimenko.temperature.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.graph.main.Main" />
+        <item itemvalue="Application.ru.academits.gerasimenko.binary_search_tree.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.hashtable.main.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.arraylist.main.Main" />
+        <item itemvalue="Application.ru.academits.gerasimenko.graph.main.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -198,134 +195,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720019151845</updated>
-    </task>
-    <task id="LOCAL-00042" summary="feature: enable traversal methods to accept a functional interface 'Consumer'">
-      <option name="closed" value="true" />
-      <created>1725451198809</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1725451198809</updated>
-    </task>
-    <task id="LOCAL-00043" summary="refactor: use more appropriate methods for stack in DFS">
-      <option name="closed" value="true" />
-      <created>1725451423081</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1725451423081</updated>
-    </task>
-    <task id="LOCAL-00044" summary="test: test constructor with comparator and functional interface">
-      <option name="closed" value="true" />
-      <created>1725451543101</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1725451543101</updated>
-    </task>
-    <task id="LOCAL-00045" summary="style: make beautiful data output to the console">
-      <option name="closed" value="true" />
-      <created>1725460872310</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1725460872310</updated>
-    </task>
-    <task id="LOCAL-00046" summary="refactor: use existing variable instead of calling method">
-      <option name="closed" value="true" />
-      <created>1725460992860</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1725460992860</updated>
-    </task>
-    <task id="LOCAL-00047" summary="style: remove extra space from printing in line">
-      <option name="closed" value="true" />
-      <created>1725790168507</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1725790168507</updated>
-    </task>
-    <task id="LOCAL-00048" summary="refactor: simplify clear() method using ready-made functions of the 'Arrays' class">
-      <option name="closed" value="true" />
-      <created>1725790290019</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1725790290019</updated>
-    </task>
-    <task id="LOCAL-00049" summary="fix: add person name check for null">
-      <option name="closed" value="true" />
-      <created>1725793447826</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1725793447826</updated>
-    </task>
-    <task id="LOCAL-00050" summary="fix: give the 'minorsAverageAge' type OptionalDouble">
-      <option name="closed" value="true" />
-      <created>1725793586687</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1725793586687</updated>
-    </task>
-    <task id="LOCAL-00051" summary="chore: remove unnecessary ArrayListHome class">
-      <option name="closed" value="true" />
-      <created>1725796500111</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1725796500111</updated>
-    </task>
-    <task id="LOCAL-00052" summary="chore: move dependent elements to view-package">
-      <option name="closed" value="true" />
-      <created>1725999325759</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1725999325760</updated>
-    </task>
-    <task id="LOCAL-00053" summary="fix: create separate interface for temperature scales">
-      <option name="closed" value="true" />
-      <created>1725999406758</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1725999406758</updated>
-    </task>
-    <task id="LOCAL-00054" summary="fix: create classes that implement temperature scales">
-      <option name="closed" value="true" />
-      <created>1725999484252</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1725999484252</updated>
-    </task>
-    <task id="LOCAL-00055" summary="fix: remove unnecessary methods from interface">
-      <option name="closed" value="true" />
-      <created>1725999542860</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1725999542860</updated>
-    </task>
-    <task id="LOCAL-00056" summary="refactor: implement the corrected model interface">
-      <option name="closed" value="true" />
-      <created>1725999617087</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1725999617087</updated>
-    </task>
-    <task id="LOCAL-00057" summary="fix: remove unnecessary methods from View">
-      <option name="closed" value="true" />
-      <created>1725999690261</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1725999690261</updated>
     </task>
     <task id="LOCAL-00058" summary="refactor: implement the corrected View interface">
       <option name="closed" value="true" />
@@ -591,7 +460,135 @@
       <option name="project" value="LOCAL" />
       <updated>1727600132826</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="fix: give the class a more complete name">
+      <option name="closed" value="true" />
+      <created>1727610689178</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1727610689179</updated>
+    </task>
+    <task id="LOCAL-00092" summary="fix: remove duplicate code">
+      <option name="closed" value="true" />
+      <created>1727610741838</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1727610741838</updated>
+    </task>
+    <task id="LOCAL-00093" summary="fix: remove default field initialization">
+      <option name="closed" value="true" />
+      <created>1727612058327</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1727612058327</updated>
+    </task>
+    <task id="LOCAL-00094" summary="fix: return an unmodifiable list of scales">
+      <option name="closed" value="true" />
+      <created>1727612172557</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1727612172557</updated>
+    </task>
+    <task id="LOCAL-00095" summary="fix: pass the available scales list to the model constructor">
+      <option name="closed" value="true" />
+      <created>1727612259002</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1727612259002</updated>
+    </task>
+    <task id="LOCAL-00096" summary="fix: allow any matrix to be transposed">
+      <option name="closed" value="true" />
+      <created>1728813572972</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1728813572972</updated>
+    </task>
+    <task id="LOCAL-00097" summary="test: check the functionality of transposition method">
+      <option name="closed" value="true" />
+      <created>1728813657565</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1728813657565</updated>
+    </task>
+    <task id="LOCAL-00098" summary="fix: get rid of access by index in the iterator">
+      <option name="closed" value="true" />
+      <created>1728815108727</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1728815108727</updated>
+    </task>
+    <task id="LOCAL-00099" summary="fix: add a null reference check to all public methods and constructors">
+      <option name="closed" value="true" />
+      <created>1728816739270</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1728816739270</updated>
+    </task>
+    <task id="LOCAL-00100" summary="fix: give a more complete name to the classes">
+      <option name="closed" value="true" />
+      <created>1728818269875</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1728818269875</updated>
+    </task>
+    <task id="LOCAL-00101" summary="fix: fix error when removing root with two children">
+      <option name="closed" value="true" />
+      <created>1728821905906</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1728821905906</updated>
+    </task>
+    <task id="LOCAL-00102" summary="style: change the order of passed arguments to the row setter">
+      <option name="closed" value="true" />
+      <created>1729606072412</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1729606072412</updated>
+    </task>
+    <task id="LOCAL-00103" summary="fix: consider separately the case of a matrix of dimension 2 when calculating the determinant">
+      <option name="closed" value="true" />
+      <created>1729606195608</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1729606195608</updated>
+    </task>
+    <task id="LOCAL-00104" summary="fix: add a private constructor without arguments">
+      <option name="closed" value="true" />
+      <created>1729606390339</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1729606390339</updated>
+    </task>
+    <task id="LOCAL-00105" summary="fix: check each scale for null separately">
+      <option name="closed" value="true" />
+      <created>1729606598264</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1729606598264</updated>
+    </task>
+    <task id="LOCAL-00106" summary="fix: add a check for repeated calls to the start method">
+      <option name="closed" value="true" />
+      <created>1729607526822</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1729607526822</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -606,22 +603,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: get rid of repeated calls to compare in contains method" />
-    <MESSAGE value="feature: override toString method" />
-    <MESSAGE value="test: try using toString method in main" />
-    <MESSAGE value="fix: consider the special case of root deleting with two children, when right subtree minimum element is the root right child" />
-    <MESSAGE value="refactor: bring removeAll and retainAll methods to a unified style" />
-    <MESSAGE value="style: change the line feed method" />
-    <MESSAGE value="fix: allow null values in tree nodes" />
-    <MESSAGE value="fix: change exception type for null value" />
-    <MESSAGE value="refactor: get OptionalDouble from IntStream using average()" />
-    <MESSAGE value="fix: change the method name to match the return type" />
-    <MESSAGE value="fix: give search methods the ability to accept Consumer as argument" />
-    <MESSAGE value="test: test updated DFS and BFS with Consumer" />
-    <MESSAGE value="fix: implement the ability to receive a scales list from the model" />
-    <MESSAGE value="fix: change the key field to an array of lists" />
-    <MESSAGE value="fix: add a method for setting available scales in view" />
-    <MESSAGE value="fix: add method for setting available scales to controller" />
     <MESSAGE value="feature: add method for getting determinant" />
     <MESSAGE value="fix: change module name" />
     <MESSAGE value="test: check functionality of method for getting determinant" />
@@ -629,9 +610,25 @@
     <MESSAGE value="fix: take into account the last index in the clear() method" />
     <MESSAGE value="fix: add a method for setting available scales" />
     <MESSAGE value="fix: fix the way to change modcount in removeAll and retainAll methods" />
-    <MESSAGE value="fix: change" />
     <MESSAGE value="refactor: add continue to search methods for readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: add continue to search methods for readability" />
+    <MESSAGE value="fix: give the class a more complete name" />
+    <MESSAGE value="fix: remove duplicate code" />
+    <MESSAGE value="fix: remove default field initialization" />
+    <MESSAGE value="fix: return an unmodifiable list of scales" />
+    <MESSAGE value="fix: pass the available scales list to the model constructor" />
+    <MESSAGE value="fix: allow any matrix to be transposed" />
+    <MESSAGE value="test: check the functionality of transposition method" />
+    <MESSAGE value="fix: get rid of access by index in the iterator" />
+    <MESSAGE value="fix: add a null reference check to all public methods and constructors" />
+    <MESSAGE value="fix: give a more complete name to the classes" />
+    <MESSAGE value="fix: fix error when removing root with two children" />
+    <MESSAGE value="style: change the order of passed arguments to the row setter" />
+    <MESSAGE value="fix: consider separately the case of a matrix of dimension 2 when calculating the determinant" />
+    <MESSAGE value="fix: add a private constructor without arguments" />
+    <MESSAGE value="fix: check each scale for null separately" />
+    <MESSAGE value="fix: change" />
+    <MESSAGE value="fix: add a check for repeated calls to the start method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: add a check for repeated calls to the start method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
