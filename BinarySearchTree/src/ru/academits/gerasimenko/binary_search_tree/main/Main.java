@@ -3,14 +3,13 @@ package ru.academits.gerasimenko.binary_search_tree.main;
 import ru.academits.gerasimenko.shapes.Rectangle;
 import ru.academits.gerasimenko.binary_search_tree.BinarySearchTree;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
     public static void main(String[] args) {
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
-        List<Integer> elements = new LinkedList<>(List.of(8, 3, 10, 1, 0, 6, 14, 4, 7, 13, 30, 25, 23, 24, 35, 27));
+        List<Integer> elements = List.of(8, 3, 10, 1, 0, 6, 14, 4, 7, 13, 30, 25, 23, 24, 35, 27);
 
         for (Integer element : elements) {
             binarySearchTree.insert(element);
