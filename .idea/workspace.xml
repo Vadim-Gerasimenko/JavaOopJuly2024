@@ -16,8 +16,15 @@
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/GameField.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/GamePanel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/MenuPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProducerConsumerThreads/ProducerConsumerThreads.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProducerConsumerThreads/src/ru/academits/gerasimenko/producerconsumer/ProducerConsumerManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProducerConsumerThreads/src/ru/academits/gerasimenko/producerconsumer/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ThreadPool/ThreadPool.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ThreadPool/src/ru/academits/gerasimenko/threadpool/ThreadPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ThreadPool/src/ru/academits/gerasimenko/threadpool/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinarySearchTree/src/ru/academits/gerasimenko/binary_search_tree/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BinarySearchTree/src/ru/academits/gerasimenko/binary_search_tree/BinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/CsvToHtmlConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/model/Minesweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/model/Minesweeper.java" afterDir="false" />
@@ -28,6 +35,7 @@
       <change beforePath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/panel/MenuPanel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/panel/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper/src/ru/academits/gerasimenko/minesweeper/view/gui/panel/PlayingPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vector/src/ru/academits/gerasimenko/vector/Vector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/files/source.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +55,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Vadim-Gerasimenko"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Vadim-Gerasimenko/JavaOopJuly2024.git",
+    "accountId": "ad5da496-8d2a-477b-8268-ef57982d353d"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Matrix/src/ru/academits/gerasimenko/matrix/Matrix.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -58,50 +78,57 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2ik0DwWEZM7EtzuEoVjb0HCk1XS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ArrayListHome.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.arraylist.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.arraylisthome.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.arraylisthome.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.binary_search_tree.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.binary_tree.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.csv.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.graph.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.hashtable.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.lambda.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.list.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.matrix.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.minesweeper.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.shapes.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.temperature.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.tree.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.vector.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ru.academits.gerasimenko.vector.main_matrix.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Minesweeper/src/ru/academits/gerasimenko/minesweeper/main/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ArrayListHome.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Test.executor": "Run",
+    "Application.ru.academits.gerasimenko.arraylist.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.arraylisthome.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.arraylisthome.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.binary_search_tree.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.binary_tree.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.csv.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.graph.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.hashtable.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.lambda.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.list.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.matrix.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.minesweeper.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.shapes.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.temperature.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.tree.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.vector.main.Main.executor": "Run",
+    "Application.ru.academits.gerasimenko.vector.main_matrix.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/vadimgerasimenko/Documents/AcademItSchoolJava/JavaOopJuly2024/Minesweeper/src/ru/academits/gerasimenko/minesweeper/main/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Csv/src/ru/academits/gerasimenko/csv/files" />
@@ -110,8 +137,13 @@
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Csv" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.academits.gerasimenko.producerconsumer.main" />
+      <recent name="ru.academits.gerasimenko.producerconsumer" />
+      <recent name="ru.academits.gerasimenko.threadpool" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.ru.academits.gerasimenko.temperature.Main">
+  <component name="RunManager" selected="Application.ru.academits.gerasimenko.binary_search_tree.main.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.academits.gerasimenko.matrix.main.Main" />
       <module name="Matrix" />
@@ -179,13 +211,21 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ru.academits.gerasimenko.binary_search_tree.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.temperature.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ru.academits.gerasimenko.binary_search_tree.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.hashtable.main.Main" />
         <item itemvalue="Application.ru.academits.gerasimenko.graph.main.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -195,30 +235,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720019151845</updated>
-    </task>
-    <task id="LOCAL-00058" summary="refactor: implement the corrected View interface">
-      <option name="closed" value="true" />
-      <created>1725999748937</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1725999748937</updated>
-    </task>
-    <task id="LOCAL-00059" summary="refactor: simplify the controller due to OCP">
-      <option name="closed" value="true" />
-      <created>1725999858361</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1725999858361</updated>
-    </task>
-    <task id="LOCAL-00060" summary="feat: create playing field as two-dimensional cell array">
-      <option name="closed" value="true" />
-      <created>1726305144352</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1726305144352</updated>
+      <workItem from="1751446027620" duration="475000" />
     </task>
     <task id="LOCAL-00061" summary="feat: add a model interface and a minesweeper class that implements Model">
       <option name="closed" value="true" />
@@ -588,8 +605,35 @@
       <option name="project" value="LOCAL" />
       <updated>1729607526822</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="fix: make binary search tree task as a module">
+      <option name="closed" value="true" />
+      <created>1729608210327</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1729608210327</updated>
+    </task>
+    <task id="LOCAL-00108" summary="style: rename binary search tree node to tree node">
+      <option name="closed" value="true" />
+      <created>1729608845915</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1729608845916</updated>
+    </task>
+    <task id="LOCAL-00109" summary="fix: remove linked list">
+      <option name="closed" value="true" />
+      <created>1729608892600</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1729608892600</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -603,9 +647,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: add method for getting determinant" />
-    <MESSAGE value="fix: change module name" />
-    <MESSAGE value="test: check functionality of method for getting determinant" />
     <MESSAGE value="style: swap if-else for readability" />
     <MESSAGE value="fix: take into account the last index in the clear() method" />
     <MESSAGE value="fix: add a method for setting available scales" />
@@ -626,9 +667,12 @@
     <MESSAGE value="fix: consider separately the case of a matrix of dimension 2 when calculating the determinant" />
     <MESSAGE value="fix: add a private constructor without arguments" />
     <MESSAGE value="fix: check each scale for null separately" />
-    <MESSAGE value="fix: change" />
     <MESSAGE value="fix: add a check for repeated calls to the start method" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: add a check for repeated calls to the start method" />
+    <MESSAGE value="fix: make binary search tree task as a module" />
+    <MESSAGE value="style: rename binary search tree node to tree node" />
+    <MESSAGE value="fix: remove linked list" />
+    <MESSAGE value="fix: change" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
